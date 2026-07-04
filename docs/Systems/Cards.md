@@ -49,9 +49,16 @@ There is no separate "deck" object. The Gu slotted into your **aperture** are yo
 | `HAND_SIZE` | 5 | Opening hand |
 | `DRAW_PER_TURN` | 1 | Cards drawn at start of each player turn |
 | `HAND_MAX` | 8 | Hand cap |
+| `ESSENCE_REGEN` | 12 | Essence restored at the start of each of your turns |
+| `MAX_TURNS` | 60 | Stalemate cap; higher-HP% side wins (prevents infinite fights) |
 | `RESHUFFLE` | true | Discard reshuffles into draw pile when empty |
 
 These live in one config block so combat feel can be tuned quickly.
+
+**Why essence regen?** A fixed per-combat essence pool with no regen lets long
+fights stall out once either side runs dry (surfaced by the prototype: a
+stalemate ran to 40,000+ turns). A small per-turn regen keeps engines running
+and the `MAX_TURNS` cap is a hard backstop.
 
 ---
 
@@ -132,6 +139,43 @@ new Gu need new verbs, and the AI generator (later sprint) emits the same struct
 
 ---
 
+## Path Focus: The Attainment Gate (DEC-026)
+
+This is what makes committing to 1–2 paths the core deck-building decision, rather
+than jamming one Gu from every path.
+
+**Your attainment in a path caps how many Gu of that path you may play per turn:**
+
+| Attainment | Gu of that path / turn |
+|------------|------------------------|
+| Ordinary | 1 |
+| Adept | 2 |
+| Master | 3 |
+| Quasi-Grandmaster | 5 |
+| Grandmaster | 6 |
+
+A deck spread across six paths at Ordinary can play ~1 card per path per turn —
+it never gets an engine going. A deck that is Master in one path can chain 3 of
+that path's Gu in a turn, firing its whole combo. **Killer moves require Master+**
+in the move's path and the component Gu equipped.
+
+## Path Synergy Engines (implemented in prototype)
+
+Each path is built as a self-reinforcing engine so a focused deck combos with
+itself. The six built out first:
+
+| Path | Engine |
+|------|--------|
+| Poison ☠ | Build stacks → spread/multiply → payoff cards deal damage per stack |
+| Blood ◈ | Spend HP for power → lifesteal it back → payoffs scale when low HP; bleed |
+| Strength ✊ | Consecutive-attack combo counter ramps → self-buffs → big finisher |
+| Light ✦ | Stack shields → cleanse → convert shield into a damage burst |
+| Dark ☾ | Enter stealth for burst → execute low/debuffed targets (pairs with Poison) |
+| Food ◍ | Generate essence + heals → "consume" + feast buffs → dump essence into one blow |
+
+Cross-path pairings are intentional (Dark executes what Poison debuffs; Blood
+funds Strength's HP-hungry finishers) but never required.
+
 ## Deck-Building Guidance (surfaced to player)
 
 Because the aperture is limited, a "good deck" tends to:
@@ -157,5 +201,7 @@ The prototype implements this model in Python/terminal (DEC-041). When ported to
 ## Open Questions
 
 - [ ] Should some Gu be "exhaust" (single-use per combat) vs reshuffling? (Prototype: all reshuffle)
-- [ ] Do killer moves draw their component Gu out of hand, or exist as separate cards? (Prototype: separate action, requires components equipped)
-- [ ] Per-turn essence regen during combat, or fixed pool? (Prototype: fixed pool per DEC — revisit for feel)
+- [x] Do killer moves draw their component Gu out of hand, or exist as separate cards? **Separate action; requires components equipped + Master attainment; costs a path activation.**
+- [x] Per-turn essence regen during combat, or fixed pool? **Small per-turn regen (`ESSENCE_REGEN`) — fixed-no-regen caused stalemates.**
+- [ ] Should attainment be raisable mid-combat, or only between combats via study/cultivation? (Prototype: fixed per combat)
+- [ ] How should multi-enemy encounters interact with the attainment gate? (Prototype: 1v1 only so far)
