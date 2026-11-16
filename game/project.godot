@@ -1,0 +1,43 @@
+; Engine configuration file.
+; Reverend Insanity: Gu Master's Path (MVP) — Godot 4.5
+
+config_version=5
+
+[application]
+
+config/name="Reverend Insanity: Path of the Gu Master"
+config/description="A roguelike deckbuilder of Gu Masters, cultivation and lifespan."
+config/version="0.1.0"
+run/main_scene="res://ui/Main.tscn"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+config/icon="res://assets/icons/app_icon.png"
+boot_splash/bg_color=Color(0.07, 0.06, 0.05, 1)
+boot_splash/show_image=false
+
+[autoload]
+
+Data="*res://autoload/data.gd"
+Game="*res://autoload/game.gd"
+Meta="*res://autoload/meta.gd"
+Sfx="*res://autoload/sfx.gd"
+AIGen="*res://autoload/ai_gen.gd"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/size/window_width_override=1600
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[gui]
+
+theme/default_font_antialiasing=1
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=false
+environment/defaults/default_clear_color=Color(0.07, 0.06, 0.05, 1)

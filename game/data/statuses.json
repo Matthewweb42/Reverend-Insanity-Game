@@ -1,0 +1,86 @@
+{
+ "burn": {
+  "name": "Burning",
+  "icon": "flame",
+  "debuff": true,
+  "desc": "Takes 3 damage per stack each turn; loses 1 stack per turn."
+ },
+ "poison": {
+  "name": "Poisoned",
+  "icon": "poison-bottle",
+  "debuff": true,
+  "desc": "Takes 1 damage per stack each turn. Stacks do not fade on their own."
+ },
+ "bleed": {
+  "name": "Bleeding",
+  "icon": "droplets",
+  "debuff": true,
+  "desc": "Takes 2 damage per stack each turn; loses 1 stack per turn."
+ },
+ "stun": {
+  "name": "Stunned",
+  "icon": "knocked-out-stars",
+  "debuff": true,
+  "desc": "Skips its next action."
+ },
+ "slow": {
+  "name": "Slowed",
+  "icon": "snail",
+  "debuff": true,
+  "desc": "Draws one fewer card; enemies deal 15% less."
+ },
+ "weak": {
+  "name": "Weakened",
+  "icon": "broken-bone",
+  "debuff": true,
+  "desc": "Deals 25% less damage."
+ },
+ "vuln": {
+  "name": "Vulnerable",
+  "icon": "cracked-shield",
+  "debuff": true,
+  "desc": "Takes 25% more damage."
+ },
+ "root": {
+  "name": "Rooted",
+  "icon": "tree-roots",
+  "debuff": true,
+  "desc": "Cannot flee; -15 evasion."
+ },
+ "strong": {
+  "name": "Strengthened",
+  "icon": "biceps",
+  "debuff": false,
+  "desc": "Deals 25% more damage."
+ },
+ "prot": {
+  "name": "Protected",
+  "icon": "checked-shield",
+  "debuff": false,
+  "desc": "Takes 25% less damage."
+ },
+ "stealth": {
+  "name": "Stealthed",
+  "icon": "cloak-dagger",
+  "debuff": false,
+  "desc": "+40 evasion. Next attack deals +50% and breaks stealth."
+ },
+ "regen": {
+  "name": "Regenerating",
+  "icon": "heart-plus",
+  "debuff": false,
+  "desc": "Heals 3 per stack each turn."
+ },
+ "thorns": {
+  "name": "Thorned",
+  "icon": "thorny-vine",
+  "debuff": false,
+  "desc": "Attackers take damage equal to stacks."
+ },
+ "control": {
+  "name": "Controlled",
+  "icon": "puppet",
+  "debuff": true,
+  "desc": "Its next action strikes its own ally (or nothing)."
+ }
+}

@@ -1,0 +1,4084 @@
+[
+ {
+  "id": "iron_fist",
+  "name": "Iron Fist Gu",
+  "path": "strength",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 7,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 13
+   },
+   {
+    "v": "combo",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "fist",
+  "flavor": "Plain iron, plainly applied.",
+  "target": "enemy",
+  "tags": [
+   "fist"
+  ],
+  "feed": 2,
+  "value": 30,
+  "pool": false,
+  "clan": "xiong"
+ },
+ {
+  "id": "bone_spike",
+  "name": "Bone Spike Gu",
+  "path": "strength",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 8,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 12
+   },
+   {
+    "v": "status",
+    "s": "bleed",
+    "stacks": 1,
+    "turns": 3,
+    "t": "enemy"
+   },
+   {
+    "v": "combo",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "bone-knife",
+  "flavor": "A spur of bone driven out through the palm.",
+  "target": "enemy",
+  "tags": [
+   "bone"
+  ],
+  "feed": 2,
+  "value": 30,
+  "pool": false,
+  "clan": "bai"
+ },
+ {
+  "id": "brute_force",
+  "name": "Brute Force Gu",
+  "path": "strength",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 6,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 11
+   },
+   {
+    "v": "combo",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "punch",
+  "flavor": "Some answers need no subtlety.",
+  "target": "enemy",
+  "tags": [
+   "fist"
+  ],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "black_boar",
+  "name": "Black Boar Gu",
+  "path": "strength",
+  "rank": 1,
+  "rarity": "uncommon",
+  "cost": 9,
+  "effects": [
+   {
+    "v": "status",
+    "s": "strong",
+    "stacks": 1,
+    "turns": 2,
+    "t": "self"
+   },
+   {
+    "v": "combo",
+    "n": 1
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "boar",
+  "flavor": "The strength of a black boar, borrowed for a moment.",
+  "target": "self",
+  "tags": [
+   "beast"
+  ],
+  "feed": 2,
+  "value": 34,
+  "pool": true
+ },
+ {
+  "id": "rolling_fist",
+  "name": "Rolling Fist Gu",
+  "path": "strength",
+  "rank": 2,
+  "rarity": "common",
+  "cost": 14,
+  "effects": [
+   {
+    "v": "dmg_combo",
+    "base": 14,
+    "per": 6
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "fulguro-punch",
+  "flavor": "Every blow you have landed rides behind this one.",
+  "target": "enemy",
+  "tags": [
+   "fist"
+  ],
+  "feed": 5,
+  "value": 90,
+  "pool": true
+ },
+ {
+  "id": "white_boar",
+  "name": "White Boar Gu",
+  "path": "strength",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 16,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 28
+   },
+   {
+    "v": "status",
+    "s": "strong",
+    "stacks": 1,
+    "turns": 2,
+    "t": "self"
+   },
+   {
+    "v": "combo",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "boar-tusks",
+  "flavor": "Pale bristles, iron hide.",
+  "target": "enemy",
+  "tags": [
+   "beast"
+  ],
+  "feed": 5,
+  "value": 103,
+  "pool": true
+ },
+ {
+  "id": "bear_strength",
+  "name": "Bear Strength Gu",
+  "path": "strength",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 15,
+  "effects": [
+   {
+    "v": "status",
+    "s": "strong",
+    "stacks": 1,
+    "turns": 3,
+    "t": "self"
+   },
+   {
+    "v": "combo",
+    "n": 2
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "bear-head",
+  "flavor": "A bear's patience; a bear's arms.",
+  "target": "self",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": false,
+  "clan": "xiong"
+ },
+ {
+  "id": "thick_skin",
+  "name": "Thick Skin Gu",
+  "path": "strength",
+  "rank": 2,
+  "rarity": "common",
+  "cost": 12,
+  "effects": [
+   {
+    "v": "shield",
+    "n": 32
+   },
+   {
+    "v": "status",
+    "s": "prot",
+    "stacks": 1,
+    "turns": 2,
+    "t": "self"
+   }
+  ],
+  "kind": "defense",
+  "flags": [],
+  "icon": "leather-armor",
+  "flavor": "Hide like old leather.",
+  "target": "self",
+  "tags": [],
+  "feed": 5,
+  "value": 90,
+  "pool": false,
+  "clan": "xiong"
+ },
+ {
+  "id": "bone_armor",
+  "name": "Bone Armor Gu",
+  "path": "strength",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 14,
+  "effects": [
+   {
+    "v": "shield",
+    "n": 41
+   },
+   {
+    "v": "status",
+    "s": "thorns",
+    "stacks": 4,
+    "turns": 3,
+    "t": "self"
+   }
+  ],
+  "kind": "defense",
+  "flags": [],
+  "icon": "backbone-shell",
+  "flavor": "Armour grown from your own skeleton.",
+  "target": "self",
+  "tags": [
+   "bone"
+  ],
+  "feed": 5,
+  "value": 103,
+  "pool": false,
+  "clan": "bai"
+ },
+ {
+  "id": "bone_blade",
+  "name": "Bone Blade Gu",
+  "path": "strength",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 16,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 32
+   },
+   {
+    "v": "status",
+    "s": "bleed",
+    "stacks": 2,
+    "turns": 3,
+    "t": "enemy"
+   },
+   {
+    "v": "combo",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "bone-mace",
+  "flavor": "Grow the weapon you need.",
+  "target": "enemy",
+  "tags": [
+   "bone"
+  ],
+  "feed": 5,
+  "value": 103,
+  "pool": false,
+  "clan": "bai"
+ },
+ {
+  "id": "hundred_strikes",
+  "name": "Hundred Strikes Gu",
+  "path": "strength",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 30,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 18,
+    "times": 3
+   },
+   {
+    "v": "combo",
+    "n": 3
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "punch-blast",
+  "flavor": "Not one hundred. But it feels like it.",
+  "target": "enemy",
+  "tags": [
+   "fist"
+  ],
+  "feed": 12,
+  "value": 338,
+  "pool": true
+ },
+ {
+  "id": "mountain_stance",
+  "name": "Mountain Stance Gu",
+  "path": "strength",
+  "rank": 3,
+  "rarity": "uncommon",
+  "cost": 26,
+  "effects": [
+   {
+    "v": "shield",
+    "n": 69
+   },
+   {
+    "v": "status",
+    "s": "prot",
+    "stacks": 1,
+    "turns": 3,
+    "t": "self"
+   },
+   {
+    "v": "combo",
+    "n": 1
+   }
+  ],
+  "kind": "defense",
+  "flags": [],
+  "icon": "mountain-road",
+  "flavor": "Plant your feet like the roots of a mountain.",
+  "target": "self",
+  "tags": [],
+  "feed": 12,
+  "value": 299,
+  "pool": false,
+  "clan": "xiong"
+ },
+ {
+  "id": "skeletal_reinforcement",
+  "name": "Skeletal Reinforcement Gu",
+  "path": "strength",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 28,
+  "effects": [
+   {
+    "v": "status",
+    "s": "strong",
+    "stacks": 2,
+    "turns": 3,
+    "t": "self"
+   },
+   {
+    "v": "shield",
+    "n": 52
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "skeleton",
+  "flavor": "Bones like bronze.",
+  "target": "self",
+  "tags": [
+   "bone"
+  ],
+  "feed": 12,
+  "value": 338,
+  "pool": false,
+  "clan": "bai"
+ },
+ {
+  "id": "dragon_strength",
+  "name": "Dragon Strength Gu",
+  "path": "strength",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 45,
+  "effects": [
+   {
+    "v": "dmg_combo",
+    "base": 55,
+    "per": 10
+   },
+   {
+    "v": "combo",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "dragon-head",
+  "flavor": "One dragon's might. Few bodies can hold it.",
+  "target": "enemy",
+  "tags": [
+   "fist",
+   "beast"
+  ],
+  "feed": 30,
+  "value": 910,
+  "pool": true
+ },
+ {
+  "id": "titans_grip",
+  "name": "Titan's Grip Gu",
+  "path": "strength",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 48,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 91
+   },
+   {
+    "v": "status",
+    "s": "stun",
+    "stacks": 1,
+    "turns": 1,
+    "t": "enemy"
+   },
+   {
+    "v": "combo",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "grab",
+  "flavor": "Grab. Crush. Done.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 30,
+  "value": 910,
+  "pool": false,
+  "clan": "xiong"
+ },
+ {
+  "id": "sovereign_strength",
+  "name": "Sovereign Strength Gu",
+  "path": "strength",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 70,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 150,
+    "pierce": true
+   },
+   {
+    "v": "combo",
+    "n": 2
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "thor-fist",
+  "flavor": "When the sovereign strikes, even the heavens tremble.",
+  "target": "enemy",
+  "tags": [
+   "fist"
+  ],
+  "feed": 75,
+  "value": 2700,
+  "pool": true
+ },
+ {
+  "id": "insight",
+  "name": "Insight Gu",
+  "path": "wisdom",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 6,
+  "effects": [
+   {
+    "v": "draw",
+    "n": 1
+   },
+   {
+    "v": "reveal",
+    "n": 2
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "eyeball",
+  "flavor": "See a little more than you did.",
+  "target": "self",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "wise_thought",
+  "name": "Wise Thought Gu",
+  "path": "wisdom",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 8,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 10
+   },
+   {
+    "v": "draw",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "brain",
+  "flavor": "A thought sharp enough to cut.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "suggestion",
+  "name": "Suggestion Gu",
+  "path": "enslavement",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 8,
+  "effects": [
+   {
+    "v": "status",
+    "s": "weak",
+    "stacks": 1,
+    "turns": 2,
+    "t": "enemy"
+   },
+   {
+    "v": "draw",
+    "n": 1
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "psychic-waves",
+  "flavor": "You were going to do that anyway.",
+  "target": "enemy",
+  "tags": [
+   "control"
+  ],
+  "feed": 2,
+  "value": 30,
+  "pool": false,
+  "clan": "shang"
+ },
+ {
+  "id": "clear_mind",
+  "name": "Clear Mind Gu",
+  "path": "wisdom",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 12,
+  "effects": [
+   {
+    "v": "draw",
+    "n": 2
+   },
+   {
+    "v": "cheapen",
+    "n": 1
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "brainstorm",
+  "flavor": "Clarity costs less than confusion.",
+  "target": "self",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": true
+ },
+ {
+  "id": "thought_spear",
+  "name": "Thought Spear Gu",
+  "path": "wisdom",
+  "rank": 2,
+  "rarity": "common",
+  "cost": 16,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 26
+   },
+   {
+    "v": "reveal",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "spear-feather",
+  "flavor": "Read the gap; strike it.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 90,
+  "pool": true
+ },
+ {
+  "id": "information_network",
+  "name": "Information Network Gu",
+  "path": "wisdom",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 24,
+  "effects": [
+   {
+    "v": "draw",
+    "n": 2
+   },
+   {
+    "v": "reveal",
+    "n": 3
+   },
+   {
+    "v": "status",
+    "s": "strong",
+    "stacks": 1,
+    "turns": 2,
+    "t": "self"
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "spider-web",
+  "flavor": "Whispers from a hundred mouths.",
+  "target": "self",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": false,
+  "clan": "shang"
+ },
+ {
+  "id": "myriad_thoughts",
+  "name": "Myriad Thoughts Gu",
+  "path": "wisdom",
+  "rank": 3,
+  "rarity": "uncommon",
+  "cost": 30,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 34
+   },
+   {
+    "v": "draw",
+    "n": 2
+   },
+   {
+    "v": "cheapen",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "brain-tentacle",
+  "flavor": "Ten thousand thoughts, all of them yours.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 299,
+  "pool": true
+ },
+ {
+  "id": "lunar_reflection",
+  "name": "Lunar Reflection Gu",
+  "path": "wisdom",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 28,
+  "effects": [
+   {
+    "v": "shield",
+    "n": 72
+   },
+   {
+    "v": "status",
+    "s": "thorns",
+    "stacks": 8,
+    "turns": 2,
+    "t": "self"
+   }
+  ],
+  "kind": "defense",
+  "flags": [],
+  "icon": "crystal-shine",
+  "flavor": "The moon returns what you give it.",
+  "target": "self",
+  "tags": [
+   "moon"
+  ],
+  "feed": 12,
+  "value": 338,
+  "pool": false,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "heavens_calculation",
+  "name": "Heaven's Calculation Gu",
+  "path": "wisdom",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 42,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 78
+   },
+   {
+    "v": "draw",
+    "n": 2
+   },
+   {
+    "v": "reveal",
+    "n": 3
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "crystal-ball",
+  "flavor": "The dao is arithmetic, if you are patient.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 30,
+  "value": 910,
+  "pool": true
+ },
+ {
+  "id": "star_thought",
+  "name": "Star Thought Gu",
+  "path": "wisdom",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 60,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 135
+   },
+   {
+    "v": "draw",
+    "n": 3
+   },
+   {
+    "v": "cheapen",
+    "n": 2
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "star-swirl",
+  "flavor": "A thought as bright as a falling star.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 75,
+  "value": 2700,
+  "pool": true
+ },
+ {
+  "id": "blood_drop",
+  "name": "Blood Drop Gu",
+  "path": "blood",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 5,
+  "effects": [
+   {
+    "v": "self_damage",
+    "n": 5
+   },
+   {
+    "v": "damage",
+    "n": 16
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "droplets",
+  "flavor": "One drop; one blow.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "blood_leech",
+  "name": "Blood Leech Gu",
+  "path": "blood",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 8,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 12,
+    "lifesteal": 0.5
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "leeching-worm",
+  "flavor": "It drinks, so you may.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "blood_qi",
+  "name": "Blood Qi Gu",
+  "path": "blood",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 14,
+  "effects": [
+   {
+    "v": "self_damage",
+    "n": 8
+   },
+   {
+    "v": "status",
+    "s": "strong",
+    "stacks": 1,
+    "turns": 2,
+    "t": "self"
+   },
+   {
+    "v": "essence",
+    "n": 10
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "heart-drop",
+  "flavor": "Burn your blood for a moment's power.",
+  "target": "self",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": true
+ },
+ {
+  "id": "blood_moon_blade",
+  "name": "Blood Moon Blade Gu",
+  "path": "blood",
+  "rank": 2,
+  "rarity": "common",
+  "cost": 15,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 24
+   },
+   {
+    "v": "status",
+    "s": "bleed",
+    "stacks": 2,
+    "turns": 3,
+    "t": "enemy"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "bloody-sword",
+  "flavor": "It cuts twice: once going in, once coming out.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 90,
+  "pool": true
+ },
+ {
+  "id": "wound_drinker",
+  "name": "Wound Drinker Gu",
+  "path": "blood",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 26,
+  "effects": [
+   {
+    "v": "dmg_missing_hp",
+    "pct": 0.35,
+    "base": 20
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "bleeding-heart",
+  "flavor": "The closer you are to death, the more it gives.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": true
+ },
+ {
+  "id": "blood_sacrifice",
+  "name": "Blood Sacrifice Gu",
+  "path": "blood",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 20,
+  "effects": [
+   {
+    "v": "self_damage",
+    "n": 30
+   },
+   {
+    "v": "essence",
+    "n": 50
+   },
+   {
+    "v": "status",
+    "s": "strong",
+    "stacks": 2,
+    "turns": 1,
+    "t": "self"
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "sacrificial-dagger",
+  "flavor": "Power demands payment in the most precious currency: life itself.",
+  "target": "self",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": true
+ },
+ {
+  "id": "crimson_tide",
+  "name": "Crimson Tide Gu",
+  "path": "blood",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 44,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 83,
+    "lifesteal": 0.4
+   },
+   {
+    "v": "status",
+    "s": "bleed",
+    "stacks": 3,
+    "turns": 3,
+    "t": "enemy"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "big-wave",
+  "flavor": "A red tide, and it is rising.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 30,
+  "value": 910,
+  "pool": true
+ },
+ {
+  "id": "blood_skull",
+  "name": "Blood Skull Gu",
+  "path": "blood",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 66,
+  "effects": [
+   {
+    "v": "self_damage",
+    "n": 40
+   },
+   {
+    "v": "damage",
+    "n": 180,
+    "lifesteal": 0.5
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "crowned-skull",
+  "flavor": "The fiend's own treasure.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 75,
+  "value": 2700,
+  "pool": true
+ },
+ {
+  "id": "spark_forge",
+  "name": "Spark Forge Gu",
+  "path": "refinement",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 8,
+  "effects": [
+   {
+    "v": "create",
+    "card": "ember_spark",
+    "n": 2
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "anvil",
+  "flavor": "Two sparks off the anvil, each with a bite.",
+  "target": "self",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "tempering",
+  "name": "Tempering Gu",
+  "path": "refinement",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 7,
+  "effects": [
+   {
+    "v": "upgrade_hand",
+    "pct": 0.15
+   },
+   {
+    "v": "shield",
+    "n": 10
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "anvil-impact",
+  "flavor": "Heat, hammer, quench.",
+  "target": "self",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "smelting",
+  "name": "Smelting Gu",
+  "path": "refinement",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 14,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 25
+   },
+   {
+    "v": "create",
+    "card": "ember_spark",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "cauldron",
+  "flavor": "Melt the enemy's guard into slag.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": true
+ },
+ {
+  "id": "gu_refining_furnace",
+  "name": "Gu Refining Furnace Gu",
+  "path": "refinement",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 26,
+  "effects": [
+   {
+    "v": "create",
+    "card": "forged_blade",
+    "n": 2
+   },
+   {
+    "v": "upgrade_hand",
+    "pct": 0.2
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "furnace",
+  "flavor": "A furnace small enough to carry.",
+  "target": "self",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": true
+ },
+ {
+  "id": "moon_smith",
+  "name": "Moon Smith Gu",
+  "path": "refinement",
+  "rank": 3,
+  "rarity": "uncommon",
+  "cost": 28,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 48
+   },
+   {
+    "v": "upgrade_hand",
+    "pct": 0.1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "hammer-drop",
+  "flavor": "Moonlight, hammered thin.",
+  "target": "enemy",
+  "tags": [
+   "moon"
+  ],
+  "feed": 12,
+  "value": 299,
+  "pool": true
+ },
+ {
+  "id": "ten_thousand_forgings",
+  "name": "Ten Thousand Forgings Gu",
+  "path": "refinement",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 46,
+  "effects": [
+   {
+    "v": "create",
+    "card": "forged_blade",
+    "n": 3
+   },
+   {
+    "v": "upgrade_hand",
+    "pct": 0.3
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "gear-hammer",
+  "flavor": "Every Gu Master's dream workshop.",
+  "target": "self",
+  "tags": [],
+  "feed": 30,
+  "value": 910,
+  "pool": true
+ },
+ {
+  "id": "heaven_forge",
+  "name": "Heaven Forge Gu",
+  "path": "refinement",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 64,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 142
+   },
+   {
+    "v": "create",
+    "card": "heaven_spear",
+    "n": 1
+   },
+   {
+    "v": "upgrade_hand",
+    "pct": 0.3
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "thor-hammer",
+  "flavor": "It forged the stars, they say.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 75,
+  "value": 2700,
+  "pool": true
+ },
+ {
+  "id": "ember_spark",
+  "name": "Ember Spark Gu",
+  "path": "refinement",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 0,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 8
+   }
+  ],
+  "kind": "attack",
+  "flags": [
+   "temporary",
+   "quick"
+  ],
+  "icon": "fire-ray",
+  "flavor": "Here and gone.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": false
+ },
+ {
+  "id": "forged_blade",
+  "name": "Forged Blade Gu",
+  "path": "refinement",
+  "rank": 3,
+  "rarity": "common",
+  "cost": 0,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 26
+   }
+  ],
+  "kind": "attack",
+  "flags": [
+   "temporary",
+   "quick"
+  ],
+  "icon": "shard-sword",
+  "flavor": "Still hot.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 260,
+  "pool": false
+ },
+ {
+  "id": "heaven_spear",
+  "name": "Heaven Spear Gu",
+  "path": "refinement",
+  "rank": 5,
+  "rarity": "common",
+  "cost": 0,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 70,
+    "pierce": true
+   }
+  ],
+  "kind": "attack",
+  "flags": [
+   "temporary"
+  ],
+  "icon": "sun-spear",
+  "flavor": "A spear of white-hot light.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 75,
+  "value": 1800,
+  "pool": false
+ },
+ {
+  "id": "beast_skin",
+  "name": "Beast Skin Gu",
+  "path": "transformation",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 9,
+  "effects": [
+   {
+    "v": "form",
+    "form": "beast",
+    "turns": 3
+   },
+   {
+    "v": "damage",
+    "n": 8
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "wolf-head",
+  "flavor": "Fur, fang and appetite.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "stone_skin",
+  "name": "Stone Skin Gu",
+  "path": "transformation",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 8,
+  "effects": [
+   {
+    "v": "form",
+    "form": "stone",
+    "turns": 2
+   },
+   {
+    "v": "shield",
+    "n": 14
+   }
+  ],
+  "kind": "defense",
+  "flags": [],
+  "icon": "stone-block",
+  "flavor": "For a while, you are a boulder.",
+  "target": "self",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "wind_body",
+  "name": "Wind Body Gu",
+  "path": "transformation",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 14,
+  "effects": [
+   {
+    "v": "form",
+    "form": "wind",
+    "turns": 3
+   },
+   {
+    "v": "damage",
+    "n": 16
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "whirlwind",
+  "flavor": "Hard to hit what is mostly air.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": true
+ },
+ {
+  "id": "mimic",
+  "name": "Mimic Gu",
+  "path": "transformation",
+  "rank": 2,
+  "rarity": "rare",
+  "cost": 12,
+  "effects": [
+   {
+    "v": "mimic"
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "mimic-chest",
+  "flavor": "Watch closely. Then do it back.",
+  "target": "self",
+  "tags": [],
+  "feed": 5,
+  "value": 117,
+  "pool": true
+ },
+ {
+  "id": "blood_wolf_form",
+  "name": "Blood Wolf Form Gu",
+  "path": "transformation",
+  "rank": 3,
+  "rarity": "uncommon",
+  "cost": 28,
+  "effects": [
+   {
+    "v": "form",
+    "form": "blood",
+    "turns": 3
+   },
+   {
+    "v": "damage",
+    "n": 46
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "werewolf",
+  "flavor": "The wolf drinks deep.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 299,
+  "pool": true
+ },
+ {
+  "id": "white_bone_transformation",
+  "name": "White Bone Transformation Gu",
+  "path": "transformation",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 44,
+  "effects": [
+   {
+    "v": "form",
+    "form": "bone",
+    "turns": 4
+   },
+   {
+    "v": "shield",
+    "n": 78
+   },
+   {
+    "v": "damage",
+    "n": 52
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "dinosaur-bones",
+  "flavor": "Become the white bone beast.",
+  "target": "enemy",
+  "tags": [
+   "bone"
+  ],
+  "feed": 30,
+  "value": 910,
+  "pool": false,
+  "clan": "bai"
+ },
+ {
+  "id": "thousand_shapes",
+  "name": "Thousand Shapes Gu",
+  "path": "transformation",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 48,
+  "effects": [
+   {
+    "v": "form",
+    "form": "beast",
+    "turns": 3
+   },
+   {
+    "v": "form",
+    "form": "wind",
+    "turns": 3
+   },
+   {
+    "v": "damage",
+    "n": 72
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "dragon-spiral",
+  "flavor": "No shape holds you long.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 30,
+  "value": 910,
+  "pool": true
+ },
+ {
+  "id": "myriad_transformations",
+  "name": "Myriad Transformations Gu",
+  "path": "transformation",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 66,
+  "effects": [
+   {
+    "v": "form",
+    "form": "beast",
+    "turns": 4
+   },
+   {
+    "v": "form",
+    "form": "stone",
+    "turns": 2
+   },
+   {
+    "v": "damage",
+    "n": 150
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "double-dragon",
+  "flavor": "Every form, all at once.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 75,
+  "value": 2700,
+  "pool": true
+ },
+ {
+  "id": "wolf_slave",
+  "name": "Wolf Slave Gu",
+  "path": "enslavement",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 10,
+  "effects": [
+   {
+    "v": "summon",
+    "name": "Grey Wolf",
+    "hp": 22,
+    "atk": 6,
+    "icon": "wolf-head",
+    "turns": 4
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "wolf-howl",
+  "flavor": "A wolf that answers to you.",
+  "target": "self",
+  "tags": [
+   "control",
+   "beast"
+  ],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "essence_thief",
+  "name": "Essence Thief Gu",
+  "path": "enslavement",
+  "rank": 1,
+  "rarity": "uncommon",
+  "cost": 6,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 9
+   },
+   {
+    "v": "steal_essence",
+    "n": 8
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "robber-hand",
+  "flavor": "What's yours is mine.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 34,
+  "pool": true
+ },
+ {
+  "id": "puppet_thread",
+  "name": "Puppet Thread Gu",
+  "path": "enslavement",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 16,
+  "effects": [
+   {
+    "v": "status",
+    "s": "control",
+    "stacks": 1,
+    "turns": 1,
+    "t": "enemy"
+   },
+   {
+    "v": "damage",
+    "n": 16
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "puppet",
+  "flavor": "Dance.",
+  "target": "enemy",
+  "tags": [
+   "control"
+  ],
+  "feed": 5,
+  "value": 103,
+  "pool": false,
+  "clan": "shang"
+ },
+ {
+  "id": "soul_contract",
+  "name": "Soul Contract Gu",
+  "path": "enslavement",
+  "rank": 2,
+  "rarity": "rare",
+  "cost": 14,
+  "effects": [
+   {
+    "v": "status",
+    "s": "weak",
+    "stacks": 2,
+    "turns": 3,
+    "t": "enemy"
+   },
+   {
+    "v": "status",
+    "s": "vuln",
+    "stacks": 1,
+    "turns": 2,
+    "t": "enemy"
+   },
+   {
+    "v": "steal_essence",
+    "n": 10
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "scroll-quill",
+  "flavor": "Sign here. And here. And here.",
+  "target": "enemy",
+  "tags": [
+   "control"
+  ],
+  "feed": 5,
+  "value": 117,
+  "pool": false,
+  "clan": "shang"
+ },
+ {
+  "id": "beast_tide",
+  "name": "Beast Tide Gu",
+  "path": "enslavement",
+  "rank": 3,
+  "rarity": "uncommon",
+  "cost": 30,
+  "effects": [
+   {
+    "v": "summon",
+    "name": "Thunder Wolf",
+    "hp": 55,
+    "atk": 16,
+    "icon": "direwolf",
+    "turns": 4
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "wolf-trap",
+  "flavor": "Call, and the pack comes.",
+  "target": "self",
+  "tags": [
+   "control",
+   "beast"
+  ],
+  "feed": 12,
+  "value": 299,
+  "pool": true
+ },
+ {
+  "id": "bone_puppet",
+  "name": "Bone Puppet Gu",
+  "path": "enslavement",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 28,
+  "effects": [
+   {
+    "v": "summon",
+    "name": "Bone Puppet",
+    "hp": 70,
+    "atk": 14,
+    "icon": "skeleton",
+    "turns": 5
+   },
+   {
+    "v": "status",
+    "s": "thorns",
+    "stacks": 4,
+    "turns": 3,
+    "t": "self"
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "skeleton",
+  "flavor": "Bones that walk at your word.",
+  "target": "self",
+  "tags": [
+   "bone",
+   "control"
+  ],
+  "feed": 12,
+  "value": 338,
+  "pool": false,
+  "clan": "bai"
+ },
+ {
+  "id": "dominating_presence",
+  "name": "Dominating Presence Gu",
+  "path": "enslavement",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 26,
+  "effects": [
+   {
+    "v": "status",
+    "s": "weak",
+    "stacks": 2,
+    "turns": 3,
+    "t": "enemy"
+   },
+   {
+    "v": "status",
+    "s": "stun",
+    "stacks": 1,
+    "turns": 1,
+    "t": "enemy"
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "crown",
+  "flavor": "Kneel.",
+  "target": "enemy",
+  "tags": [
+   "control"
+  ],
+  "feed": 12,
+  "value": 338,
+  "pool": false,
+  "clan": "xiong"
+ },
+ {
+  "id": "shadow_servant",
+  "name": "Shadow Servant Gu",
+  "path": "enslavement",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 28,
+  "effects": [
+   {
+    "v": "summon",
+    "name": "Shadow Servant",
+    "hp": 40,
+    "atk": 22,
+    "icon": "ghost",
+    "turns": 4
+   },
+   {
+    "v": "status",
+    "s": "stealth",
+    "stacks": 1,
+    "turns": 1,
+    "t": "self"
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "ghost-ally",
+  "flavor": "It is always one step behind you.",
+  "target": "self",
+  "tags": [
+   "control"
+  ],
+  "feed": 12,
+  "value": 338,
+  "pool": false,
+  "clan": "shang"
+ },
+ {
+  "id": "masters_voice",
+  "name": "Master's Voice Gu",
+  "path": "enslavement",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 46,
+  "effects": [
+   {
+    "v": "status",
+    "s": "control",
+    "stacks": 1,
+    "turns": 2,
+    "t": "enemy"
+   },
+   {
+    "v": "status",
+    "s": "weak",
+    "stacks": 2,
+    "turns": 3,
+    "t": "enemy"
+   },
+   {
+    "v": "steal_essence",
+    "n": 25
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "lightning-shout",
+  "flavor": "One voice, and they obey.",
+  "target": "enemy",
+  "tags": [
+   "control"
+  ],
+  "feed": 30,
+  "value": 910,
+  "pool": false,
+  "clan": "shang"
+ },
+ {
+  "id": "beast_king",
+  "name": "Beast King Gu",
+  "path": "enslavement",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 50,
+  "effects": [
+   {
+    "v": "summon",
+    "name": "Beast King",
+    "hp": 140,
+    "atk": 30,
+    "icon": "tiger-head",
+    "turns": 5
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "tiger",
+  "flavor": "Even beast kings need a master.",
+  "target": "self",
+  "tags": [
+   "control",
+   "beast"
+  ],
+  "feed": 30,
+  "value": 910,
+  "pool": true
+ },
+ {
+  "id": "myriad_slaves",
+  "name": "Myriad Slaves Gu",
+  "path": "enslavement",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 70,
+  "effects": [
+   {
+    "v": "summon",
+    "name": "Beast Horde",
+    "hp": 220,
+    "atk": 45,
+    "icon": "direwolf",
+    "turns": 5
+   },
+   {
+    "v": "status",
+    "s": "control",
+    "stacks": 1,
+    "turns": 1,
+    "t": "enemy"
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "crossed-chains",
+  "flavor": "An army on a chain.",
+  "target": "self",
+  "tags": [
+   "control",
+   "beast"
+  ],
+  "feed": 75,
+  "value": 2700,
+  "pool": true
+ },
+ {
+  "id": "venom_needle",
+  "name": "Venom Needle Gu",
+  "path": "poison",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 6,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 6
+   },
+   {
+    "v": "status",
+    "s": "poison",
+    "stacks": 3,
+    "turns": 6,
+    "t": "enemy"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "spiked-tail",
+  "flavor": "Small. Patient. Fatal.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "toxic_cloud",
+  "name": "Toxic Cloud Gu",
+  "path": "poison",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 9,
+  "effects": [
+   {
+    "v": "status",
+    "s": "poison",
+    "stacks": 4,
+    "turns": 6,
+    "t": "all"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "poison-cloud",
+  "flavor": "Breathe deep.",
+  "target": "all",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "rot_spreading",
+  "name": "Rot Spreading Gu",
+  "path": "poison",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 14,
+  "effects": [
+   {
+    "v": "multiply_status",
+    "s": "poison",
+    "x": 2
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "goo-skull",
+  "flavor": "What is rotten makes more rot.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": true
+ },
+ {
+  "id": "scorpion_tail",
+  "name": "Scorpion Tail Gu",
+  "path": "poison",
+  "rank": 2,
+  "rarity": "common",
+  "cost": 15,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 18
+   },
+   {
+    "v": "status",
+    "s": "poison",
+    "stacks": 5,
+    "turns": 6,
+    "t": "enemy"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "scorpion-tail",
+  "flavor": "Sting, then wait.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 90,
+  "pool": true
+ },
+ {
+  "id": "plague_detonation",
+  "name": "Plague Detonation Gu",
+  "path": "poison",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 26,
+  "effects": [
+   {
+    "v": "detonate",
+    "s": "poison",
+    "mult": 2.5
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "poison-gas",
+  "flavor": "All of it, at once.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": true
+ },
+ {
+  "id": "myriad_venom",
+  "name": "Myriad Venom Gu",
+  "path": "poison",
+  "rank": 3,
+  "rarity": "uncommon",
+  "cost": 28,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 23
+   },
+   {
+    "v": "status",
+    "s": "poison",
+    "stacks": 9,
+    "turns": 6,
+    "t": "enemy"
+   },
+   {
+    "v": "status",
+    "s": "weak",
+    "stacks": 1,
+    "turns": 2,
+    "t": "enemy"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "snake-bite",
+  "flavor": "Ten thousand bites, one at a time.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 299,
+  "pool": true
+ },
+ {
+  "id": "seven_step_poison",
+  "name": "Seven-Step Poison Gu",
+  "path": "poison",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 46,
+  "effects": [
+   {
+    "v": "status",
+    "s": "poison",
+    "stacks": 16,
+    "turns": 7,
+    "t": "enemy"
+   },
+   {
+    "v": "status",
+    "s": "slow",
+    "stacks": 1,
+    "turns": 2,
+    "t": "enemy"
+   },
+   {
+    "v": "damage",
+    "n": 39
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "poison-bottle",
+  "flavor": "Take seven steps. You won't take an eighth.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 30,
+  "value": 910,
+  "pool": true
+ },
+ {
+  "id": "ten_thousand_venoms",
+  "name": "Ten Thousand Venoms Gu",
+  "path": "poison",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 66,
+  "effects": [
+   {
+    "v": "status",
+    "s": "poison",
+    "stacks": 22,
+    "turns": 8,
+    "t": "all"
+   },
+   {
+    "v": "multiply_status",
+    "s": "poison",
+    "x": 2
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "snake-spiral",
+  "flavor": "The air itself turns to venom.",
+  "target": "all",
+  "tags": [],
+  "feed": 75,
+  "value": 2700,
+  "pool": true
+ },
+ {
+  "id": "shadow_step",
+  "name": "Shadow Step Gu",
+  "path": "dark",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 7,
+  "effects": [
+   {
+    "v": "status",
+    "s": "stealth",
+    "stacks": 1,
+    "turns": 2,
+    "t": "self"
+   },
+   {
+    "v": "draw",
+    "n": 1
+   }
+  ],
+  "kind": "support",
+  "flags": [
+   "quick"
+  ],
+  "icon": "cloak-dagger",
+  "flavor": "Step out of the light.",
+  "target": "self",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "night_blade",
+  "name": "Night Blade Gu",
+  "path": "dark",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 8,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 12,
+    "bd": 0.5
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "plain-dagger",
+  "flavor": "Twice as sharp against the hurt.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "darkness_shroud",
+  "name": "Darkness Shroud Gu",
+  "path": "dark",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 14,
+  "effects": [
+   {
+    "v": "status",
+    "s": "stealth",
+    "stacks": 1,
+    "turns": 2,
+    "t": "self"
+   },
+   {
+    "v": "status",
+    "s": "vuln",
+    "stacks": 1,
+    "turns": 2,
+    "t": "enemy"
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "hood",
+  "flavor": "Your foe cannot see where the blow comes from.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": true
+ },
+ {
+  "id": "reapers_mark",
+  "name": "Reaper's Mark Gu",
+  "path": "dark",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 16,
+  "effects": [
+   {
+    "v": "execute",
+    "pct": 0.2,
+    "n": 20
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "reaper-scythe",
+  "flavor": "When they falter, finish it.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": true
+ },
+ {
+  "id": "moonless_night",
+  "name": "Moonless Night Gu",
+  "path": "dark",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 28,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 47,
+    "bd": 0.6
+   },
+   {
+    "v": "status",
+    "s": "weak",
+    "stacks": 1,
+    "turns": 2,
+    "t": "enemy"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "evil-moon",
+  "flavor": "No moon. No mercy.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": true
+ },
+ {
+  "id": "soul_shadow",
+  "name": "Soul Shadow Gu",
+  "path": "dark",
+  "rank": 3,
+  "rarity": "uncommon",
+  "cost": 26,
+  "effects": [
+   {
+    "v": "status",
+    "s": "stealth",
+    "stacks": 1,
+    "turns": 2,
+    "t": "self"
+   },
+   {
+    "v": "damage",
+    "n": 37
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "lightning-shadow",
+  "flavor": "A shadow with teeth.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 299,
+  "pool": true
+ },
+ {
+  "id": "abyss",
+  "name": "Abyss Gu",
+  "path": "dark",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 46,
+  "effects": [
+   {
+    "v": "execute",
+    "pct": 0.25,
+    "n": 60
+   },
+   {
+    "v": "status",
+    "s": "vuln",
+    "stacks": 2,
+    "turns": 2,
+    "t": "enemy"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "vortex",
+  "flavor": "Look into it, if you dare.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 30,
+  "value": 910,
+  "pool": true
+ },
+ {
+  "id": "eternal_night",
+  "name": "Eternal Night Gu",
+  "path": "dark",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 68,
+  "effects": [
+   {
+    "v": "status",
+    "s": "stealth",
+    "stacks": 2,
+    "turns": 2,
+    "t": "self"
+   },
+   {
+    "v": "execute",
+    "pct": 0.3,
+    "n": 95
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "death-skull",
+  "flavor": "Night that never ends.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 75,
+  "value": 2700,
+  "pool": true
+ },
+ {
+  "id": "moonlight",
+  "name": "Moonlight Gu",
+  "path": "light",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 8,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 14
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "moon",
+  "flavor": "Pale light, sharp edge.",
+  "target": "enemy",
+  "tags": [
+   "moon"
+  ],
+  "feed": 2,
+  "value": 30,
+  "pool": false,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "light_shield",
+  "name": "Light Shield Gu",
+  "path": "light",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 7,
+  "effects": [
+   {
+    "v": "shield",
+    "n": 18
+   }
+  ],
+  "kind": "defense",
+  "flags": [],
+  "icon": "magic-shield",
+  "flavor": "A thin skin of radiance.",
+  "target": "self",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "sunray",
+  "name": "Sunray Gu",
+  "path": "light",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 9,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 10
+   },
+   {
+    "v": "shield",
+    "n": 8
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "sunbeams",
+  "flavor": "Warm on one side, scorching on the other.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "radiant_burst",
+  "name": "Radiant Burst Gu",
+  "path": "light",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 14,
+  "effects": [
+   {
+    "v": "dmg_shield",
+    "mult": 1.0,
+    "consume": true
+   },
+   {
+    "v": "shield",
+    "n": 7
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "sun-radiations",
+  "flavor": "Everything you held back, released.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": true
+ },
+ {
+  "id": "moonlight_blade",
+  "name": "Moonlight Blade Gu",
+  "path": "light",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 16,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 30
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "crescent-blade",
+  "flavor": "The clan's signature edge.",
+  "target": "enemy",
+  "tags": [
+   "moon"
+  ],
+  "feed": 5,
+  "value": 103,
+  "pool": false,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "crescent_shield",
+  "name": "Crescent Shield Gu",
+  "path": "light",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 13,
+  "effects": [
+   {
+    "v": "shield",
+    "n": 39
+   },
+   {
+    "v": "shield_pct_hp",
+    "pct": 0.05
+   }
+  ],
+  "kind": "defense",
+  "flags": [],
+  "icon": "moon-orbit",
+  "flavor": "Brighter at night.",
+  "target": "self",
+  "tags": [
+   "moon"
+  ],
+  "feed": 5,
+  "value": 103,
+  "pool": false,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "moon_phase",
+  "name": "Moon Phase Gu",
+  "path": "light",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 26,
+  "effects": [
+   {
+    "v": "shield",
+    "n": 52
+   },
+   {
+    "v": "damage",
+    "n": 39
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "moon-claws",
+  "flavor": "Wax, wane, strike.",
+  "target": "enemy",
+  "tags": [
+   "moon"
+  ],
+  "feed": 12,
+  "value": 338,
+  "pool": false,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "moonblade",
+  "name": "Moonblade Gu",
+  "path": "light",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 35,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 60
+   },
+   {
+    "v": "reveal",
+    "n": 1
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "crescent-blade",
+  "flavor": "Forged from condensed moonlight, it cuts through darkness.",
+  "target": "enemy",
+  "tags": [
+   "moon"
+  ],
+  "feed": 12,
+  "value": 338,
+  "pool": true
+ },
+ {
+  "id": "golden_light",
+  "name": "Golden Light Gu",
+  "path": "light",
+  "rank": 3,
+  "rarity": "uncommon",
+  "cost": 24,
+  "effects": [
+   {
+    "v": "shield_pct_hp",
+    "pct": 0.25
+   },
+   {
+    "v": "status",
+    "s": "prot",
+    "stacks": 1,
+    "turns": 2,
+    "t": "self"
+   }
+  ],
+  "kind": "defense",
+  "flags": [],
+  "icon": "sunrise",
+  "flavor": "A wall of dawn.",
+  "target": "self",
+  "tags": [],
+  "feed": 12,
+  "value": 299,
+  "pool": true
+ },
+ {
+  "id": "full_moon",
+  "name": "Full Moon Gu",
+  "path": "light",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 50,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 98
+   },
+   {
+    "v": "dmg_shield",
+    "mult": 0.5,
+    "consume": false
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "moon",
+  "flavor": "Massive power beneath the full moon.",
+  "target": "enemy",
+  "tags": [
+   "moon"
+  ],
+  "feed": 30,
+  "value": 910,
+  "pool": false,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "dawn_bulwark",
+  "name": "Dawn Bulwark Gu",
+  "path": "light",
+  "rank": 4,
+  "rarity": "uncommon",
+  "cost": 40,
+  "effects": [
+   {
+    "v": "shield",
+    "n": 103
+   },
+   {
+    "v": "shield_pct_hp",
+    "pct": 0.1
+   }
+  ],
+  "kind": "defense",
+  "flags": [],
+  "icon": "sun-cloud",
+  "flavor": "The sun rises on your side of the field.",
+  "target": "self",
+  "tags": [],
+  "feed": 30,
+  "value": 804,
+  "pool": true
+ },
+ {
+  "id": "heavenly_light",
+  "name": "Heavenly Light Gu",
+  "path": "light",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 66,
+  "effects": [
+   {
+    "v": "shield",
+    "n": 180
+   },
+   {
+    "v": "dmg_shield",
+    "mult": 1.2,
+    "consume": true
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "sun",
+  "flavor": "Light from beyond the heavens.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 75,
+  "value": 2700,
+  "pool": true
+ },
+ {
+  "id": "liquor_worm",
+  "name": "Liquor Worm Gu",
+  "path": "food",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 4,
+  "effects": [
+   {
+    "v": "essence",
+    "n": 14
+   },
+   {
+    "v": "heal",
+    "n": 4
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "earth-worm",
+  "flavor": "It likes wine. It refines essence. Everyone wins.",
+  "target": "self",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "feast",
+  "name": "Feast Gu",
+  "path": "food",
+  "rank": 1,
+  "rarity": "uncommon",
+  "cost": 10,
+  "effects": [
+   {
+    "v": "dmg_essence",
+    "pct": 0.2,
+    "base": 6
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "meat",
+  "flavor": "Strength from plenty.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 34,
+  "pool": true
+ },
+ {
+  "id": "honey",
+  "name": "Honey Gu",
+  "path": "food",
+  "rank": 2,
+  "rarity": "common",
+  "cost": 12,
+  "effects": [
+   {
+    "v": "heal",
+    "n": 26
+   },
+   {
+    "v": "status",
+    "s": "regen",
+    "stacks": 2,
+    "turns": 3,
+    "t": "self"
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "beehive",
+  "flavor": "Sweet, golden, healing.",
+  "target": "self",
+  "tags": [],
+  "feed": 5,
+  "value": 90,
+  "pool": true
+ },
+ {
+  "id": "rice_bag",
+  "name": "Rice Bag Gu",
+  "path": "food",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 8,
+  "effects": [
+   {
+    "v": "essence",
+    "n": 28
+   },
+   {
+    "v": "draw",
+    "n": 1
+   }
+  ],
+  "kind": "support",
+  "flags": [
+   "quick"
+  ],
+  "icon": "bowl-of-rice",
+  "flavor": "Never go hungry.",
+  "target": "self",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": true
+ },
+ {
+  "id": "gluttony",
+  "name": "Gluttony Gu",
+  "path": "food",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 26,
+  "effects": [
+   {
+    "v": "dmg_essence",
+    "pct": 0.3,
+    "base": 20
+   },
+   {
+    "v": "essence",
+    "n": 15
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "pizza-cutter",
+  "flavor": "Eat. Then eat them.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": true
+ },
+ {
+  "id": "spring_autumn_feast",
+  "name": "Spring Autumn Feast Gu",
+  "path": "food",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 40,
+  "effects": [
+   {
+    "v": "essence",
+    "n": 70
+   },
+   {
+    "v": "heal",
+    "n": 65
+   },
+   {
+    "v": "status",
+    "s": "regen",
+    "stacks": 3,
+    "turns": 3,
+    "t": "self"
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "berries-bowl",
+  "flavor": "A banquet for every season.",
+  "target": "self",
+  "tags": [],
+  "feed": 30,
+  "value": 910,
+  "pool": true
+ },
+ {
+  "id": "heavens_banquet",
+  "name": "Heaven's Banquet Gu",
+  "path": "food",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 60,
+  "effects": [
+   {
+    "v": "dmg_essence",
+    "pct": 0.35,
+    "base": 40
+   },
+   {
+    "v": "essence",
+    "n": 60
+   },
+   {
+    "v": "heal",
+    "n": 90
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "fruit-bowl",
+  "flavor": "The heavens set a table for you.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 75,
+  "value": 2700,
+  "pool": true
+ },
+ {
+  "id": "basic_flame",
+  "name": "Basic Flame Gu",
+  "path": "fire",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 8,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 12
+   },
+   {
+    "v": "status",
+    "s": "burn",
+    "stacks": 2,
+    "turns": 3,
+    "t": "enemy"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "flame",
+  "flavor": "The simplest flame, but fire still burns.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "fire_bowl",
+  "name": "Fire Bowl Gu",
+  "path": "fire",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 15,
+  "effects": [
+   {
+    "v": "status",
+    "s": "burn",
+    "stacks": 4,
+    "turns": 4,
+    "t": "all"
+   },
+   {
+    "v": "damage",
+    "n": 12
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "fire-bowl",
+  "flavor": "Pour it out.",
+  "target": "all",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": true
+ },
+ {
+  "id": "flame_lotus",
+  "name": "Flame Lotus Gu",
+  "path": "fire",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 28,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 47
+   },
+   {
+    "v": "status",
+    "s": "burn",
+    "stacks": 5,
+    "turns": 4,
+    "t": "enemy"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "lotus-flower",
+  "flavor": "It blooms in ash.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": true
+ },
+ {
+  "id": "firestorm",
+  "name": "Firestorm Gu",
+  "path": "fire",
+  "rank": 4,
+  "rarity": "rare",
+  "cost": 46,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 52
+   },
+   {
+    "v": "detonate",
+    "s": "burn",
+    "mult": 4.0
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "fire-wave",
+  "flavor": "Fan the flames, then let them roar.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 30,
+  "value": 910,
+  "pool": true
+ },
+ {
+  "id": "phoenix_fire",
+  "name": "Phoenix Fire Gu",
+  "path": "fire",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 66,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 135
+   },
+   {
+    "v": "status",
+    "s": "burn",
+    "stacks": 8,
+    "turns": 4,
+    "t": "all"
+   },
+   {
+    "v": "heal",
+    "n": 45
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "fire-tail",
+  "flavor": "It rises from its own ashes.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 75,
+  "value": 2700,
+  "pool": true
+ },
+ {
+  "id": "swift_steps",
+  "name": "Swift Steps Gu",
+  "path": "none",
+  "rank": 1,
+  "rarity": "uncommon",
+  "cost": 10,
+  "effects": [
+   {
+    "v": "status",
+    "s": "stealth",
+    "stacks": 1,
+    "turns": 1,
+    "t": "self"
+   },
+   {
+    "v": "draw",
+    "n": 1
+   }
+  ],
+  "kind": "support",
+  "flags": [
+   "quick"
+  ],
+  "icon": "running-shoe",
+  "flavor": "The journey of a thousand miles begins with a swift step.",
+  "target": "self",
+  "tags": [],
+  "feed": 2,
+  "value": 34,
+  "pool": true,
+  "passive": {
+   "travel_mult": 0.75,
+   "flee": 10
+  }
+ },
+ {
+  "id": "jade_skin",
+  "name": "Jade Skin Gu",
+  "path": "none",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 6,
+  "effects": [
+   {
+    "v": "shield",
+    "n": 16
+   }
+  ],
+  "kind": "defense",
+  "flags": [],
+  "icon": "beveled-star",
+  "flavor": "Smooth, cool, hard.",
+  "target": "self",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true
+ },
+ {
+  "id": "cloud_walker",
+  "name": "Cloud Walker Gu",
+  "path": "none",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 24,
+  "effects": [
+   {
+    "v": "status",
+    "s": "stealth",
+    "stacks": 1,
+    "turns": 2,
+    "t": "self"
+   },
+   {
+    "v": "draw",
+    "n": 1
+   }
+  ],
+  "kind": "support",
+  "flags": [
+   "quick"
+  ],
+  "icon": "fluffy-cloud",
+  "flavor": "Walk on clouds; arrive before word of you does.",
+  "target": "self",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": true,
+  "passive": {
+   "travel_mult": 0.5,
+   "flee": 20
+  }
+ },
+ {
+  "id": "starlight_wings",
+  "name": "Starlight Wings Gu",
+  "path": "none",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 40,
+  "effects": [
+   {
+    "v": "status",
+    "s": "stealth",
+    "stacks": 2,
+    "turns": 2,
+    "t": "self"
+   },
+   {
+    "v": "draw",
+    "n": 2
+   }
+  ],
+  "kind": "support",
+  "flags": [
+   "quick"
+  ],
+  "icon": "angel-wings",
+  "flavor": "Wings of starlight. Distance means nothing.",
+  "target": "self",
+  "tags": [],
+  "feed": 75,
+  "value": 2700,
+  "pool": true,
+  "passive": {
+   "travel_mult": 0.33,
+   "flee": 35
+  }
+ },
+ {
+  "id": "spring_autumn_cicada",
+  "name": "Spring Autumn Cicada Gu",
+  "path": "none",
+  "rank": 2,
+  "rarity": "rare",
+  "cost": 0,
+  "effects": [],
+  "kind": "passive",
+  "flags": [
+   "passive"
+  ],
+  "icon": "butterfly",
+  "flavor": "It remembers the springs and autumns of a hundred lives.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 117,
+  "pool": true,
+  "passive": {
+   "cult_bonus": 1.5
+  }
+ },
+ {
+  "id": "primeval_moss",
+  "name": "Primeval Moss Gu",
+  "path": "none",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 0,
+  "effects": [],
+  "kind": "passive",
+  "flags": [
+   "passive"
+  ],
+  "icon": "flower-twirl",
+  "flavor": "Soaks up primeval essence in the corners of your aperture.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true,
+  "passive": {
+   "cult_bonus": 1.2
+  }
+ },
+ {
+  "id": "heaven_earth_lotus",
+  "name": "Heaven Earth Lotus Gu",
+  "path": "none",
+  "rank": 4,
+  "rarity": "legendary",
+  "cost": 0,
+  "effects": [],
+  "kind": "passive",
+  "flags": [
+   "passive"
+  ],
+  "icon": "lotus",
+  "flavor": "Its petals open and the dao pours in.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 30,
+  "value": 1050,
+  "pool": true,
+  "passive": {
+   "cult_bonus": 2.0
+  }
+ },
+ {
+  "id": "stillwater",
+  "name": "Stillwater Gu",
+  "path": "none",
+  "rank": 1,
+  "rarity": "uncommon",
+  "cost": 0,
+  "effects": [],
+  "kind": "passive",
+  "flags": [
+   "passive"
+  ],
+  "icon": "water-drop",
+  "flavor": "Keeps your aperture calm while you are away.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 34,
+  "pool": true,
+  "passive": {
+   "decay": 0.1
+  }
+ },
+ {
+  "id": "gourmand_pouch",
+  "name": "Gourmand Pouch Gu",
+  "path": "food",
+  "rank": 2,
+  "rarity": "uncommon",
+  "cost": 0,
+  "effects": [],
+  "kind": "passive",
+  "flags": [
+   "passive"
+  ],
+  "icon": "knapsack",
+  "flavor": "Feeds your other Gu from leftovers.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 103,
+  "pool": true,
+  "passive": {
+   "feed_mult": 0.75
+  }
+ },
+ {
+  "id": "soul_guard",
+  "name": "Soul Guard Gu",
+  "path": "none",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 0,
+  "effects": [],
+  "kind": "passive",
+  "flags": [
+   "passive"
+  ],
+  "icon": "eye-shield",
+  "flavor": "Keeps the miasma of Dang Hun Mountain out of your head.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": true,
+  "passive": {
+   "soul_guard": true
+  }
+ },
+ {
+  "id": "treasure_pouch",
+  "name": "Treasure Pouch Gu",
+  "path": "none",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 0,
+  "effects": [],
+  "kind": "passive",
+  "flags": [
+   "passive"
+  ],
+  "icon": "swap-bag",
+  "flavor": "Bigger on the inside.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true,
+  "passive": {
+   "storage": 10,
+   "carry": 40
+  }
+ },
+ {
+  "id": "heavenly_eye",
+  "name": "Heavenly Eye Gu",
+  "path": "wisdom",
+  "rank": 2,
+  "rarity": "rare",
+  "cost": 0,
+  "effects": [],
+  "kind": "passive",
+  "flags": [
+   "passive"
+  ],
+  "icon": "all-seeing-eye",
+  "flavor": "See the odds behind every choice.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 117,
+  "pool": true,
+  "passive": {
+   "wisdom": 25
+  }
+ },
+ {
+  "id": "relic",
+  "name": "Relic Gu",
+  "path": "none",
+  "rank": 1,
+  "rarity": "rare",
+  "cost": 0,
+  "effects": [],
+  "kind": "consumable",
+  "flags": [
+   "consumable"
+  ],
+  "icon": "gem-pendant",
+  "flavor": "Advances your cultivation by one stage. Cannot cross a rank.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 39,
+  "pool": true,
+  "consumable": {
+   "kind": "relic"
+  }
+ },
+ {
+  "id": "longevity",
+  "name": "Longevity Gu",
+  "path": "none",
+  "rank": 2,
+  "rarity": "rare",
+  "cost": 0,
+  "effects": [],
+  "kind": "consumable",
+  "flags": [
+   "consumable"
+  ],
+  "icon": "hourglass",
+  "flavor": "Five more years of life.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 5,
+  "value": 117,
+  "pool": true,
+  "consumable": {
+   "kind": "lifespan",
+   "years": 5
+  }
+ },
+ {
+  "id": "ten_years_longevity",
+  "name": "Ten Years Longevity Gu",
+  "path": "none",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 0,
+  "effects": [],
+  "kind": "consumable",
+  "flags": [
+   "consumable"
+  ],
+  "icon": "empty-hourglass",
+  "flavor": "A decade, in a shell the size of a walnut.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": true,
+  "consumable": {
+   "kind": "lifespan",
+   "years": 10
+  }
+ },
+ {
+  "id": "fifteen_years_longevity",
+  "name": "Fifteen Years Longevity Gu",
+  "path": "none",
+  "rank": 4,
+  "rarity": "legendary",
+  "cost": 0,
+  "effects": [],
+  "kind": "consumable",
+  "flags": [
+   "consumable"
+  ],
+  "icon": "sundial",
+  "flavor": "Fifteen years. Treat it like a fortune.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 30,
+  "value": 1050,
+  "pool": true,
+  "consumable": {
+   "kind": "lifespan",
+   "years": 15
+  }
+ },
+ {
+  "id": "fifty_years_longevity",
+  "name": "Fifty Years Longevity Gu",
+  "path": "none",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 0,
+  "effects": [],
+  "kind": "consumable",
+  "flags": [
+   "consumable"
+  ],
+  "icon": "sands-of-time",
+  "flavor": "An immortal treasure. Half a lifetime.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 150,
+  "value": 7500,
+  "pool": true,
+  "consumable": {
+   "kind": "lifespan",
+   "years": 50
+  }
+ },
+ {
+  "id": "hundred_years_longevity",
+  "name": "Hundred Years Longevity Gu",
+  "path": "none",
+  "rank": 7,
+  "rarity": "legendary",
+  "cost": 0,
+  "effects": [],
+  "kind": "consumable",
+  "flags": [
+   "consumable"
+  ],
+  "icon": "star-cycle",
+  "flavor": "A century of life. Wars are fought over these.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 300,
+  "value": 18000,
+  "pool": true,
+  "consumable": {
+   "kind": "lifespan",
+   "years": 100
+  }
+ },
+ {
+  "id": "breakthrough_pill",
+  "name": "Breakthrough Pill Gu",
+  "path": "none",
+  "rank": 1,
+  "rarity": "uncommon",
+  "cost": 0,
+  "effects": [],
+  "kind": "consumable",
+  "flags": [
+   "consumable"
+  ],
+  "icon": "pill-drop",
+  "flavor": "+10% to your next breakthrough attempt.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 34,
+  "pool": true,
+  "consumable": {
+   "kind": "breakthrough",
+   "bonus": 10
+  }
+ },
+ {
+  "id": "dao_insight",
+  "name": "Dao Insight Gu",
+  "path": "none",
+  "rank": 3,
+  "rarity": "rare",
+  "cost": 0,
+  "effects": [],
+  "kind": "consumable",
+  "flags": [
+   "consumable"
+  ],
+  "icon": "gift-of-knowledge",
+  "flavor": "+20% to your next breakthrough attempt.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 12,
+  "value": 338,
+  "pool": true,
+  "consumable": {
+   "kind": "breakthrough",
+   "bonus": 20
+  }
+ },
+ {
+  "id": "healing_spring",
+  "name": "Healing Spring Gu",
+  "path": "none",
+  "rank": 1,
+  "rarity": "common",
+  "cost": 0,
+  "effects": [],
+  "kind": "consumable",
+  "flags": [
+   "consumable"
+  ],
+  "icon": "health-potion",
+  "flavor": "Mends an injury overnight.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 2,
+  "value": 30,
+  "pool": true,
+  "consumable": {
+   "kind": "heal_injury"
+  }
+ },
+ {
+  "id": "three_kings_key",
+  "name": "Three Kings Key Gu",
+  "path": "none",
+  "rank": 5,
+  "rarity": "legendary",
+  "cost": 0,
+  "effects": [],
+  "kind": "consumable",
+  "flags": [
+   "consumable",
+   "key"
+  ],
+  "icon": "three-keys",
+  "flavor": "Opens the way into the Three Kings Blessed Land.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 75,
+  "value": 2700,
+  "pool": false,
+  "consumable": {
+   "kind": "key"
+  }
+ },
+ {
+  "id": "immortal_moonlight",
+  "name": "Immortal Moonlight Gu",
+  "path": "light",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 240,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 480
+   },
+   {
+    "v": "shield",
+    "n": 300
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "moon",
+  "flavor": "A Gu Immortal's moon.",
+  "target": "enemy",
+  "tags": [
+   "moon"
+  ],
+  "feed": 150,
+  "value": 7500,
+  "pool": true
+ },
+ {
+  "id": "immortal_strength",
+  "name": "Immortal Strength Gu",
+  "path": "strength",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 230,
+  "effects": [
+   {
+    "v": "dmg_combo",
+    "base": 280,
+    "per": 40
+   },
+   {
+    "v": "combo",
+    "n": 2
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "thor-fist",
+  "flavor": "Strength that cracks mountains.",
+  "target": "enemy",
+  "tags": [
+   "fist"
+  ],
+  "feed": 150,
+  "value": 7500,
+  "pool": true
+ },
+ {
+  "id": "immortal_venom",
+  "name": "Immortal Venom Gu",
+  "path": "poison",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 230,
+  "effects": [
+   {
+    "v": "status",
+    "s": "poison",
+    "stacks": 80,
+    "turns": 8,
+    "t": "all"
+   },
+   {
+    "v": "damage",
+    "n": 180
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "snake-spiral",
+  "flavor": "Rivers of venom.",
+  "target": "all",
+  "tags": [],
+  "feed": 150,
+  "value": 7500,
+  "pool": true
+ },
+ {
+  "id": "immortal_blood",
+  "name": "Immortal Blood Gu",
+  "path": "blood",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 220,
+  "effects": [
+   {
+    "v": "self_damage",
+    "n": 100
+   },
+   {
+    "v": "damage",
+    "n": 630,
+    "lifesteal": 0.5
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "crowned-skull",
+  "flavor": "Blood path at the immortal level.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 150,
+  "value": 7500,
+  "pool": true
+ },
+ {
+  "id": "immortal_shadow",
+  "name": "Immortal Shadow Gu",
+  "path": "dark",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 230,
+  "effects": [
+   {
+    "v": "status",
+    "s": "stealth",
+    "stacks": 2,
+    "turns": 2,
+    "t": "self"
+   },
+   {
+    "v": "execute",
+    "pct": 0.3,
+    "n": 330
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "death-skull",
+  "flavor": "The shadow that ate a sect.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 150,
+  "value": 7500,
+  "pool": true
+ },
+ {
+  "id": "immortal_insight",
+  "name": "Immortal Insight Gu",
+  "path": "wisdom",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 200,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 390
+   },
+   {
+    "v": "draw",
+    "n": 3
+   },
+   {
+    "v": "cheapen",
+    "n": 2
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "crystal-ball",
+  "flavor": "It knew you would read this.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 150,
+  "value": 7500,
+  "pool": true
+ },
+ {
+  "id": "immortal_feast",
+  "name": "Immortal Feast Gu",
+  "path": "food",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 180,
+  "effects": [
+   {
+    "v": "essence",
+    "n": 400
+   },
+   {
+    "v": "dmg_essence",
+    "pct": 0.3,
+    "base": 120
+   },
+   {
+    "v": "heal",
+    "n": 300
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "fruit-bowl",
+  "flavor": "Eat the heavens.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 150,
+  "value": 7500,
+  "pool": true
+ },
+ {
+  "id": "immortal_forge",
+  "name": "Immortal Forge Gu",
+  "path": "refinement",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 230,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 450
+   },
+   {
+    "v": "create",
+    "card": "heaven_spear",
+    "n": 2
+   },
+   {
+    "v": "upgrade_hand",
+    "pct": 0.3
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "thor-hammer",
+  "flavor": "A furnace the size of a fist that never cools.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 150,
+  "value": 7500,
+  "pool": true
+ },
+ {
+  "id": "immortal_form",
+  "name": "Immortal Form Gu",
+  "path": "transformation",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 230,
+  "effects": [
+   {
+    "v": "form",
+    "form": "beast",
+    "turns": 4
+   },
+   {
+    "v": "form",
+    "form": "stone",
+    "turns": 2
+   },
+   {
+    "v": "damage",
+    "n": 495
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "double-dragon",
+  "flavor": "Change your shape; change your fate.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 150,
+  "value": 7500,
+  "pool": true
+ },
+ {
+  "id": "immortal_dominion",
+  "name": "Immortal Dominion Gu",
+  "path": "enslavement",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 240,
+  "effects": [
+   {
+    "v": "summon",
+    "name": "Immortal Beast",
+    "hp": 900,
+    "atk": 130,
+    "icon": "dragon-head",
+    "turns": 5
+   },
+   {
+    "v": "status",
+    "s": "control",
+    "stacks": 1,
+    "turns": 1,
+    "t": "enemy"
+   }
+  ],
+  "kind": "support",
+  "flags": [],
+  "icon": "crossed-chains",
+  "flavor": "A beast the size of a hill, on a leash.",
+  "target": "self",
+  "tags": [],
+  "feed": 150,
+  "value": 7500,
+  "pool": true
+ },
+ {
+  "id": "immortal_phoenix",
+  "name": "Immortal Phoenix Gu",
+  "path": "fire",
+  "rank": 6,
+  "rarity": "legendary",
+  "cost": 230,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 450
+   },
+   {
+    "v": "status",
+    "s": "burn",
+    "stacks": 25,
+    "turns": 4,
+    "t": "all"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "fire-tail",
+  "flavor": "It burns the sky.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 150,
+  "value": 7500,
+  "pool": true
+ },
+ {
+  "id": "dao_sundering",
+  "name": "Dao Sundering Gu",
+  "path": "none",
+  "rank": 7,
+  "rarity": "legendary",
+  "cost": 400,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 1200,
+    "pierce": true
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "lightning-tear",
+  "flavor": "It cuts the dao itself.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 300,
+  "value": 18000,
+  "pool": true
+ },
+ {
+  "id": "heaven_defying_shield",
+  "name": "Heaven Defying Shield Gu",
+  "path": "none",
+  "rank": 7,
+  "rarity": "legendary",
+  "cost": 380,
+  "effects": [
+   {
+    "v": "shield",
+    "n": 1350
+   },
+   {
+    "v": "status",
+    "s": "prot",
+    "stacks": 2,
+    "turns": 3,
+    "t": "self"
+   }
+  ],
+  "kind": "defense",
+  "flags": [],
+  "icon": "lightning-dome",
+  "flavor": "Even tribulation lightning bends around it.",
+  "target": "self",
+  "tags": [],
+  "feed": 300,
+  "value": 18000,
+  "pool": true
+ },
+ {
+  "id": "venerable_will",
+  "name": "Venerable Will Gu",
+  "path": "none",
+  "rank": 8,
+  "rarity": "legendary",
+  "cost": 700,
+  "effects": [
+   {
+    "v": "damage",
+    "n": 2400,
+    "pierce": true
+   },
+   {
+    "v": "status",
+    "s": "strong",
+    "stacks": 2,
+    "turns": 3,
+    "t": "self"
+   }
+  ],
+  "kind": "attack",
+  "flags": [],
+  "icon": "hand-of-god",
+  "flavor": "The will of a Venerable, briefly borrowed.",
+  "target": "enemy",
+  "tags": [],
+  "feed": 600,
+  "value": 45000,
+  "pool": true
+ }
+]

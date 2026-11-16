@@ -1,0 +1,1350 @@
+{
+ "list": [
+  {
+   "id": "grey_wolf",
+   "name": "Grey Wolf",
+   "group": "wild",
+   "kind": "beast",
+   "tier": "mook",
+   "rank": 1,
+   "path": "strength",
+   "behaviour": "aggressive",
+   "icon": "wolf-head",
+   "lethality": 0.25,
+   "mats": [
+    "beast_bone",
+    "beast_core"
+   ],
+   "abilities": [
+    {
+     "name": "Bite",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.0
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Rend",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 0.7
+      },
+      {
+       "v": "status",
+       "s": "bleed",
+       "stacks": 1,
+       "turns": 3,
+       "t": "enemy"
+      }
+     ],
+     "w": 1,
+     "kind": "debuff"
+    }
+   ]
+  },
+  {
+   "id": "black_boar",
+   "name": "Black Boar",
+   "group": "wild",
+   "kind": "beast",
+   "tier": "trained",
+   "rank": 1,
+   "path": "strength",
+   "behaviour": "berserk",
+   "icon": "boar",
+   "lethality": 0.25,
+   "mats": [
+    "beast_bone",
+    "bear_sinew"
+   ],
+   "abilities": [
+    {
+     "name": "Charge",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.3
+      }
+     ],
+     "w": 2,
+     "kind": "attack"
+    },
+    {
+     "name": "Thick Hide",
+     "effects": [
+      {
+       "v": "shield",
+       "n": 1.2,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "defend"
+    }
+   ]
+  },
+  {
+   "id": "moon_spider",
+   "name": "Moon Shadow Spider",
+   "group": "wild",
+   "kind": "beast",
+   "tier": "trained",
+   "rank": 2,
+   "path": "poison",
+   "behaviour": "tactical",
+   "icon": "hanging-spider",
+   "lethality": 0.3,
+   "mats": [
+    "venom_sac",
+    "shade_silk"
+   ],
+   "abilities": [
+    {
+     "name": "Venom Bite",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 0.6
+      },
+      {
+       "v": "status",
+       "s": "poison",
+       "stacks": 4,
+       "turns": 6,
+       "t": "enemy"
+      }
+     ],
+     "w": 2,
+     "kind": "debuff"
+    },
+    {
+     "name": "Web",
+     "effects": [
+      {
+       "v": "status",
+       "s": "root",
+       "stacks": 1,
+       "turns": 2,
+       "t": "enemy"
+      },
+      {
+       "v": "status",
+       "s": "slow",
+       "stacks": 1,
+       "turns": 2,
+       "t": "enemy"
+      }
+     ],
+     "w": 1,
+     "kind": "debuff"
+    },
+    {
+     "name": "Lunge",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.0
+      }
+     ],
+     "w": 2,
+     "kind": "attack"
+    }
+   ]
+  },
+  {
+   "id": "thunder_wolf",
+   "name": "Thunder Crown Wolf",
+   "group": "wild",
+   "kind": "beast",
+   "tier": "elite",
+   "rank": 3,
+   "path": "strength",
+   "behaviour": "aggressive",
+   "icon": "direwolf",
+   "lethality": 0.35,
+   "mats": [
+    "thunder_crystal",
+    "beast_core"
+   ],
+   "abilities": [
+    {
+     "name": "Thunder Bite",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.1
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Howl",
+     "effects": [
+      {
+       "v": "status",
+       "s": "strong",
+       "stacks": 1,
+       "turns": 2,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "buff"
+    }
+   ],
+   "killer": {
+    "name": "Thunder Crown Charge",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 2.4
+     },
+     {
+      "v": "status",
+      "s": "stun",
+      "stacks": 1,
+      "turns": 1,
+      "t": "enemy"
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "jade_eye_snake",
+   "name": "Jade-Eye Snake",
+   "group": "wild",
+   "kind": "beast",
+   "tier": "trained",
+   "rank": 3,
+   "path": "poison",
+   "behaviour": "cautious",
+   "icon": "snake",
+   "lethality": 0.3,
+   "mats": [
+    "venom_sac",
+    "ancient_amber"
+   ],
+   "abilities": [
+    {
+     "name": "Coil",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 0.8
+      },
+      {
+       "v": "status",
+       "s": "root",
+       "stacks": 1,
+       "turns": 1,
+       "t": "enemy"
+      }
+     ],
+     "w": 2,
+     "kind": "attack"
+    },
+    {
+     "name": "Spit",
+     "effects": [
+      {
+       "v": "status",
+       "s": "poison",
+       "stacks": 7,
+       "turns": 6,
+       "t": "enemy"
+      },
+      {
+       "v": "status",
+       "s": "weak",
+       "stacks": 1,
+       "turns": 2,
+       "t": "enemy"
+      }
+     ],
+     "w": 2,
+     "kind": "debuff"
+    }
+   ]
+  },
+  {
+   "id": "rock_bear",
+   "name": "Rock-Hide Bear",
+   "group": "wild",
+   "kind": "beast",
+   "tier": "elite",
+   "rank": 4,
+   "path": "strength",
+   "behaviour": "defensive",
+   "icon": "bear-face",
+   "lethality": 0.4,
+   "mats": [
+    "bear_sinew",
+    "iron_sand",
+    "star_fragment"
+   ],
+   "abilities": [
+    {
+     "name": "Maul",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.2
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Rock Hide",
+     "effects": [
+      {
+       "v": "shield",
+       "n": 1.8,
+       "t": "self"
+      },
+      {
+       "v": "status",
+       "s": "prot",
+       "stacks": 1,
+       "turns": 2,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "defend"
+    }
+   ],
+   "killer": {
+    "name": "Avalanche Slam",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 2.6
+     },
+     {
+      "v": "status",
+      "s": "stun",
+      "stacks": 1,
+      "turns": 1,
+      "t": "enemy"
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "beast_king_tiger",
+   "name": "Hundred-Beast King Tiger",
+   "group": "beast_king",
+   "kind": "beast",
+   "tier": "boss",
+   "rank": 4,
+   "path": "strength",
+   "behaviour": "berserk",
+   "icon": "tiger-head",
+   "lethality": 0.5,
+   "mats": [
+    "beast_core",
+    "star_fragment",
+    "dao_shard"
+   ],
+   "abilities": [
+    {
+     "name": "Claw Storm",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 0.6,
+       "times": 3
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "King's Roar",
+     "effects": [
+      {
+       "v": "status",
+       "s": "weak",
+       "stacks": 2,
+       "turns": 2,
+       "t": "enemy"
+      },
+      {
+       "v": "status",
+       "s": "strong",
+       "stacks": 1,
+       "turns": 2,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "debuff"
+    }
+   ],
+   "killer": {
+    "name": "Hundred Beasts Descend",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 3.0
+     },
+     {
+      "v": "status",
+      "s": "vuln",
+      "stacks": 2,
+      "turns": 2,
+      "t": "enemy"
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "eagle_lord",
+   "name": "Golden Eagle Lord",
+   "group": "beast_king",
+   "kind": "beast",
+   "tier": "boss",
+   "rank": 6,
+   "path": "strength",
+   "behaviour": "tactical",
+   "icon": "eagle-head",
+   "lethality": 0.6,
+   "mats": [
+    "star_fragment",
+    "dao_shard",
+    "immortal_stone"
+   ],
+   "abilities": [
+    {
+     "name": "Talon Dive",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.2
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Gale Wings",
+     "effects": [
+      {
+       "v": "status",
+       "s": "slow",
+       "stacks": 1,
+       "turns": 2,
+       "t": "enemy"
+      },
+      {
+       "v": "status",
+       "s": "root",
+       "stacks": 1,
+       "turns": 1,
+       "t": "enemy"
+      }
+     ],
+     "w": 1,
+     "kind": "debuff"
+    }
+   ],
+   "killer": {
+    "name": "Heaven-Tearing Dive",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 3.0,
+      "pierce": true
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "bandit",
+   "name": "Mountain Bandit",
+   "group": "bandit",
+   "kind": "cultivator",
+   "tier": "mook",
+   "rank": 1,
+   "path": "strength",
+   "behaviour": "aggressive",
+   "icon": "robber-mask",
+   "lethality": 0.1,
+   "stones": true,
+   "mats": [
+    "iron_sand"
+   ],
+   "abilities": [
+    {
+     "name": "Slash",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.0
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Dirty Trick",
+     "effects": [
+      {
+       "v": "status",
+       "s": "weak",
+       "stacks": 1,
+       "turns": 2,
+       "t": "enemy"
+      }
+     ],
+     "w": 1,
+     "kind": "debuff"
+    }
+   ]
+  },
+  {
+   "id": "bandit_leader",
+   "name": "Bandit Chief",
+   "group": "bandit",
+   "kind": "cultivator",
+   "tier": "elite",
+   "rank": 2,
+   "path": "blood",
+   "behaviour": "tactical",
+   "icon": "pirate-skull",
+   "lethality": 0.2,
+   "stones": true,
+   "mats": [
+    "crimson_essence"
+   ],
+   "abilities": [
+    {
+     "name": "Blood Blade",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.0
+      },
+      {
+       "v": "status",
+       "s": "bleed",
+       "stacks": 2,
+       "turns": 3,
+       "t": "enemy"
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Rally",
+     "effects": [
+      {
+       "v": "status",
+       "s": "strong",
+       "stacks": 1,
+       "turns": 2,
+       "t": "self"
+      },
+      {
+       "v": "heal",
+       "n": 0.5,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "buff"
+    }
+   ],
+   "killer": {
+    "name": "Crimson Massacre",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 2.2
+     },
+     {
+      "v": "status",
+      "s": "bleed",
+      "stacks": 4,
+      "turns": 3,
+      "t": "enemy"
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "rogue_cultivator",
+   "name": "Rogue Gu Master",
+   "group": "bandit",
+   "kind": "cultivator",
+   "tier": "trained",
+   "rank": 2,
+   "path": "dark",
+   "behaviour": "cautious",
+   "icon": "hood",
+   "lethality": 0.2,
+   "stones": true,
+   "mats": [
+    "shade_silk"
+   ],
+   "abilities": [
+    {
+     "name": "Shadow Cut",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.0
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Smoke",
+     "effects": [
+      {
+       "v": "status",
+       "s": "stealth",
+       "stacks": 1,
+       "turns": 1,
+       "t": "self"
+      },
+      {
+       "v": "shield",
+       "n": 0.8,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "defend"
+    }
+   ]
+  },
+  {
+   "id": "demonic_cultivator",
+   "name": "Demonic Gu Master",
+   "group": "demonic",
+   "kind": "cultivator",
+   "tier": "elite",
+   "rank": 3,
+   "path": "blood",
+   "behaviour": "berserk",
+   "icon": "devil-mask",
+   "lethality": 0.55,
+   "stones": true,
+   "mats": [
+    "crimson_essence",
+    "soul_jade"
+   ],
+   "abilities": [
+    {
+     "name": "Blood Lash",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.1
+      },
+      {
+       "v": "status",
+       "s": "bleed",
+       "stacks": 2,
+       "turns": 3,
+       "t": "enemy"
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Drink Blood",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 0.8
+      },
+      {
+       "v": "heal",
+       "n": 0.6,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "attack"
+    }
+   ],
+   "killer": {
+    "name": "Blood River",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 2.5
+     },
+     {
+      "v": "status",
+      "s": "bleed",
+      "stacks": 5,
+      "turns": 3,
+      "t": "enemy"
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "poison_assassin",
+   "name": "Venom Assassin",
+   "group": "demonic",
+   "kind": "cultivator",
+   "tier": "trained",
+   "rank": 3,
+   "path": "poison",
+   "behaviour": "tactical",
+   "icon": "ninja-mask",
+   "lethality": 0.5,
+   "stones": true,
+   "mats": [
+    "venom_sac"
+   ],
+   "abilities": [
+    {
+     "name": "Poison Dart",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 0.6
+      },
+      {
+       "v": "status",
+       "s": "poison",
+       "stacks": 6,
+       "turns": 6,
+       "t": "enemy"
+      }
+     ],
+     "w": 3,
+     "kind": "debuff"
+    },
+    {
+     "name": "Vanish",
+     "effects": [
+      {
+       "v": "status",
+       "s": "stealth",
+       "stacks": 1,
+       "turns": 1,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "defend"
+    }
+   ],
+   "killer": {
+    "name": "Thousand Needles",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 0.5,
+      "times": 4
+     },
+     {
+      "v": "status",
+      "s": "poison",
+      "stacks": 10,
+      "turns": 6,
+      "t": "enemy"
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "corpse_puppet",
+   "name": "Corpse Puppet",
+   "group": "soul",
+   "kind": "construct",
+   "tier": "trained",
+   "rank": 4,
+   "path": "enslavement",
+   "behaviour": "aggressive",
+   "icon": "shambling-zombie",
+   "lethality": 0.4,
+   "mats": [
+    "soul_jade",
+    "beast_bone"
+   ],
+   "abilities": [
+    {
+     "name": "Grasp",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.0
+      },
+      {
+       "v": "status",
+       "s": "root",
+       "stacks": 1,
+       "turns": 1,
+       "t": "enemy"
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Rot",
+     "effects": [
+      {
+       "v": "status",
+       "s": "poison",
+       "stacks": 6,
+       "turns": 6,
+       "t": "enemy"
+      }
+     ],
+     "w": 1,
+     "kind": "debuff"
+    }
+   ]
+  },
+  {
+   "id": "wandering_soul",
+   "name": "Wandering Soul",
+   "group": "soul",
+   "kind": "spirit",
+   "tier": "elite",
+   "rank": 5,
+   "path": "dark",
+   "behaviour": "tactical",
+   "icon": "floating-ghost",
+   "lethality": 0.6,
+   "mats": [
+    "soul_jade",
+    "dao_shard"
+   ],
+   "abilities": [
+    {
+     "name": "Soul Wail",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.0
+      },
+      {
+       "v": "status",
+       "s": "weak",
+       "stacks": 1,
+       "turns": 2,
+       "t": "enemy"
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Fade",
+     "effects": [
+      {
+       "v": "status",
+       "s": "stealth",
+       "stacks": 1,
+       "turns": 1,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "defend"
+    }
+   ],
+   "killer": {
+    "name": "Soul Rend",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 2.8,
+      "pierce": true
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "guardian_construct",
+   "name": "Ancient Guardian",
+   "group": "construct",
+   "kind": "construct",
+   "tier": "elite",
+   "rank": 5,
+   "path": "refinement",
+   "behaviour": "defensive",
+   "icon": "rock-golem",
+   "lethality": 0.5,
+   "mats": [
+    "star_fragment",
+    "ancient_amber",
+    "dao_shard"
+   ],
+   "abilities": [
+    {
+     "name": "Stone Fist",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.1
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Rebuild",
+     "effects": [
+      {
+       "v": "shield",
+       "n": 2.0,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "defend"
+    }
+   ],
+   "killer": {
+    "name": "Formation Crush",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 2.6
+     },
+     {
+      "v": "status",
+      "s": "stun",
+      "stacks": 1,
+      "turns": 1,
+      "t": "enemy"
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "fire_imp",
+   "name": "Lava Salamander",
+   "group": "fire",
+   "kind": "beast",
+   "tier": "trained",
+   "rank": 3,
+   "path": "fire",
+   "behaviour": "aggressive",
+   "icon": "salamander",
+   "lethality": 0.35,
+   "mats": [
+    "phoenix_ash",
+    "refining_ember"
+   ],
+   "abilities": [
+    {
+     "name": "Flame Spit",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 0.7
+      },
+      {
+       "v": "status",
+       "s": "burn",
+       "stacks": 3,
+       "turns": 3,
+       "t": "enemy"
+      }
+     ],
+     "w": 3,
+     "kind": "debuff"
+    },
+    {
+     "name": "Magma Skin",
+     "effects": [
+      {
+       "v": "shield",
+       "n": 1.2,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "defend"
+    }
+   ]
+  },
+  {
+   "id": "ember_tyrant",
+   "name": "Ember Tyrant",
+   "group": "fire_boss",
+   "kind": "beast",
+   "tier": "boss",
+   "rank": 4,
+   "path": "fire",
+   "behaviour": "berserk",
+   "icon": "dragon-breath",
+   "lethality": 0.6,
+   "mats": [
+    "phoenix_ash",
+    "star_fragment",
+    "heavens_tear"
+   ],
+   "flag_on_win": "beat_fire_boss",
+   "abilities": [
+    {
+     "name": "Fire Breath",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 0.8
+      },
+      {
+       "v": "status",
+       "s": "burn",
+       "stacks": 5,
+       "turns": 3,
+       "t": "enemy"
+      }
+     ],
+     "w": 3,
+     "kind": "debuff"
+    },
+    {
+     "name": "Tail Sweep",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.2
+      }
+     ],
+     "w": 2,
+     "kind": "attack"
+    }
+   ],
+   "killer": {
+    "name": "Caldera Eruption",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 2.6
+     },
+     {
+      "v": "status",
+      "s": "burn",
+      "stacks": 8,
+      "turns": 4,
+      "t": "enemy"
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "rival_disciple",
+   "name": "Rival Disciple",
+   "group": "rival",
+   "kind": "cultivator",
+   "tier": "trained",
+   "rank": 1,
+   "path": "strength",
+   "behaviour": "tactical",
+   "icon": "sword-brandish",
+   "lethality": 0.0,
+   "stones": true,
+   "abilities": [
+    {
+     "name": "Spar Strike",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.0
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Guard",
+     "effects": [
+      {
+       "v": "shield",
+       "n": 1.0,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "defend"
+    }
+   ]
+  },
+  {
+   "id": "tribulation_avatar",
+   "name": "Heavenly Tribulation",
+   "group": "tribulation",
+   "kind": "heaven",
+   "tier": "boss",
+   "rank": 5,
+   "path": "light",
+   "behaviour": "aggressive",
+   "icon": "lightning-storm",
+   "lethality": 1.0,
+   "abilities": [
+    {
+     "name": "Heavenly Lightning",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.1,
+       "pierce": true
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Thunder Cage",
+     "effects": [
+      {
+       "v": "status",
+       "s": "root",
+       "stacks": 1,
+       "turns": 2,
+       "t": "enemy"
+      },
+      {
+       "v": "status",
+       "s": "slow",
+       "stacks": 1,
+       "turns": 2,
+       "t": "enemy"
+      }
+     ],
+     "w": 1,
+     "kind": "debuff"
+    }
+   ],
+   "killer": {
+    "name": "Nine-Fold Thunder",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 0.8,
+      "times": 3,
+      "pierce": true
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "earthly_calamity",
+   "name": "Earthly Calamity Beast",
+   "group": "tribulation",
+   "kind": "heaven",
+   "tier": "elite",
+   "rank": 6,
+   "path": "strength",
+   "behaviour": "berserk",
+   "icon": "rock-golem",
+   "lethality": 0.0,
+   "abilities": [
+    {
+     "name": "Quake",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.1
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Stone Rain",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 0.5,
+       "times": 2
+      }
+     ],
+     "w": 1,
+     "kind": "attack"
+    }
+   ],
+   "killer": {
+    "name": "Earth Rift",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 2.4
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "heaven_will",
+   "name": "Avatar of Heaven's Will",
+   "group": "fate",
+   "kind": "heaven",
+   "tier": "boss",
+   "rank": 5,
+   "path": "light",
+   "behaviour": "tactical",
+   "icon": "eye-of-horus",
+   "lethality": 1.0,
+   "abilities": [
+    {
+     "name": "Fate Severing",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.2,
+       "pierce": true
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Decree",
+     "effects": [
+      {
+       "v": "status",
+       "s": "weak",
+       "stacks": 2,
+       "turns": 2,
+       "t": "enemy"
+      },
+      {
+       "v": "status",
+       "s": "vuln",
+       "stacks": 1,
+       "turns": 2,
+       "t": "enemy"
+      }
+     ],
+     "w": 1,
+     "kind": "debuff"
+    }
+   ],
+   "killer": {
+    "name": "Heaven's Judgement",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 3.0,
+      "pierce": true
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
+   "id": "sect_elder",
+   "name": "Righteous Sect Elder",
+   "group": "demonic",
+   "kind": "cultivator",
+   "tier": "boss",
+   "rank": 7,
+   "path": "light",
+   "behaviour": "tactical",
+   "icon": "sun-priest",
+   "lethality": 0.7,
+   "stones": true,
+   "mats": [
+    "immortal_stone",
+    "dao_shard"
+   ],
+   "abilities": [
+    {
+     "name": "Sword Light",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.1
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Barrier",
+     "effects": [
+      {
+       "v": "shield",
+       "n": 1.8,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "defend"
+    }
+   ],
+   "killer": {
+    "name": "Heavenly Sword Array",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 0.9,
+      "times": 3
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  }
+ ],
+ "tiers": {
+  "mook": {
+   "hp": 0.6,
+   "dmg": 0.8,
+   "km": 0.0
+  },
+  "trained": {
+   "hp": 1.0,
+   "dmg": 1.0,
+   "km": 0.1
+  },
+  "elite": {
+   "hp": 1.6,
+   "dmg": 1.15,
+   "km": 0.5
+  },
+  "boss": {
+   "hp": 3.0,
+   "dmg": 1.3,
+   "km": 0.9
+  }
+ }
+}

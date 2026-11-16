@@ -1,0 +1,288 @@
+{
+ "inheritance": [
+  {
+   "id": "formula_r1",
+   "kind": "formula",
+   "name": "Gu Formula (Rank 1)",
+   "cost": 50,
+   "rank": 1,
+   "desc": "Start knowing a random Rank 1 Gu formula of your primary path."
+  },
+  {
+   "id": "formula_r2",
+   "kind": "formula",
+   "name": "Gu Formula (Rank 2)",
+   "cost": 100,
+   "rank": 2,
+   "desc": "Start knowing a random Rank 2 formula of your primary path."
+  },
+  {
+   "id": "formula_r3",
+   "kind": "formula",
+   "name": "Gu Formula (Rank 3)",
+   "cost": 150,
+   "rank": 3,
+   "desc": "Start knowing a random Rank 3 formula of your primary path."
+  },
+  {
+   "id": "formula_r4",
+   "kind": "formula",
+   "name": "Gu Formula (Rank 4)",
+   "cost": 200,
+   "rank": 4,
+   "desc": "Start knowing a random Rank 4 formula of your primary path."
+  },
+  {
+   "id": "formula_r5",
+   "kind": "formula",
+   "name": "Gu Formula (Rank 5)",
+   "cost": 250,
+   "rank": 5,
+   "desc": "Start knowing a random Rank 5 formula of your primary path."
+  },
+  {
+   "id": "killer_move",
+   "kind": "killer",
+   "name": "Killer Move Insight",
+   "cost": 150,
+   "desc": "Start knowing your primary path's killer move (100 + 50 x rank)."
+  },
+  {
+   "id": "cache_small",
+   "kind": "cache",
+   "name": "Resource Cache (small)",
+   "cost": 60,
+   "stones": 150,
+   "desc": "A cache of 150 stones and materials hidden in a nearby location."
+  },
+  {
+   "id": "cache_large",
+   "kind": "cache",
+   "name": "Resource Cache (large)",
+   "cost": 140,
+   "stones": 500,
+   "desc": "A cache of 500 stones, rare materials and a Relic Gu."
+  },
+  {
+   "id": "insight_minor",
+   "kind": "insight",
+   "name": "Path Insight (minor)",
+   "cost": 75,
+   "points": 60,
+   "desc": "+60 attainment in your primary path."
+  },
+  {
+   "id": "insight_major",
+   "kind": "insight",
+   "name": "Path Insight (major)",
+   "cost": 125,
+   "points": 120,
+   "desc": "+120 attainment in your primary path."
+  },
+  {
+   "id": "insight_grand",
+   "kind": "insight",
+   "name": "Path Insight (grand)",
+   "cost": 200,
+   "points": 300,
+   "desc": "+300 attainment: start at Master in your primary path."
+  },
+  {
+   "id": "npc_contact",
+   "kind": "npc",
+   "name": "Old Friend",
+   "cost": 100,
+   "level": "Contact",
+   "desc": "Start with a random notable NPC as a Contact."
+  },
+  {
+   "id": "npc_connection",
+   "kind": "npc",
+   "name": "Sworn Sibling",
+   "cost": 250,
+   "level": "Connection",
+   "desc": "Start with a random notable NPC as a Connection."
+  },
+  {
+   "id": "loc_hu",
+   "kind": "location",
+   "name": "Map to the Hu Immortal Land",
+   "cost": 100,
+   "loc": "hu_immortal_land",
+   "desc": "Start knowing where the hidden Hu Immortal Blessed Land is."
+  },
+  {
+   "id": "loc_three",
+   "kind": "location",
+   "name": "Whispers of the Three Kings",
+   "cost": 60,
+   "loc": "three_kings_land",
+   "desc": "Start knowing where the Three Kings Blessed Land lies (you still need its key)."
+  },
+  {
+   "id": "rep_seed",
+   "kind": "reputation",
+   "name": "Reputation Seed",
+   "cost": 75,
+   "points": 10,
+   "desc": "+10 fame, so NPCs warm to you faster."
+  }
+ ],
+ "starts": [
+  {
+   "id": "standard",
+   "name": "Standard Start",
+   "desc": "Begin as your clan's newest Gu Master.",
+   "unlock": null
+  },
+  {
+   "id": "young",
+   "name": "Young Start",
+   "desc": "Begin at age 12, three years early, with a little less money.",
+   "unlock": {
+    "type": "days",
+    "days": 7200,
+    "text": "Survive 20 years in one life."
+   }
+  },
+  {
+   "id": "prodigy",
+   "name": "Prodigy",
+   "desc": "Guaranteed A-grade aptitude with no rival.",
+   "unlock": {
+    "type": "rank",
+    "rank": 4,
+    "text": "Reach Rank 4."
+   }
+  },
+  {
+   "id": "reincarnator",
+   "name": "Reincarnator",
+   "desc": "Memories of a past life: two formulas, the Hu Immortal map and +50 attainment in every path you know.",
+   "unlock": {
+    "type": "rank",
+    "rank": 6,
+    "text": "Become a Gu Immortal (Rank 6)."
+   }
+  }
+ ],
+ "modes": [
+  {
+   "id": "normal",
+   "name": "Normal",
+   "desc": "The standard game."
+  },
+  {
+   "id": "hard",
+   "name": "Hard",
+   "desc": "Enemies +30% health and damage, events are harsher, prices higher."
+  },
+  {
+   "id": "speed",
+   "name": "Speed Run",
+   "desc": "Lifespan 60 years. Score bonus for how fast you win."
+  },
+  {
+   "id": "path_challenge",
+   "name": "Path Challenge",
+   "desc": "Only Gu of your primary path (and neutral Gu) may be equipped."
+  },
+  {
+   "id": "ironman",
+   "name": "Ironman",
+   "desc": "One autosave only; death deletes it."
+  }
+ ],
+ "achievements": [
+  {
+   "id": "first_blood",
+   "name": "First Victory",
+   "points": 20,
+   "desc": "Win your first battle."
+  },
+  {
+   "id": "rank_2",
+   "name": "Rank 2 Gu Master",
+   "points": 30,
+   "desc": "Reach Rank 2."
+  },
+  {
+   "id": "rank_3",
+   "name": "Rank 3 Gu Master",
+   "points": 50,
+   "desc": "Reach Rank 3."
+  },
+  {
+   "id": "rank_5",
+   "name": "Peak of Mortality",
+   "points": 120,
+   "desc": "Reach Rank 5."
+  },
+  {
+   "id": "immortal",
+   "name": "Gu Immortal",
+   "points": 300,
+   "desc": "Survive your tribulation and become a Gu Immortal."
+  },
+  {
+   "id": "killer_move",
+   "name": "Killer Move",
+   "points": 40,
+   "desc": "Use a killer move in battle."
+  },
+  {
+   "id": "boss_slayer",
+   "name": "Boss Slayer",
+   "points": 80,
+   "desc": "Defeat a boss."
+  },
+  {
+   "id": "master_path",
+   "name": "Path Master",
+   "points": 60,
+   "desc": "Reach Master attainment in a path."
+  },
+  {
+   "id": "refiner",
+   "name": "Refiner",
+   "points": 30,
+   "desc": "Refine a Gu."
+  },
+  {
+   "id": "wealthy",
+   "name": "Wealthy",
+   "points": 40,
+   "desc": "Hold 2,000 primeval stones at once."
+  },
+  {
+   "id": "connected",
+   "name": "Well Connected",
+   "points": 40,
+   "desc": "Have 3 NPC Contacts or better."
+  },
+  {
+   "id": "explorer",
+   "name": "Explorer",
+   "points": 40,
+   "desc": "Visit 8 locations."
+  },
+  {
+   "id": "three_kings",
+   "name": "Three Kings' Heir",
+   "points": 150,
+   "desc": "Claim the Three Kings inheritance."
+  },
+  {
+   "id": "elder",
+   "name": "Clan Elder",
+   "points": 80,
+   "desc": "Become an Elder of your clan."
+  },
+  {
+   "id": "centenarian",
+   "name": "Long Life",
+   "points": 60,
+   "desc": "Live past 100."
+  }
+ ]
+}

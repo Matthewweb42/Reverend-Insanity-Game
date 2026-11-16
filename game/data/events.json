@@ -1,0 +1,5553 @@
+{
+ "events": [
+  {
+   "id": "wolf_pack",
+   "title": "Wolves on the Road",
+   "text": "Grey shapes slip between the trees. A small wolf pack has picked up your scent and is fanning out to surround you.",
+   "choices": [
+    {
+     "text": "Stand and fight.",
+     "ok": [
+      {
+       "do": "log",
+       "text": "The pack scatters."
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "enemy": "grey_wolf",
+      "group": "wild"
+     }
+    },
+    {
+     "text": "Climb a tree and wait them out (lose 2 days).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 2
+      },
+      {
+       "do": "log",
+       "text": "They lose interest by morning."
+      }
+     ]
+    },
+    {
+     "text": "Throw them some dried meat (10 stones' worth).",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -10
+      },
+      {
+       "do": "log",
+       "text": "They snap it up and trot off."
+      }
+     ],
+     "req": {
+      "stones": 10
+     }
+    }
+   ],
+   "where": [
+    "travel",
+    "qing_mao_woods",
+    "wild_beast_plains"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    2
+   ],
+   "goals": [
+    "combat"
+   ],
+   "weight": 14,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "boar_ambush",
+   "title": "Black Boar",
+   "text": "A black boar the size of a cart crashes out of the undergrowth, tusks lowered.",
+   "choices": [
+    {
+     "text": "Meet the charge.",
+     "ok": [
+      {
+       "do": "mat",
+       "id": "bear_sinew",
+       "n": 1
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "black_boar"
+     }
+    },
+    {
+     "text": "Dive aside and run.",
+     "ok": [
+      {
+       "do": "damage",
+       "pct": 0.08
+      }
+     ],
+     "hint": "You'll take a glancing blow."
+    }
+   ],
+   "where": [
+    "travel",
+    "qing_mao_woods",
+    "xiong_village"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    2
+   ],
+   "goals": [
+    "combat"
+   ],
+   "weight": 10,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "herb_patch",
+   "title": "Patch of Primeval Grass",
+   "text": "Faint green light pulses from a hollow under a rock: primeval grass, thick and healthy.",
+   "choices": [
+    {
+     "text": "Harvest it carefully (1 day).",
+     "ok": [
+      {
+       "do": "mat",
+       "id": "primeval_grass",
+       "n": 3
+      },
+      {
+       "do": "time",
+       "days": 1
+      }
+     ]
+    },
+    {
+     "text": "Grab what you can quickly.",
+     "ok": [
+      {
+       "do": "mat",
+       "id": "primeval_grass",
+       "n": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "travel",
+    "wild"
+   ],
+   "type": "discovery",
+   "rank": [
+    1,
+    4
+   ],
+   "goals": [
+    "stones"
+   ],
+   "weight": 12,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "wild_gu_nest",
+   "title": "Wild Gu Nest",
+   "text": "A hum fills the air. In a split trunk, a cluster of wild Gu are feeding on sap. Capturing one takes skill.",
+   "choices": [
+    {
+     "text": "Try to capture one.",
+     "ok": [
+      {
+       "do": "gu_pool",
+       "rank": "r",
+       "log": "You coax a wild Gu into your aperture."
+      }
+     ],
+     "fail": [
+      {
+       "do": "damage",
+       "pct": 0.1
+      },
+      {
+       "do": "log",
+       "text": "The swarm turns on you."
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.55,
+      "stat": "wisdom"
+     },
+     "hint": "Wisdom helps."
+    },
+    {
+     "text": "Fight the swarm for their essence.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": 25
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "group": "wild",
+      "tier": "mook"
+     }
+    },
+    {
+     "text": "Leave it be.",
+     "ok": [
+      {
+       "do": "log",
+       "text": "You move on."
+      }
+     ]
+    }
+   ],
+   "where": [
+    "wild",
+    "travel"
+   ],
+   "type": "discovery",
+   "rank": [
+    1,
+    5
+   ],
+   "goals": [
+    "gu_path",
+    "gu_kind"
+   ],
+   "weight": 10,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "lost_merchant",
+   "title": "A Lost Merchant",
+   "text": "A merchant with a broken cart waves you down. Bandits took his guards and he is far from the road.",
+   "choices": [
+    {
+     "text": "Escort him to safety (3 days).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 3
+      },
+      {
+       "do": "stones",
+       "n": 40
+      },
+      {
+       "do": "rep",
+       "n": 5
+      },
+      {
+       "do": "fame",
+       "n": 3
+      }
+     ],
+     "fail": [
+      {
+       "do": "time",
+       "days": 3
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "enemy": "bandit",
+      "group": "bandit"
+     }
+    },
+    {
+     "text": "Rob him yourself.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": 70
+      },
+      {
+       "do": "rep",
+       "n": -15
+      }
+     ],
+     "hint": "Demonic act."
+    },
+    {
+     "text": "Point him the right way and go.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "travel"
+   ],
+   "type": "dilemma",
+   "rank": [
+    1,
+    3
+   ],
+   "goals": [],
+   "weight": 8,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "bandit_toll",
+   "title": "Bandit Toll",
+   "text": "Three men step onto the road with blades drawn. 'Toll's twenty stones, Gu Master.'",
+   "choices": [
+    {
+     "text": "Pay the toll.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -20
+      }
+     ],
+     "req": {
+      "stones": 20
+     }
+    },
+    {
+     "text": "Teach them manners.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": 30
+      },
+      {
+       "do": "fame",
+       "n": 2
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 3,
+      "rank": "r",
+      "enemy": "bandit",
+      "group": "bandit"
+     }
+    },
+    {
+     "text": "Bluff that your clan elder follows close behind.",
+     "ok": [
+      {
+       "do": "log",
+       "text": "They exchange looks and let you pass."
+      }
+     ],
+     "fail": [
+      {
+       "do": "stones",
+       "n": -30
+      },
+      {
+       "do": "damage",
+       "pct": 0.1
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.5,
+      "stat": "enslavement"
+     },
+     "hint": "Enslavement or Wisdom helps."
+    }
+   ],
+   "where": [
+    "travel"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    3
+   ],
+   "goals": [
+    "combat"
+   ],
+   "weight": 10,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "rogue_duel",
+   "title": "Challenge on the Road",
+   "text": "A lone Gu Master blocks the path. 'Your Gu look well fed. I'll take one.'",
+   "choices": [
+    {
+     "text": "Duel.",
+     "ok": [
+      {
+       "do": "gu_pool",
+       "rank": "r",
+       "chance": 0.4
+      },
+      {
+       "do": "stones",
+       "n": 35
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "rogue_cultivator"
+     }
+    },
+    {
+     "text": "Hand over 30 stones instead.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -30
+      }
+     ],
+     "req": {
+      "stones": 30
+     }
+    }
+   ],
+   "where": [
+    "travel"
+   ],
+   "type": "encounter",
+   "rank": [
+    2,
+    4
+   ],
+   "goals": [
+    "combat"
+   ],
+   "weight": 8,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "spider_lair",
+   "title": "Moon Shadow Spiders",
+   "text": "Silver webs glitter between the orchids. Something large shifts above you.",
+   "choices": [
+    {
+     "text": "Burn the webs and fight.",
+     "ok": [
+      {
+       "do": "mat",
+       "id": "shade_silk",
+       "n": 2
+      },
+      {
+       "do": "mat",
+       "id": "venom_sac",
+       "n": 1
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "enemy": "moon_spider"
+     }
+    },
+    {
+     "text": "Back away slowly.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "moon_orchid_valley",
+    "travel"
+   ],
+   "type": "encounter",
+   "rank": [
+    2,
+    3
+   ],
+   "goals": [
+    "combat"
+   ],
+   "weight": 9,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "thunder_wolf_alpha",
+   "title": "Thunder Crown Wolf",
+   "text": "Lightning crackles along the spine of a huge wolf. It has noticed you.",
+   "choices": [
+    {
+     "text": "Fight it.",
+     "ok": [
+      {
+       "do": "mat",
+       "id": "thunder_crystal",
+       "n": 1
+      },
+      {
+       "do": "fame",
+       "n": 4
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "thunder_wolf"
+     }
+    },
+    {
+     "text": "Flee into a gully.",
+     "ok": [
+      {
+       "do": "damage",
+       "pct": 0.12
+      }
+     ]
+    }
+   ],
+   "where": [
+    "wild_beast_plains",
+    "travel"
+   ],
+   "type": "encounter",
+   "rank": [
+    2,
+    4
+   ],
+   "goals": [
+    "combat"
+   ],
+   "weight": 7,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "snake_pit",
+   "title": "Jade-Eye Snakes",
+   "text": "Grass rustles in a widening circle. Jade eyes rise to meet you.",
+   "choices": [
+    {
+     "text": "Fight.",
+     "ok": [
+      {
+       "do": "mat",
+       "id": "venom_sac",
+       "n": 2
+      },
+      {
+       "do": "mat",
+       "id": "ancient_amber",
+       "n": 1
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "enemy": "jade_eye_snake"
+     }
+    },
+    {
+     "text": "Step back into the open.",
+     "ok": [
+      {
+       "do": "time",
+       "days": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "wild_beast_plains",
+    "wu_hollow",
+    "travel"
+   ],
+   "type": "encounter",
+   "rank": [
+    3,
+    4
+   ],
+   "goals": [],
+   "weight": 8,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "rock_bear",
+   "title": "Rock-Hide Bear",
+   "text": "A bear with stone plates for skin stands up, and up, and up.",
+   "choices": [
+    {
+     "text": "Fight it.",
+     "ok": [
+      {
+       "do": "mat",
+       "id": "bear_sinew",
+       "n": 2
+      },
+      {
+       "do": "mat",
+       "id": "star_fragment",
+       "n": 1
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "rock_bear"
+     }
+    },
+    {
+     "text": "Leave it a gift of honey (one Sweet Nectar).",
+     "ok": [
+      {
+       "do": "mat",
+       "id": "sweet_nectar",
+       "n": -1
+      },
+      {
+       "do": "rep",
+       "n": 2
+      }
+     ],
+     "req": {
+      "mat": "sweet_nectar"
+     }
+    }
+   ],
+   "where": [
+    "wild_beast_plains",
+    "xiong_village",
+    "northern_plains"
+   ],
+   "type": "encounter",
+   "rank": [
+    3,
+    5
+   ],
+   "goals": [],
+   "weight": 7,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "demonic_hunter",
+   "title": "Demonic Gu Master",
+   "text": "A cultivator with blood-red nails smiles at you. 'Your aperture smells delicious.'",
+   "choices": [
+    {
+     "text": "Fight for your life.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": 80
+      },
+      {
+       "do": "rep",
+       "n": 5
+      },
+      {
+       "do": "gu_pool",
+       "rank": "r",
+       "chance": 0.5
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "demonic_cultivator"
+     }
+    },
+    {
+     "text": "Offer a deal: you'll look the other way.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": -8
+      },
+      {
+       "do": "info",
+       "n": 1
+      }
+     ],
+     "hint": "Demonic act."
+    }
+   ],
+   "where": [
+    "travel",
+    "wild_beast_plains",
+    "moon_orchid_valley",
+    "merchant_city"
+   ],
+   "type": "encounter",
+   "rank": [
+    3,
+    5
+   ],
+   "goals": [
+    "combat"
+   ],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "assassin",
+   "title": "A Needle in the Dark",
+   "text": "A whistle. A needle buries itself in the post beside your head. Someone wants you dead.",
+   "choices": [
+    {
+     "text": "Hunt the assassin down.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": 60
+      },
+      {
+       "do": "info",
+       "n": 1
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "poison_assassin"
+     }
+    },
+    {
+     "text": "Vanish into the crowd.",
+     "ok": [
+      {
+       "do": "time",
+       "days": 1
+      }
+     ],
+     "fail": [
+      {
+       "do": "damage",
+       "pct": 0.15
+      },
+      {
+       "do": "status",
+       "s": "poisoned"
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.6,
+      "stat": "dark"
+     }
+    }
+   ],
+   "where": [
+    "merchant_city",
+    "wu_hollow",
+    "travel"
+   ],
+   "type": "encounter",
+   "rank": [
+    3,
+    5
+   ],
+   "goals": [],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "weather_storm",
+   "title": "Sudden Storm",
+   "text": "Black clouds roll in and rain comes down sideways.",
+   "choices": [
+    {
+     "text": "Shelter in a cave (2 days).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 2
+      },
+      {
+       "do": "cult",
+       "n": 3,
+       "log": "You meditate while the storm rages."
+      }
+     ]
+    },
+    {
+     "text": "Push on through.",
+     "ok": [
+      {
+       "do": "damage",
+       "pct": 0.06
+      }
+     ]
+    }
+   ],
+   "where": [
+    "travel"
+   ],
+   "type": "challenge",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "abandoned_camp",
+   "title": "Abandoned Camp",
+   "text": "Cold ashes, a torn tent and a pack left behind in a hurry.",
+   "choices": [
+    {
+     "text": "Search the pack.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": 15
+      },
+      {
+       "do": "mat_tier",
+       "tier": "common",
+       "n": 2
+      }
+     ]
+    },
+    {
+     "text": "Search the area for whoever fled.",
+     "ok": [
+      {
+       "do": "info",
+       "n": 1
+      },
+      {
+       "do": "rep",
+       "n": 2
+      }
+     ],
+     "fail": [
+      {
+       "do": "log",
+       "text": "The trail is cold."
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.6,
+      "stat": "wisdom"
+     }
+    }
+   ],
+   "where": [
+    "travel",
+    "wild"
+   ],
+   "type": "discovery",
+   "rank": [
+    1,
+    5
+   ],
+   "goals": [],
+   "weight": 8,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "stone_vein",
+   "title": "Primeval Stone Vein",
+   "text": "A crack in the rock glitters with the green of raw primeval stone.",
+   "choices": [
+    {
+     "text": "Dig it out (3 days).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 3
+      },
+      {
+       "do": "stones",
+       "n": 60
+      }
+     ]
+    },
+    {
+     "text": "Take what's loose.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": 15
+      }
+     ]
+    }
+   ],
+   "where": [
+    "wild",
+    "travel"
+   ],
+   "type": "discovery",
+   "rank": [
+    1,
+    5
+   ],
+   "goals": [
+    "stones"
+   ],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "ruins",
+   "title": "Scattered Ruins",
+   "text": "Broken pillars poke out of the grass, carved with Gu formulas worn almost smooth.",
+   "choices": [
+    {
+     "text": "Study the carvings (4 days).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 4
+      },
+      {
+       "do": "formula",
+       "rank": "r"
+      },
+      {
+       "do": "attain",
+       "path": "primary",
+       "n": 15
+      }
+     ],
+     "fail": [
+      {
+       "do": "time",
+       "days": 4
+      },
+      {
+       "do": "attain",
+       "path": "primary",
+       "n": 8
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.5,
+      "stat": "wisdom"
+     }
+    },
+    {
+     "text": "Dig for treasure.",
+     "ok": [
+      {
+       "do": "mat_tier",
+       "tier": "rare",
+       "n": 1
+      }
+     ],
+     "fail": [
+      {
+       "do": "damage",
+       "pct": 0.1
+      },
+      {
+       "do": "log",
+       "text": "A trap!"
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.5
+     }
+    },
+    {
+     "text": "Leave it be.",
+     "ok": [
+      {
+       "do": "log",
+       "text": "You move on."
+      }
+     ]
+    }
+   ],
+   "where": [
+    "wild_beast_plains",
+    "moon_orchid_valley",
+    "dang_hun_mountain"
+   ],
+   "type": "discovery",
+   "rank": [
+    2,
+    6
+   ],
+   "goals": [
+    "inheritance",
+    "info"
+   ],
+   "weight": 7,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "injured_hunter",
+   "title": "Injured Hunter",
+   "text": "A hunter lies in the grass with a torn leg, waving weakly.",
+   "choices": [
+    {
+     "text": "Bind the wound and carry him to camp (1 day).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 1
+      },
+      {
+       "do": "rep",
+       "n": 6
+      },
+      {
+       "do": "meet_npc",
+       "arch": "beast_tamer",
+       "disp": 20
+      }
+     ]
+    },
+    {
+     "text": "Give him a healing herb (one Primeval Grass).",
+     "ok": [
+      {
+       "do": "mat",
+       "id": "primeval_grass",
+       "n": -1
+      },
+      {
+       "do": "rep",
+       "n": 4
+      },
+      {
+       "do": "meet_npc",
+       "arch": "beast_tamer",
+       "disp": 10
+      }
+     ],
+     "req": {
+      "mat": "primeval_grass"
+     }
+    },
+    {
+     "text": "Take his pack.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": 25
+      },
+      {
+       "do": "rep",
+       "n": -12
+      }
+     ],
+     "hint": "Demonic act."
+    }
+   ],
+   "where": [
+    "wild_beast_plains",
+    "travel"
+   ],
+   "type": "dilemma",
+   "rank": [
+    1,
+    4
+   ],
+   "goals": [
+    "npc"
+   ],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "wanderer_tale",
+   "title": "Wanderer by the Fire",
+   "text": "A wanderer shares your campfire and, for the price of a meal, a story about a door in the mist.",
+   "choices": [
+    {
+     "text": "Pay for the story (10 stones).",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -10
+      },
+      {
+       "do": "reveal",
+       "loc": "hu_immortal_land",
+       "chance": 0.4
+      },
+      {
+       "do": "info",
+       "n": 1
+      }
+     ],
+     "req": {
+      "stones": 10
+     }
+    },
+    {
+     "text": "Trade stories instead.",
+     "ok": [
+      {
+       "do": "info",
+       "n": 1
+      }
+     ],
+     "fail": [
+      {
+       "do": "log",
+       "text": "He falls asleep halfway through yours."
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.5,
+      "stat": "wisdom"
+     }
+    }
+   ],
+   "where": [
+    "travel"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [
+    "info",
+    "explore",
+    "inheritance"
+   ],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "caravan",
+   "title": "Passing Caravan",
+   "text": "A caravan of the Merchant Guild rolls past and stops to trade.",
+   "choices": [
+    {
+     "text": "Browse the caravan's wares.",
+     "ok": [
+      {
+       "do": "open_market",
+       "kind": "caravan"
+      }
+     ]
+    },
+    {
+     "text": "Leave it be.",
+     "ok": [
+      {
+       "do": "log",
+       "text": "You move on."
+      }
+     ]
+    }
+   ],
+   "where": [
+    "travel",
+    "village"
+   ],
+   "type": "opportunity",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [
+    "gu_path",
+    "gu_kind"
+   ],
+   "weight": 8,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "soul_wail",
+   "title": "Wailing in the Fog",
+   "text": "A pale figure drifts through the miasma, singing a song with no words.",
+   "choices": [
+    {
+     "text": "Banish it.",
+     "ok": [
+      {
+       "do": "mat",
+       "id": "soul_jade",
+       "n": 1
+      },
+      {
+       "do": "attain",
+       "path": "dark",
+       "n": 10
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "wandering_soul"
+     }
+    },
+    {
+     "text": "Listen to the song.",
+     "ok": [
+      {
+       "do": "cult",
+       "n": 20
+      },
+      {
+       "do": "attain",
+       "path": "wisdom",
+       "n": 10
+      }
+     ],
+     "fail": [
+      {
+       "do": "damage",
+       "pct": 0.2
+      },
+      {
+       "do": "log",
+       "text": "The song tears at your soul."
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.4,
+      "stat": "wisdom"
+     }
+    }
+   ],
+   "where": [
+    "dang_hun_mountain"
+   ],
+   "type": "encounter",
+   "rank": [
+    4,
+    7
+   ],
+   "goals": [],
+   "weight": 10,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "tomb",
+   "title": "Ancient Tomb",
+   "text": "A doorway into the mountain, sealed with a formation that flickers when you approach.",
+   "choices": [
+    {
+     "text": "Break the formation and enter.",
+     "ok": [
+      {
+       "do": "gu_pool",
+       "rank": "r",
+       "rarity": "rare"
+      },
+      {
+       "do": "stones",
+       "n": 150
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "enemy": "corpse_puppet"
+     }
+    },
+    {
+     "text": "Decipher the formation (3 days).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 3
+      },
+      {
+       "do": "formula",
+       "rank": "r"
+      },
+      {
+       "do": "info",
+       "n": 2
+      }
+     ],
+     "fail": [
+      {
+       "do": "time",
+       "days": 3
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.45,
+      "stat": "wisdom"
+     }
+    }
+   ],
+   "where": [
+    "dang_hun_mountain",
+    "wild_beast_plains"
+   ],
+   "type": "discovery",
+   "rank": [
+    4,
+    7
+   ],
+   "goals": [
+    "inheritance",
+    "gu_path"
+   ],
+   "weight": 7,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "market_day",
+   "title": "Market Day",
+   "text": "Stalls fill the square. Prices are good today.",
+   "choices": [
+    {
+     "text": "Visit the market.",
+     "ok": [
+      {
+       "do": "open_market",
+       "kind": "local",
+       "discount": 0.1
+      }
+     ]
+    },
+    {
+     "text": "Leave it be.",
+     "ok": [
+      {
+       "do": "log",
+       "text": "You move on."
+      }
+     ]
+    }
+   ],
+   "where": [
+    "village",
+    "city"
+   ],
+   "type": "opportunity",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [
+    "gu_path",
+    "gu_kind"
+   ],
+   "weight": 6,
+   "urgency": "background",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "sparring",
+   "title": "Sparring Match",
+   "text": "A clan cousin challenges you to a friendly spar in the training grounds.",
+   "choices": [
+    {
+     "text": "Accept.",
+     "ok": [
+      {
+       "do": "attain",
+       "path": "primary",
+       "n": 12
+      },
+      {
+       "do": "standing",
+       "n": 4
+      }
+     ],
+     "fail": [
+      {
+       "do": "attain",
+       "path": "primary",
+       "n": 6
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "rival_disciple"
+     }
+    },
+    {
+     "text": "Decline politely.",
+     "ok": [
+      {
+       "do": "standing",
+       "n": -1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "village"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    3
+   ],
+   "goals": [
+    "train",
+    "combat"
+   ],
+   "weight": 8,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "elder_lecture",
+   "title": "An Elder's Lecture",
+   "text": "An elder is lecturing young Gu Masters on the fundamentals of the aperture.",
+   "choices": [
+    {
+     "text": "Attend (2 days).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 2
+      },
+      {
+       "do": "cult",
+       "n": 10
+      },
+      {
+       "do": "attain",
+       "path": "primary",
+       "n": 8
+      }
+     ]
+    },
+    {
+     "text": "Ask a pointed question.",
+     "ok": [
+      {
+       "do": "disp_arch",
+       "arch": "elder",
+       "n": 8
+      },
+      {
+       "do": "attain",
+       "path": "wisdom",
+       "n": 10
+      }
+     ],
+     "fail": [
+      {
+       "do": "disp_arch",
+       "arch": "elder",
+       "n": -5
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.5,
+      "stat": "wisdom"
+     }
+    }
+   ],
+   "where": [
+    "village"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    4
+   ],
+   "goals": [
+    "train"
+   ],
+   "weight": 7,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "thief",
+   "title": "Pickpocket",
+   "text": "A boy bumps into you in the crowd. Your purse feels lighter.",
+   "choices": [
+    {
+     "text": "Chase him.",
+     "ok": [
+      {
+       "do": "log",
+       "text": "You catch him and take back your stones, with interest."
+      },
+      {
+       "do": "stones",
+       "n": 10
+      }
+     ],
+     "fail": [
+      {
+       "do": "stones",
+       "n": -25
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.55,
+      "stat": "strength"
+     }
+    },
+    {
+     "text": "Let him go, he looked hungry.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -15
+      },
+      {
+       "do": "rep",
+       "n": 3
+      }
+     ]
+    }
+   ],
+   "where": [
+    "city",
+    "village"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    4
+   ],
+   "goals": [],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "auction_small",
+   "title": "Back-Room Auction",
+   "text": "A broker whispers that a rare Gu is going under the hammer tonight.",
+   "choices": [
+    {
+     "text": "Bid (cost scales with rank).",
+     "ok": [
+      {
+       "do": "stones",
+       "n": "-80r"
+      },
+      {
+       "do": "gu_pool",
+       "rank": "r",
+       "rarity": "rare"
+      }
+     ],
+     "req": {
+      "stones": "80r"
+     }
+    },
+    {
+     "text": "Just watch and listen.",
+     "ok": [
+      {
+       "do": "info",
+       "n": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "merchant_city"
+   ],
+   "type": "opportunity",
+   "rank": [
+    2,
+    6
+   ],
+   "goals": [
+    "gu_path",
+    "gu_kind"
+   ],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "gambling",
+   "title": "Stone Gambling",
+   "text": "A stall sells uncut stones. Some hold primeval essence; most hold nothing.",
+   "choices": [
+    {
+     "text": "Buy one stone (20).",
+     "ok": [
+      {
+       "do": "stones",
+       "n": 55
+      }
+     ],
+     "fail": [
+      {
+       "do": "log",
+       "text": "Nothing but rock."
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.35,
+      "stat": "wisdom"
+     },
+     "req": {
+      "stones": 20
+     },
+     "hint": "Wisdom helps you pick."
+    },
+    {
+     "text": "Leave it be.",
+     "ok": [
+      {
+       "do": "log",
+       "text": "You move on."
+      }
+     ]
+    }
+   ],
+   "where": [
+    "merchant_city",
+    "bai_territory"
+   ],
+   "type": "opportunity",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [
+    "stones"
+   ],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "broker_offer",
+   "title": "Information for Sale",
+   "text": "An information broker taps the side of his nose. 'I know where a Gu nest is. 30 stones.'",
+   "choices": [
+    {
+     "text": "Pay.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -30
+      },
+      {
+       "do": "info",
+       "n": 2
+      },
+      {
+       "do": "queue",
+       "id": "wild_gu_nest",
+       "days": 2
+      }
+     ],
+     "req": {
+      "stones": 30
+     }
+    },
+    {
+     "text": "Haggle.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -15
+      },
+      {
+       "do": "info",
+       "n": 2
+      }
+     ],
+     "fail": [
+      {
+       "do": "disp_arch",
+       "arch": "broker",
+       "n": -5
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.5,
+      "stat": "wisdom"
+     },
+     "req": {
+      "stones": 15
+     }
+    }
+   ],
+   "where": [
+    "merchant_city"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    6
+   ],
+   "goals": [
+    "info"
+   ],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "refiner_request",
+   "title": "A Refiner's Request",
+   "text": "Madam Su needs three Iron Sand for an order and will pay well.",
+   "choices": [
+    {
+     "text": "Sell her three Iron Sand.",
+     "ok": [
+      {
+       "do": "mat",
+       "id": "iron_sand",
+       "n": -3
+      },
+      {
+       "do": "stones",
+       "n": 80
+      },
+      {
+       "do": "disp",
+       "npc": "madam_su",
+       "n": 12
+      }
+     ],
+     "req": {
+      "mat": "iron_sand",
+      "mat_n": 3
+     }
+    },
+    {
+     "text": "Promise to bring some later.",
+     "ok": [
+      {
+       "do": "disp",
+       "npc": "madam_su",
+       "n": 2
+      }
+     ]
+    }
+   ],
+   "where": [
+    "bai_territory"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    4
+   ],
+   "goals": [
+    "npc"
+   ],
+   "weight": 5,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "npc": "madam_su"
+  },
+  {
+   "id": "arena",
+   "title": "Arena Bout",
+   "text": "The arena master offers you a bout. The crowd is already shouting.",
+   "choices": [
+    {
+     "text": "Fight for the purse.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": "40r"
+      },
+      {
+       "do": "fame",
+       "n": 5
+      }
+     ],
+     "fail": [
+      {
+       "do": "fame",
+       "n": -2
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "bandit_leader",
+      "group": "bandit"
+     }
+    },
+    {
+     "text": "Leave it be.",
+     "ok": [
+      {
+       "do": "log",
+       "text": "You move on."
+      }
+     ]
+    }
+   ],
+   "where": [
+    "bai_territory",
+    "southern_border_arena"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    6
+   ],
+   "goals": [
+    "combat",
+    "stones"
+   ],
+   "weight": 7,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "clan_politics",
+   "title": "Clan Politics",
+   "text": "Two elders are quarrelling over who controls the clan's spirit spring. Each wants your support.",
+   "choices": [
+    {
+     "text": "Back the senior elder.",
+     "ok": [
+      {
+       "do": "standing",
+       "n": 12
+      },
+      {
+       "do": "disp_arch",
+       "arch": "elder",
+       "n": 5
+      }
+     ]
+    },
+    {
+     "text": "Back the younger, bolder one.",
+     "ok": [
+      {
+       "do": "standing",
+       "n": 6
+      },
+      {
+       "do": "cult",
+       "n": 15
+      }
+     ]
+    },
+    {
+     "text": "Stay out of it.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "village"
+   ],
+   "type": "dilemma",
+   "rank": [
+    1,
+    5
+   ],
+   "goals": [],
+   "weight": 5,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "gu_feeding_crisis",
+   "title": "Spoiled Gu Food",
+   "text": "Rats got into your Gu's food stores overnight.",
+   "choices": [
+    {
+     "text": "Buy new food (cost scales with your Gu).",
+     "ok": [
+      {
+       "do": "stones",
+       "n": "-15r"
+      }
+     ],
+     "req": {
+      "stones": "15r"
+     }
+    },
+    {
+     "text": "Let your Gu go hungry for a while.",
+     "ok": [
+      {
+       "do": "starve",
+       "weeks": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "village",
+    "city"
+   ],
+   "type": "challenge",
+   "rank": [
+    1,
+    6
+   ],
+   "goals": [],
+   "weight": 4,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "healer",
+   "title": "Travelling Healer",
+   "text": "A healer offers to mend injuries for a fee.",
+   "choices": [
+    {
+     "text": "Pay 30 stones to heal all injuries.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -30
+      },
+      {
+       "do": "cure"
+      }
+     ],
+     "req": {
+      "stones": 30,
+      "injured": true
+     }
+    },
+    {
+     "text": "Decline.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "village",
+    "city"
+   ],
+   "type": "opportunity",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 5,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "injured": true
+   }
+  },
+  {
+   "id": "friend_visit",
+   "title": "{npc} Drops By",
+   "text": "{npc} catches you at the inn with a jug of wine and a story.",
+   "choices": [
+    {
+     "text": "Share the wine and talk.",
+     "ok": [
+      {
+       "do": "disp_npc",
+       "n": 8
+      },
+      {
+       "do": "info",
+       "n": 1
+      }
+     ]
+    },
+    {
+     "text": "Spar together.",
+     "ok": [
+      {
+       "do": "disp_npc",
+       "n": 5
+      },
+      {
+       "do": "attain",
+       "path": "primary",
+       "n": 10
+      }
+     ]
+    }
+   ],
+   "where": [
+    "village",
+    "city"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [
+    "npc"
+   ],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "npc": "known"
+  },
+  {
+   "id": "rival_taunt",
+   "title": "{rival} Again",
+   "text": "{rival} blocks your way through the square. 'Still crawling along at your stage? Pathetic.'",
+   "choices": [
+    {
+     "text": "Challenge {rival} to a duel.",
+     "ok": [
+      {
+       "do": "fame",
+       "n": 6
+      },
+      {
+       "do": "disp_rival",
+       "n": -5
+      },
+      {
+       "do": "rival_lose"
+      }
+     ],
+     "fail": [
+      {
+       "do": "fame",
+       "n": -4
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "rival_disciple"
+     }
+    },
+    {
+     "text": "Ignore the taunt.",
+     "ok": [
+      {
+       "do": "cult",
+       "n": 5,
+       "log": "You channel your anger into cultivation."
+      }
+     ]
+    }
+   ],
+   "where": [
+    "village",
+    "city"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    5
+   ],
+   "goals": [
+    "combat"
+   ],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "has_rival": true
+   }
+  },
+  {
+   "id": "lost_child",
+   "title": "Lost Child",
+   "text": "A crying child says her brother went into the woods to catch a Gu and never came back.",
+   "choices": [
+    {
+     "text": "Search the woods (2 days).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 2
+      },
+      {
+       "do": "rep",
+       "n": 8
+      },
+      {
+       "do": "standing",
+       "n": 6
+      }
+     ],
+     "fail": [
+      {
+       "do": "time",
+       "days": 2
+      },
+      {
+       "do": "rep",
+       "n": 3
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "enemy": "grey_wolf"
+     }
+    },
+    {
+     "text": "Tell the clan guards.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "gu_yue_village",
+    "xiong_village",
+    "bai_territory"
+   ],
+   "type": "dilemma",
+   "rank": [
+    1,
+    3
+   ],
+   "goals": [],
+   "weight": 5,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "black_market_offer",
+   "title": "Black Market Whisper",
+   "text": "A hooded figure offers you a Gu taken from a dead man. Cheap. No questions.",
+   "choices": [
+    {
+     "text": "Buy it (cost scales with rank).",
+     "ok": [
+      {
+       "do": "stones",
+       "n": "-40r"
+      },
+      {
+       "do": "gu_pool",
+       "rank": "r"
+      },
+      {
+       "do": "rep",
+       "n": -6
+      }
+     ],
+     "req": {
+      "stones": "40r"
+     },
+     "hint": "Demonic act."
+    },
+    {
+     "text": "Report the figure to the guards.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": 5
+      },
+      {
+       "do": "standing",
+       "n": 3
+      }
+     ]
+    }
+   ],
+   "where": [
+    "merchant_city",
+    "wu_hollow"
+   ],
+   "type": "dilemma",
+   "rank": [
+    1,
+    6
+   ],
+   "goals": [],
+   "weight": 5,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "insight_dream",
+   "title": "Dream of the Dao",
+   "text": "In a dream you see your Gu moving like stars across a black sky, each one connected.",
+   "choices": [
+    {
+     "text": "Meditate on the dream.",
+     "ok": [
+      {
+       "do": "attain",
+       "path": "primary",
+       "n": 20
+      },
+      {
+       "do": "cult",
+       "n": 8
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "opportunity",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [
+    "train"
+   ],
+   "weight": 3,
+   "urgency": "background",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "aperture_turbulence",
+   "title": "Aperture Turbulence",
+   "text": "Your primeval essence churns, threatening to crack the walls of your aperture.",
+   "choices": [
+    {
+     "text": "Force it down.",
+     "ok": [
+      {
+       "do": "cult",
+       "n": 12
+      }
+     ],
+     "fail": [
+      {
+       "do": "injury",
+       "name": "Aperture Strain",
+       "days": 30
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.6
+     }
+    },
+    {
+     "text": "Spend stones to calm it (scales with rank).",
+     "ok": [
+      {
+       "do": "stones",
+       "n": "-10r"
+      }
+     ],
+     "req": {
+      "stones": "10r"
+     }
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "challenge",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 3,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "demonic_plunder",
+   "title": "Aperture Plundering",
+   "text": "A dying demonic cultivator lies at your feet. You know the forbidden technique to tear open his aperture and take its essence.",
+   "choices": [
+    {
+     "text": "Plunder his aperture.",
+     "ok": [
+      {
+       "do": "cult",
+       "n": "40r"
+      },
+      {
+       "do": "lifespan",
+       "years": 2
+      },
+      {
+       "do": "rep",
+       "n": -25
+      }
+     ],
+     "hint": "Deeply demonic."
+    },
+    {
+     "text": "Grant him a clean end.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": 6
+      }
+     ]
+    },
+    {
+     "text": "Leave him to the beasts.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": -2
+      }
+     ]
+    }
+   ],
+   "where": [
+    "travel",
+    "wild"
+   ],
+   "type": "dilemma",
+   "rank": [
+    2,
+    8
+   ],
+   "goals": [],
+   "weight": 3,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "blood_ritual",
+   "title": "Blood Sacrifice Ritual",
+   "text": "A cult offers to teach you a ritual that buys years of life with the blood of beasts, and some say, worse.",
+   "choices": [
+    {
+     "text": "Learn it and perform it.",
+     "ok": [
+      {
+       "do": "lifespan",
+       "years": 6
+      },
+      {
+       "do": "rep",
+       "n": -20
+      },
+      {
+       "do": "damage",
+       "pct": 0.2
+      }
+     ],
+     "hint": "Demonic."
+    },
+    {
+     "text": "Refuse and report the cult.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": 8
+      },
+      {
+       "do": "fame",
+       "n": 3
+      }
+     ]
+    }
+   ],
+   "where": [
+    "wu_hollow",
+    "merchant_city",
+    "dang_hun_mountain"
+   ],
+   "type": "dilemma",
+   "rank": [
+    2,
+    8
+   ],
+   "goals": [],
+   "weight": 3,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "soul_consumption",
+   "title": "Soul Consumption",
+   "text": "The ghost of an ancient cultivator offers itself to you. Consuming it would strengthen your soul and lengthen your life.",
+   "choices": [
+    {
+     "text": "Consume the soul.",
+     "ok": [
+      {
+       "do": "lifespan",
+       "years": 8
+      },
+      {
+       "do": "attain",
+       "path": "dark",
+       "n": 40
+      },
+      {
+       "do": "rep",
+       "n": -15
+      }
+     ],
+     "hint": "Demonic."
+    },
+    {
+     "text": "Help it pass on.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": 10
+      },
+      {
+       "do": "attain",
+       "path": "wisdom",
+       "n": 25
+      }
+     ]
+    }
+   ],
+   "where": [
+    "dang_hun_mountain"
+   ],
+   "type": "dilemma",
+   "rank": [
+    3,
+    9
+   ],
+   "goals": [],
+   "weight": 4,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "longevity_rumour",
+   "title": "Longevity Gu Rumour",
+   "text": "A merchant swears a Longevity Gu is hidden in a beast's den nearby.",
+   "choices": [
+    {
+     "text": "Hunt the beast.",
+     "ok": [
+      {
+       "do": "gu",
+       "id": "longevity"
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "group": "wild",
+      "tier": "elite"
+     }
+    },
+    {
+     "text": "Buy the 'map' for 50 stones.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -50
+      },
+      {
+       "do": "gu",
+       "id": "longevity",
+       "chance": 0.5
+      }
+     ],
+     "req": {
+      "stones": 50
+     }
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "opportunity",
+   "rank": [
+    2,
+    9
+   ],
+   "goals": [],
+   "weight": 3,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "age_min": 40
+   }
+  },
+  {
+   "id": "relic_find",
+   "title": "Relic Gu Glow",
+   "text": "Something gleams in a stream bed: a Relic Gu, rare and precious.",
+   "choices": [
+    {
+     "text": "Take it.",
+     "ok": [
+      {
+       "do": "gu",
+       "id": "relic"
+      }
+     ]
+    }
+   ],
+   "where": [
+    "wild",
+    "travel"
+   ],
+   "type": "discovery",
+   "rank": [
+    1,
+    5
+   ],
+   "goals": [],
+   "weight": 2,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "mentor_offer",
+   "title": "An Elder's Offer",
+   "text": "Elder Chen watches you train. 'You have potential. I could guide your next breakthrough.'",
+   "choices": [
+    {
+     "text": "Accept with gratitude.",
+     "ok": [
+      {
+       "do": "disp",
+       "npc": "elder_chen",
+       "n": 15
+      },
+      {
+       "do": "bt_bonus",
+       "n": 10
+      }
+     ]
+    },
+    {
+     "text": "Bring a gift first (40 stones).",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -40
+      },
+      {
+       "do": "disp",
+       "npc": "elder_chen",
+       "n": 25
+      },
+      {
+       "do": "bt_bonus",
+       "n": 12
+      }
+     ],
+     "req": {
+      "stones": 40
+     }
+    }
+   ],
+   "where": [
+    "gu_yue_village"
+   ],
+   "type": "encounter",
+   "rank": [
+    1,
+    4
+   ],
+   "goals": [
+    "npc",
+    "train"
+   ],
+   "weight": 4,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": true,
+   "npc": "elder_chen"
+  },
+  {
+   "id": "orchid_1",
+   "title": "Withering Orchids",
+   "text": "The moon orchids of the valley are withering overnight. Elder Chen asks you to find out why.",
+   "choices": [
+    {
+     "text": "Take the task.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "orchid",
+       "step": 1
+      },
+      {
+       "do": "queue",
+       "id": "orchid_2",
+       "days": 4
+      }
+     ]
+    },
+    {
+     "text": "Not now.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "gu_yue_village"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    3
+   ],
+   "goals": [],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": true,
+   "chain": "orchid"
+  },
+  {
+   "id": "orchid_2",
+   "title": "Tracks in the Mist",
+   "text": "In the valley you find grey slime trails leading to a cave behind a waterfall.",
+   "choices": [
+    {
+     "text": "Follow them.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "orchid",
+       "step": 2
+      },
+      {
+       "do": "queue",
+       "id": "orchid_3",
+       "days": 2
+      }
+     ]
+    },
+    {
+     "text": "Report back to the elder first.",
+     "ok": [
+      {
+       "do": "standing",
+       "n": 4
+      },
+      {
+       "do": "story",
+       "id": "orchid",
+       "step": 2
+      },
+      {
+       "do": "queue",
+       "id": "orchid_3",
+       "days": 5
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "orchid"
+  },
+  {
+   "id": "orchid_3",
+   "title": "The Rot Worm Queen",
+   "text": "A bloated worm queen feeds on the orchids' roots, surrounded by her brood.",
+   "choices": [
+    {
+     "text": "Destroy her.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "orchid",
+       "step": 3
+      },
+      {
+       "do": "queue",
+       "id": "orchid_4",
+       "days": 1
+      }
+     ],
+     "fail": [
+      {
+       "do": "damage",
+       "pct": 0.15
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "enemy": "jade_eye_snake"
+     }
+    },
+    {
+     "text": "Capture her with a control Gu.",
+     "ok": [
+      {
+       "do": "gu",
+       "id": "rot_spreading"
+      },
+      {
+       "do": "story",
+       "id": "orchid",
+       "step": 3
+      },
+      {
+       "do": "queue",
+       "id": "orchid_4",
+       "days": 1
+      }
+     ],
+     "req": {
+      "gu_tag": "control"
+     }
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "orchid"
+  },
+  {
+   "id": "orchid_4",
+   "title": "Orchids Restored",
+   "text": "The valley glows again. Elder Chen is pleased.",
+   "choices": [
+    {
+     "text": "Accept the clan's reward.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": 80
+      },
+      {
+       "do": "standing",
+       "n": 20
+      },
+      {
+       "do": "mat",
+       "id": "moon_orchid",
+       "n": 3
+      },
+      {
+       "do": "story_done",
+       "id": "orchid"
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "orchid"
+  },
+  {
+   "id": "debt_1",
+   "title": "Jia Fu's Problem",
+   "text": "Jia Fu is sweating. 'A Shang elder lent me money. I can't repay. Help me, and I'll make it worth your while.'",
+   "choices": [
+    {
+     "text": "Agree to help.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "debt",
+       "step": 1
+      },
+      {
+       "do": "disp",
+       "npc": "jia_fu",
+       "n": 10
+      },
+      {
+       "do": "queue",
+       "id": "debt_2",
+       "days": 3
+      }
+     ]
+    },
+    {
+     "text": "Not your problem.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "merchant_city"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    4
+   ],
+   "goals": [],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": true,
+   "npc": "jia_fu",
+   "chain": "debt"
+  },
+  {
+   "id": "debt_2",
+   "title": "Following the Money",
+   "text": "The debt was bought by a loan shark who hires bandits as collectors.",
+   "choices": [
+    {
+     "text": "Confront the collectors.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "debt",
+       "step": 2
+      },
+      {
+       "do": "queue",
+       "id": "debt_3",
+       "days": 2
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "enemy": "bandit",
+      "group": "bandit"
+     }
+    },
+    {
+     "text": "Dig up dirt on the loan shark.",
+     "ok": [
+      {
+       "do": "info",
+       "n": 1
+      },
+      {
+       "do": "story",
+       "id": "debt",
+       "step": 2
+      },
+      {
+       "do": "queue",
+       "id": "debt_3",
+       "days": 3
+      }
+     ],
+     "fail": [
+      {
+       "do": "queue",
+       "id": "debt_3",
+       "days": 3
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.5,
+      "stat": "wisdom"
+     }
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "debt"
+  },
+  {
+   "id": "debt_3",
+   "title": "The Loan Shark",
+   "text": "The loan shark meets you in a tea house, guards at his back.",
+   "choices": [
+    {
+     "text": "Threaten him.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "debt",
+       "step": 3
+      },
+      {
+       "do": "queue",
+       "id": "debt_4",
+       "days": 1
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "bandit_leader"
+     }
+    },
+    {
+     "text": "Pay part of the debt yourself (100).",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -100
+      },
+      {
+       "do": "story",
+       "id": "debt",
+       "step": 3
+      },
+      {
+       "do": "queue",
+       "id": "debt_4",
+       "days": 1
+      }
+     ],
+     "req": {
+      "stones": 100
+     }
+    },
+    {
+     "text": "Expose him to the Shang clan.",
+     "ok": [
+      {
+       "do": "standing",
+       "n": 10
+      },
+      {
+       "do": "story",
+       "id": "debt",
+       "step": 3
+      },
+      {
+       "do": "queue",
+       "id": "debt_4",
+       "days": 1
+      }
+     ],
+     "req": {
+      "info": 2
+     }
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "debt"
+  },
+  {
+   "id": "debt_4",
+   "title": "A Grateful Merchant",
+   "text": "Jia Fu is free. 'From now on, you'll always get my best prices.'",
+   "choices": [
+    {
+     "text": "Accept.",
+     "ok": [
+      {
+       "do": "disp",
+       "npc": "jia_fu",
+       "n": 30
+      },
+      {
+       "do": "relation",
+       "npc": "jia_fu",
+       "level": "Contact"
+      },
+      {
+       "do": "stones",
+       "n": 60
+      },
+      {
+       "do": "story_done",
+       "id": "debt"
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "debt"
+  },
+  {
+   "id": "bk_1",
+   "title": "Rumours of a Beast King",
+   "text": "Tie Shan says a Hundred-Beast King Tiger has claimed the Wild Beast Plains, and the herds are fleeing.",
+   "choices": [
+    {
+     "text": "Promise to deal with it.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "beast_king",
+       "step": 1
+      },
+      {
+       "do": "disp",
+       "npc": "tie_shan",
+       "n": 8
+      }
+     ]
+    },
+    {
+     "text": "Too dangerous.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "xiong_village",
+    "wild_beast_plains"
+   ],
+   "type": "chain",
+   "rank": [
+    3,
+    5
+   ],
+   "goals": [],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": true,
+   "chain": "beast_king"
+  },
+  {
+   "id": "bk_2",
+   "title": "The King's Pride",
+   "text": "You find the tiger's lieutenants: two Thunder Crown Wolves.",
+   "choices": [
+    {
+     "text": "Fight them.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "beast_king",
+       "step": 2
+      },
+      {
+       "do": "queue",
+       "id": "bk_3",
+       "days": 2
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "enemy": "thunder_wolf"
+     }
+    }
+   ],
+   "where": [
+    "wild_beast_plains"
+   ],
+   "type": "chain",
+   "rank": [
+    3,
+    6
+   ],
+   "goals": [],
+   "weight": 12,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "beast_king",
+    "step": 1
+   },
+   "chain": "beast_king"
+  },
+  {
+   "id": "bk_3",
+   "title": "The Beast King",
+   "text": "The Hundred-Beast King Tiger steps out of the tall grass. The plains go silent.",
+   "choices": [
+    {
+     "text": "Face the king.",
+     "ok": [
+      {
+       "do": "story_done",
+       "id": "beast_king"
+      },
+      {
+       "do": "gu",
+       "id": "beast_king"
+      },
+      {
+       "do": "fame",
+       "n": 15
+      },
+      {
+       "do": "achieve",
+       "id": "boss_slayer"
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "beast_king_tiger"
+     }
+    },
+    {
+     "text": "Retreat and prepare.",
+     "ok": [
+      {
+       "do": "queue",
+       "id": "bk_3",
+       "days": 10
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "beast_king"
+  },
+  {
+   "id": "ember_1",
+   "title": "Heat on the Wind",
+   "text": "Smiths from Chi Forge talk of a fire beast in the caldera that melts their ore carts.",
+   "choices": [
+    {
+     "text": "Go and see.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "ember",
+       "step": 1
+      },
+      {
+       "do": "reveal",
+       "loc": "ember_caldera"
+      },
+      {
+       "do": "reveal",
+       "loc": "chi_forge"
+      }
+     ]
+    }
+   ],
+   "where": [
+    "merchant_city",
+    "southern_border_arena"
+   ],
+   "type": "chain",
+   "rank": [
+    3,
+    6
+   ],
+   "goals": [],
+   "weight": 5,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": true,
+   "chain": "ember"
+  },
+  {
+   "id": "ember_2",
+   "title": "The Ember Tyrant",
+   "text": "In the caldera a dragon-like salamander rises from the lava, crowned in flame.",
+   "choices": [
+    {
+     "text": "Fight the Ember Tyrant.",
+     "ok": [
+      {
+       "do": "story_done",
+       "id": "ember"
+      },
+      {
+       "do": "flag",
+       "id": "beat_fire_boss"
+      },
+      {
+       "do": "gu",
+       "id": "flame_lotus"
+      },
+      {
+       "do": "fame",
+       "n": 12
+      },
+      {
+       "do": "achieve",
+       "id": "boss_slayer"
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "ember_tyrant"
+     }
+    },
+    {
+     "text": "Not yet.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "ember_caldera"
+   ],
+   "type": "chain",
+   "rank": [
+    3,
+    9
+   ],
+   "goals": [],
+   "weight": 20,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "chain": "ember"
+  },
+  {
+   "id": "tk_1",
+   "title": "A Wanderer's Riddle",
+   "text": "Wen Rui speaks of three kings who left a blessed land behind, and a key broken in three.",
+   "choices": [
+    {
+     "text": "Ask how to find the shards.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 1
+      },
+      {
+       "do": "reveal",
+       "loc": "three_kings_land"
+      },
+      {
+       "do": "info",
+       "n": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "moon_orchid_valley",
+    "travel"
+   ],
+   "type": "chain",
+   "rank": [
+    2,
+    6
+   ],
+   "goals": [
+    "inheritance"
+   ],
+   "weight": 5,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": true,
+   "chain": "three_kings"
+  },
+  {
+   "id": "tk_2",
+   "title": "The First Shard's Trail",
+   "text": "Old Mo sells you a clue: the first shard lies with a bandit chief who doesn't know its worth.",
+   "choices": [
+    {
+     "text": "Pay Old Mo 50 stones.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -50
+      },
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 2
+      },
+      {
+       "do": "queue",
+       "id": "tk_3",
+       "days": 3
+      }
+     ],
+     "req": {
+      "stones": 50
+     }
+    },
+    {
+     "text": "Spend two pieces of information instead.",
+     "ok": [
+      {
+       "do": "info",
+       "n": -2
+      },
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 2
+      },
+      {
+       "do": "queue",
+       "id": "tk_3",
+       "days": 3
+      }
+     ],
+     "req": {
+      "info": 2
+     }
+    }
+   ],
+   "where": [
+    "merchant_city"
+   ],
+   "type": "chain",
+   "rank": [
+    2,
+    6
+   ],
+   "goals": [],
+   "weight": 15,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "three_kings",
+    "step": 1
+   },
+   "chain": "three_kings"
+  },
+  {
+   "id": "tk_3",
+   "title": "The Bandit Chief's Hoard",
+   "text": "The chief keeps the shard on a cord around his neck.",
+   "choices": [
+    {
+     "text": "Take it by force.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 3
+      },
+      {
+       "do": "flag",
+       "id": "shard_1"
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "bandit_leader"
+     }
+    },
+    {
+     "text": "Steal it at night.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 3
+      },
+      {
+       "do": "flag",
+       "id": "shard_1"
+      }
+     ],
+     "fail": [
+      {
+       "do": "queue",
+       "id": "tk_3",
+       "days": 5
+      },
+      {
+       "do": "damage",
+       "pct": 0.1
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.5,
+      "stat": "dark"
+     }
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "three_kings"
+  },
+  {
+   "id": "tk_4",
+   "title": "The Second Shard",
+   "text": "The second shard is said to rest in an ancient tomb on Dang Hun Mountain.",
+   "choices": [
+    {
+     "text": "Search the tombs.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 4
+      },
+      {
+       "do": "queue",
+       "id": "tk_5",
+       "days": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "dang_hun_mountain"
+   ],
+   "type": "chain",
+   "rank": [
+    3,
+    9
+   ],
+   "goals": [],
+   "weight": 20,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "three_kings",
+    "step": 3
+   },
+   "chain": "three_kings"
+  },
+  {
+   "id": "tk_5",
+   "title": "Guardian of the Tomb",
+   "text": "A guardian construct stirs as you lift the shard.",
+   "choices": [
+    {
+     "text": "Destroy the guardian.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 5
+      },
+      {
+       "do": "flag",
+       "id": "shard_2"
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "guardian_construct"
+     }
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "three_kings"
+  },
+  {
+   "id": "tk_6",
+   "title": "The Third Shard",
+   "text": "The third shard is kept by Elder Ying of the Shang clan.",
+   "choices": [
+    {
+     "text": "Request an audience.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 6
+      },
+      {
+       "do": "queue",
+       "id": "tk_7",
+       "days": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "merchant_city"
+   ],
+   "type": "chain",
+   "rank": [
+    3,
+    9
+   ],
+   "goals": [],
+   "weight": 20,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "three_kings",
+    "step": 5
+   },
+   "chain": "three_kings"
+  },
+  {
+   "id": "tk_7",
+   "title": "The Elder's Price",
+   "text": "Elder Ying will part with it, for a price.",
+   "choices": [
+    {
+     "text": "Pay 600 stones.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -600
+      },
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 7
+      },
+      {
+       "do": "flag",
+       "id": "shard_3"
+      },
+      {
+       "do": "queue",
+       "id": "tk_8",
+       "days": 1
+      }
+     ],
+     "req": {
+      "stones": 600
+     }
+    },
+    {
+     "text": "Serve the Shang clan (60 days).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 60
+      },
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 7
+      },
+      {
+       "do": "flag",
+       "id": "shard_3"
+      },
+      {
+       "do": "queue",
+       "id": "tk_8",
+       "days": 1
+      }
+     ]
+    },
+    {
+     "text": "Persuade her with what you know.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 7
+      },
+      {
+       "do": "flag",
+       "id": "shard_3"
+      },
+      {
+       "do": "queue",
+       "id": "tk_8",
+       "days": 1
+      }
+     ],
+     "fail": [
+      {
+       "do": "disp",
+       "npc": "elder_ying",
+       "n": -10
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.6,
+      "stat": "wisdom"
+     },
+     "req": {
+      "info": 4
+     }
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "three_kings"
+  },
+  {
+   "id": "tk_8",
+   "title": "Forging the Key",
+   "text": "Three shards, one formula. Refine the key.",
+   "choices": [
+    {
+     "text": "Refine the key (10 days, 200 stones).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 10
+      },
+      {
+       "do": "stones",
+       "n": -200
+      },
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 8
+      },
+      {
+       "do": "queue",
+       "id": "tk_9",
+       "days": 1
+      }
+     ],
+     "req": {
+      "stones": 200
+     }
+    },
+    {
+     "text": "Pay Madam Su to do it (400 stones).",
+     "ok": [
+      {
+       "do": "stones",
+       "n": -400
+      },
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 8
+      },
+      {
+       "do": "queue",
+       "id": "tk_9",
+       "days": 1
+      }
+     ],
+     "req": {
+      "stones": 400
+     }
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "three_kings"
+  },
+  {
+   "id": "tk_9",
+   "title": "The Way Opens",
+   "text": "The key hums and points toward a valley beyond Dang Hun Mountain.",
+   "choices": [
+    {
+     "text": "Take the key.",
+     "ok": [
+      {
+       "do": "gu",
+       "id": "three_kings_key"
+      },
+      {
+       "do": "story",
+       "id": "three_kings",
+       "step": 9
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 20,
+   "once": false,
+   "chain": "three_kings"
+  },
+  {
+   "id": "tk_10",
+   "title": "The Three Kings' Trial",
+   "text": "Inside the blessed land, three guardians stand before the inheritance.",
+   "choices": [
+    {
+     "text": "Face the three guardians.",
+     "ok": [
+      {
+       "do": "story_done",
+       "id": "three_kings"
+      },
+      {
+       "do": "achieve",
+       "id": "three_kings"
+      },
+      {
+       "do": "gu",
+       "id": "heavenly_light"
+      },
+      {
+       "do": "gu",
+       "id": "star_thought"
+      },
+      {
+       "do": "mat",
+       "id": "dao_shard",
+       "n": 3
+      },
+      {
+       "do": "stones",
+       "n": 2000
+      },
+      {
+       "do": "flag",
+       "id": "blessed_seed"
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 3,
+      "rank": "r",
+      "enemy": "guardian_construct"
+     }
+    },
+    {
+     "text": "Withdraw for now.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "three_kings_land"
+   ],
+   "type": "chain",
+   "rank": [
+    5,
+    9
+   ],
+   "goals": [],
+   "weight": 30,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "three_kings",
+    "step": 9
+   },
+   "chain": "three_kings"
+  },
+  {
+   "id": "rv_1",
+   "title": "A Rival Is Born",
+   "text": "{rival} of the Bai clan is the same age as you, and the elders keep comparing you.",
+   "choices": [
+    {
+     "text": "Swear to surpass {rival}.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 1
+      },
+      {
+       "do": "cult",
+       "n": 10
+      }
+     ]
+    },
+    {
+     "text": "Ignore the comparisons.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "village"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    2
+   ],
+   "goals": [],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": true,
+   "req": {
+    "has_rival": true
+   },
+   "chain": "rival"
+  },
+  {
+   "id": "rv_2",
+   "title": "First Clash",
+   "text": "{rival} challenges you in front of everyone.",
+   "choices": [
+    {
+     "text": "Fight.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 2
+      },
+      {
+       "do": "fame",
+       "n": 4
+      }
+     ],
+     "fail": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 2
+      },
+      {
+       "do": "fame",
+       "n": -3
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "rival_disciple"
+     }
+    }
+   ],
+   "where": [
+    "village"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    3
+   ],
+   "goals": [],
+   "weight": 12,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "rival",
+    "step": 1
+   },
+   "chain": "rival"
+  },
+  {
+   "id": "rv_3",
+   "title": "Sabotage",
+   "text": "Someone poisoned your Gu's food. Witnesses saw {rival}'s servant.",
+   "choices": [
+    {
+     "text": "Accuse him before the elders.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 3
+      },
+      {
+       "do": "standing",
+       "n": 8
+      }
+     ],
+     "fail": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 3
+      },
+      {
+       "do": "standing",
+       "n": -5
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.5,
+      "stat": "wisdom"
+     }
+    },
+    {
+     "text": "Take revenge quietly.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 3
+      },
+      {
+       "do": "rep",
+       "n": -5
+      }
+     ]
+    }
+   ],
+   "where": [
+    "village"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    3
+   ],
+   "goals": [],
+   "weight": 12,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "rival",
+    "step": 2,
+    "days_since": 60
+   },
+   "chain": "rival"
+  },
+  {
+   "id": "rv_4",
+   "title": "The Competition Trials",
+   "text": "Both of you are chosen for a clan trial in the woods.",
+   "choices": [
+    {
+     "text": "Race him to the prize.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 4
+      },
+      {
+       "do": "gu_pool",
+       "rank": "r"
+      }
+     ],
+     "fail": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 4
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.55,
+      "stat": "strength"
+     }
+    },
+    {
+     "text": "Work together this once.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 4
+      },
+      {
+       "do": "disp_rival",
+       "n": 15
+      },
+      {
+       "do": "attain",
+       "path": "primary",
+       "n": 15
+      }
+     ]
+    }
+   ],
+   "where": [
+    "wild",
+    "travel"
+   ],
+   "type": "chain",
+   "rank": [
+    1,
+    3
+   ],
+   "goals": [],
+   "weight": 12,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "rival",
+    "step": 3,
+    "days_since": 60
+   },
+   "chain": "rival"
+  },
+  {
+   "id": "rv_5",
+   "title": "{rival}'s New Master",
+   "text": "Word is {rival} has taken a demonic master: Hei Tu.",
+   "choices": [
+    {
+     "text": "Gather information on Hei Tu.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 5
+      },
+      {
+       "do": "info",
+       "n": 1
+      },
+      {
+       "do": "meet_npc",
+       "npc": "hei_tu",
+       "disp": -40
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    2,
+    4
+   ],
+   "goals": [],
+   "weight": 10,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "rival",
+    "step": 4,
+    "days_since": 120
+   },
+   "chain": "rival"
+  },
+  {
+   "id": "rv_6",
+   "title": "Ambush",
+   "text": "{rival} and his master's men ambush you on the road.",
+   "choices": [
+    {
+     "text": "Fight your way out.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 6
+      },
+      {
+       "do": "fame",
+       "n": 5
+      }
+     ],
+     "fail": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 6
+      },
+      {
+       "do": "injury",
+       "name": "Ambush Wounds",
+       "days": 40
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "enemy": "bandit_leader"
+     }
+    }
+   ],
+   "where": [
+    "travel"
+   ],
+   "type": "chain",
+   "rank": [
+    2,
+    5
+   ],
+   "goals": [],
+   "weight": 14,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "rival",
+    "step": 5,
+    "days_since": 60
+   },
+   "chain": "rival"
+  },
+  {
+   "id": "rv_7",
+   "title": "A Desperate Plea",
+   "text": "{rival}'s sister begs you to save him from Hei Tu before it's too late.",
+   "choices": [
+    {
+     "text": "Agree to help.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 7
+      },
+      {
+       "do": "rep",
+       "n": 5
+      }
+     ]
+    },
+    {
+     "text": "He made his choice.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 7
+      },
+      {
+       "do": "flag",
+       "id": "rival_abandoned"
+      }
+     ]
+    }
+   ],
+   "where": [
+    "village",
+    "city"
+   ],
+   "type": "chain",
+   "rank": [
+    3,
+    5
+   ],
+   "goals": [],
+   "weight": 10,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "rival",
+    "step": 6,
+    "days_since": 90
+   },
+   "chain": "rival"
+  },
+  {
+   "id": "rv_8",
+   "title": "Hei Tu's Lair",
+   "text": "You track Hei Tu to a cave on the Wild Beast Plains.",
+   "choices": [
+    {
+     "text": "Storm the lair.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 8
+      },
+      {
+       "do": "kill_npc",
+       "npc": "hei_tu"
+      },
+      {
+       "do": "stones",
+       "n": 300
+      },
+      {
+       "do": "gu",
+       "id": "crimson_tide"
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r+1",
+      "enemy": "demonic_cultivator"
+     }
+    },
+    {
+     "text": "Wait for a better moment.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "wild_beast_plains"
+   ],
+   "type": "chain",
+   "rank": [
+    3,
+    6
+   ],
+   "goals": [],
+   "weight": 20,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "rival",
+    "step": 7
+   },
+   "chain": "rival"
+  },
+  {
+   "id": "rv_9",
+   "title": "Choice of Blades",
+   "text": "Hei Tu is dead. {rival} kneels, beaten. His fate is yours to decide.",
+   "choices": [
+    {
+     "text": "Spare him.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 9
+      },
+      {
+       "do": "rep",
+       "n": 10
+      },
+      {
+       "do": "disp_rival",
+       "n": 40
+      }
+     ]
+    },
+    {
+     "text": "End the rivalry for good.",
+     "ok": [
+      {
+       "do": "story",
+       "id": "rival",
+       "step": 9
+      },
+      {
+       "do": "rep",
+       "n": -10
+      },
+      {
+       "do": "kill_rival"
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    3,
+    6
+   ],
+   "goals": [],
+   "weight": 20,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "rival",
+    "step": 8
+   },
+   "chain": "rival"
+  },
+  {
+   "id": "rv_10",
+   "title": "Rivals No More",
+   "text": "Years later, {rival} comes to see you.",
+   "choices": [
+    {
+     "text": "Greet him as a friend.",
+     "ok": [
+      {
+       "do": "story_done",
+       "id": "rival"
+      },
+      {
+       "do": "rival_friend"
+      },
+      {
+       "do": "bt_bonus",
+       "n": 10
+      },
+      {
+       "do": "gu_pool",
+       "rank": "r",
+       "rarity": "rare"
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "chain",
+   "rank": [
+    4,
+    9
+   ],
+   "goals": [],
+   "weight": 12,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "story": "rival",
+    "step": 9,
+    "days_since": 365,
+    "rival_alive": true
+   },
+   "chain": "rival"
+  },
+  {
+   "id": "hu_1",
+   "title": "A Fox in the Mist",
+   "text": "A white fox with nine pale markings watches you from the edge of the woods, then trots away, looking back.",
+   "choices": [
+    {
+     "text": "Follow the fox.",
+     "ok": [
+      {
+       "do": "reveal",
+       "loc": "hu_immortal_land"
+      },
+      {
+       "do": "log",
+       "text": "Behind a curtain of mist, a hidden valley. The Hu Immortal Blessed Land!"
+      }
+     ],
+     "fail": [
+      {
+       "do": "log",
+       "text": "You lose it in the mist."
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.6,
+      "stat": "wisdom"
+     }
+    },
+    {
+     "text": "Leave it be.",
+     "ok": [
+      {
+       "do": "log",
+       "text": "You move on."
+      }
+     ]
+    }
+   ],
+   "where": [
+    "qing_mao_woods",
+    "travel"
+   ],
+   "type": "discovery",
+   "rank": [
+    2,
+    6
+   ],
+   "goals": [
+    "explore",
+    "inheritance"
+   ],
+   "weight": 5,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "not_known": "hu_immortal_land"
+   }
+  },
+  {
+   "id": "hu_2",
+   "title": "The Fox's Gift",
+   "text": "In the heart of the Hu Immortal land, the white fox lays a cultivation Gu at your feet.",
+   "choices": [
+    {
+     "text": "Accept the gift.",
+     "ok": [
+      {
+       "do": "gu",
+       "id": "spring_autumn_cicada"
+      },
+      {
+       "do": "achieve",
+       "id": "explorer"
+      }
+     ]
+    }
+   ],
+   "where": [
+    "hu_immortal_land"
+   ],
+   "type": "discovery",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 30,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": true
+  },
+  {
+   "id": "epoch_verdant",
+   "title": "Verdant Great Inheritance",
+   "text": "The Verdant Great Inheritance has opened! Treasure hunters flood the wilds toward a forest that wasn't there yesterday.",
+   "choices": [
+    {
+     "text": "Join the hunt.",
+     "ok": [
+      {
+       "do": "gu_pool",
+       "rank": "r",
+       "rarity": "legendary"
+      },
+      {
+       "do": "attain",
+       "path": "primary",
+       "n": 50
+      },
+      {
+       "do": "fame",
+       "n": 10
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "group": "demonic"
+     }
+    },
+    {
+     "text": "Trade information to the hunters.",
+     "ok": [
+      {
+       "do": "stones",
+       "n": "60r"
+      },
+      {
+       "do": "info",
+       "n": 2
+      }
+     ]
+    },
+    {
+     "text": "Stay away.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "opportunity",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "immediate",
+   "expiry": 30,
+   "once": false
+  },
+  {
+   "id": "epoch_competition",
+   "title": "Southern Border Competition",
+   "text": "Every hundred years the clans send their best young Gu Masters to the arena. Your clan has chosen you.",
+   "choices": [
+    {
+     "text": "Compete.",
+     "ok": [
+      {
+       "do": "fame",
+       "n": 20
+      },
+      {
+       "do": "standing",
+       "n": 40
+      },
+      {
+       "do": "gu_pool",
+       "rank": "r",
+       "rarity": "rare"
+      },
+      {
+       "do": "stones",
+       "n": "80r"
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 3,
+      "rank": "r",
+      "enemy": "rogue_cultivator",
+      "group": "bandit"
+     }
+    },
+    {
+     "text": "Decline the honour.",
+     "ok": [
+      {
+       "do": "standing",
+       "n": -20
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "challenge",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "immediate",
+   "expiry": 30,
+   "once": false
+  },
+  {
+   "id": "epoch_storm",
+   "title": "Heavenly Tribulation Storm",
+   "text": "The sky splits. Lightning falls for days without end. Those who weather it come out changed.",
+   "choices": [
+    {
+     "text": "Bathe in the lightning.",
+     "ok": [
+      {
+       "do": "cult",
+       "n": "60r"
+      },
+      {
+       "do": "attain",
+       "path": "primary",
+       "n": 60
+      }
+     ],
+     "fail": [
+      {
+       "do": "injury",
+       "name": "Lightning Burns",
+       "days": 60
+      },
+      {
+       "do": "damage",
+       "pct": 0.4
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.5
+     }
+    },
+    {
+     "text": "Shelter and wait it out (20 days).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 20
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "challenge",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "immediate",
+   "expiry": 10,
+   "once": false
+  },
+  {
+   "id": "epoch_war",
+   "title": "Demonic Alliance War",
+   "text": "Demonic cultivators have united and marched on the Southern Border.",
+   "choices": [
+    {
+     "text": "Fight for the righteous.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": 20
+      },
+      {
+       "do": "fame",
+       "n": 15
+      },
+      {
+       "do": "stones",
+       "n": "100r"
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 3,
+      "rank": "r",
+      "group": "demonic"
+     }
+    },
+    {
+     "text": "Join the demonic alliance.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": -30
+      },
+      {
+       "do": "stones",
+       "n": "150r"
+      },
+      {
+       "do": "gu_pool",
+       "rank": "r",
+       "rarity": "rare"
+      }
+     ]
+    },
+    {
+     "text": "Hide in seclusion.",
+     "ok": [
+      {
+       "do": "time",
+       "days": 90
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "dilemma",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "immediate",
+   "expiry": 30,
+   "once": false
+  },
+  {
+   "id": "epoch_awaken",
+   "title": "Ancient Immortal Awakens",
+   "text": "An ancient Gu Immortal has awakened and is seeking disciples, or meals.",
+   "choices": [
+    {
+     "text": "Seek an audience.",
+     "ok": [
+      {
+       "do": "cult",
+       "n": "80r"
+      },
+      {
+       "do": "bt_bonus",
+       "n": 15
+      }
+     ],
+     "fail": [
+      {
+       "do": "damage",
+       "pct": 0.5
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.5,
+      "stat": "wisdom"
+     }
+    },
+    {
+     "text": "Flee the region.",
+     "ok": [
+      {
+       "do": "time",
+       "days": 30
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "dilemma",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "immediate",
+   "expiry": 30,
+   "once": false
+  },
+  {
+   "id": "epoch_beast_tide",
+   "title": "Great Beast Tide",
+   "text": "A tide of beasts pours off the Wild Beast Plains toward the villages.",
+   "choices": [
+    {
+     "text": "Hold the wall.",
+     "ok": [
+      {
+       "do": "standing",
+       "n": 25
+      },
+      {
+       "do": "mat_tier",
+       "tier": "rare",
+       "n": 2
+      },
+      {
+       "do": "fame",
+       "n": 8
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 3,
+      "rank": "r",
+      "group": "wild"
+     }
+    },
+    {
+     "text": "Evacuate villagers.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": 12
+      },
+      {
+       "do": "time",
+       "days": 5
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "challenge",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "immediate",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "epoch_wolf_tide",
+   "title": "Thunder Wolf Tide",
+   "text": "Hundreds of wolves descend on Qing Mao Mountain. The clans must hold the line.",
+   "choices": [
+    {
+     "text": "Fight on the front line.",
+     "ok": [
+      {
+       "do": "standing",
+       "n": 25
+      },
+      {
+       "do": "stones",
+       "n": "50r"
+      },
+      {
+       "do": "fame",
+       "n": 6
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 3,
+      "rank": "r",
+      "enemy": "grey_wolf"
+     }
+    },
+    {
+     "text": "Guard the clan's Gu stores.",
+     "ok": [
+      {
+       "do": "standing",
+       "n": 10
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "challenge",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "immediate",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "epoch_auction",
+   "title": "Grand Merchant Auction",
+   "text": "The Grand Merchant Auction is being held in Merchant City this month.",
+   "choices": [
+    {
+     "text": "Attend and bid.",
+     "ok": [
+      {
+       "do": "open_market",
+       "kind": "auction"
+      }
+     ]
+    },
+    {
+     "text": "Skip it.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "opportunity",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 30,
+   "once": false
+  },
+  {
+   "id": "epoch_plague",
+   "title": "Grey Plague",
+   "text": "A grey plague spreads through the settlements. Healers are overwhelmed.",
+   "choices": [
+    {
+     "text": "Help the healers (30 days).",
+     "ok": [
+      {
+       "do": "time",
+       "days": 30
+      },
+      {
+       "do": "rep",
+       "n": 15
+      },
+      {
+       "do": "fame",
+       "n": 8
+      }
+     ],
+     "fail": [
+      {
+       "do": "time",
+       "days": 30
+      },
+      {
+       "do": "injury",
+       "name": "Grey Fever",
+       "days": 60
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.7
+     }
+    },
+    {
+     "text": "Seclude yourself until it passes.",
+     "ok": [
+      {
+       "do": "time",
+       "days": 40
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "challenge",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "immediate",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "epoch_eclipse",
+   "title": "Blood Moon Eclipse",
+   "text": "The moon turns red. Blood path cultivators grow bold; light path cultivators weaken.",
+   "choices": [
+    {
+     "text": "Cultivate under the blood moon.",
+     "ok": [
+      {
+       "do": "attain",
+       "path": "blood",
+       "n": 40
+      },
+      {
+       "do": "cult",
+       "n": "20r"
+      }
+     ]
+    },
+    {
+     "text": "Wait it out.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "opportunity",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 10,
+   "once": false
+  },
+  {
+   "id": "epoch_clan_war",
+   "title": "Gu Yue and Bai Clan War",
+   "text": "Old grudges boil over. The Gu Yue and Bai clans are at war.",
+   "choices": [
+    {
+     "text": "Fight for your clan.",
+     "ok": [
+      {
+       "do": "standing",
+       "n": 40
+      },
+      {
+       "do": "fame",
+       "n": 10
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 2,
+      "rank": "r",
+      "enemy": "rogue_cultivator",
+      "group": "bandit"
+     }
+    },
+    {
+     "text": "Broker a truce.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": 15
+      },
+      {
+       "do": "standing",
+       "n": 10
+      }
+     ],
+     "fail": [
+      {
+       "do": "standing",
+       "n": -10
+      }
+     ],
+     "check": {
+      "type": "chance",
+      "p": 0.45,
+      "stat": "wisdom"
+     }
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "dilemma",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "immediate",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "epoch_three_kings",
+   "title": "Three Kings Land Stirs",
+   "text": "A pillar of light rises beyond Dang Hun Mountain. The Three Kings Blessed Land is stirring.",
+   "choices": [
+    {
+     "text": "Note the location.",
+     "ok": [
+      {
+       "do": "reveal",
+       "loc": "three_kings_land"
+      },
+      {
+       "do": "info",
+       "n": 1
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "discovery",
+   "rank": [
+    1,
+    9
+   ],
+   "goals": [],
+   "weight": 0,
+   "urgency": "urgent",
+   "expiry": 30,
+   "once": false
+  },
+  {
+   "id": "imm_auction",
+   "title": "Treasure Yellow Heaven",
+   "text": "The Treasure Yellow Heaven, where immortals trade, opens its gates to you.",
+   "choices": [
+    {
+     "text": "Enter the auction.",
+     "ok": [
+      {
+       "do": "open_market",
+       "kind": "treasure_yellow_heaven"
+      }
+     ]
+    },
+    {
+     "text": "Leave it be.",
+     "ok": [
+      {
+       "do": "log",
+       "text": "You move on."
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "opportunity",
+   "rank": [
+    6,
+    9
+   ],
+   "goals": [],
+   "weight": 8,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "imm_sect",
+   "title": "Sect Elder's Challenge",
+   "text": "A Righteous Sect Elder senses your demonic deeds and descends from the clouds.",
+   "choices": [
+    {
+     "text": "Fight.",
+     "ok": [
+      {
+       "do": "immortal_stones",
+       "n": 20
+      },
+      {
+       "do": "fame",
+       "n": 15
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "sect_elder"
+     }
+    },
+    {
+     "text": "Bow and apologise.",
+     "ok": [
+      {
+       "do": "rep",
+       "n": 10
+      },
+      {
+       "do": "immortal_stones",
+       "n": -5
+      }
+     ],
+     "req": {
+      "immortal_stones": 5
+     }
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "encounter",
+   "rank": [
+    6,
+    9
+   ],
+   "goals": [],
+   "weight": 5,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false,
+   "req": {
+    "align_max": -20
+   }
+  },
+  {
+   "id": "imm_dao_vision",
+   "title": "Dao Vision",
+   "text": "For a moment you see the dao marks of the world itself, like veins in jade.",
+   "choices": [
+    {
+     "text": "Engrave what you saw.",
+     "ok": [
+      {
+       "do": "dao",
+       "n": 40
+      }
+     ]
+    }
+   ],
+   "where": [
+    "any"
+   ],
+   "type": "opportunity",
+   "rank": [
+    6,
+    9
+   ],
+   "goals": [],
+   "weight": 6,
+   "urgency": "background",
+   "expiry": 20,
+   "once": false
+  },
+  {
+   "id": "imm_eagle",
+   "title": "Golden Eagle Lord",
+   "text": "A golden eagle the size of a pavilion circles, then dives for you.",
+   "choices": [
+    {
+     "text": "Fight.",
+     "ok": [
+      {
+       "do": "immortal_stones",
+       "n": 15
+      },
+      {
+       "do": "beast_companion",
+       "name": "Golden Eagle"
+      }
+     ],
+     "check": {
+      "type": "combat",
+      "count": 1,
+      "rank": "r",
+      "enemy": "eagle_lord"
+     }
+    },
+    {
+     "text": "Hide in your blessed land.",
+     "ok": []
+    }
+   ],
+   "where": [
+    "northern_plains",
+    "wild_beast_plains",
+    "travel"
+   ],
+   "type": "encounter",
+   "rank": [
+    6,
+    9
+   ],
+   "goals": [],
+   "weight": 6,
+   "urgency": "normal",
+   "expiry": 20,
+   "once": false
+  }
+ ],
+ "storylines": [
+  {
+   "id": "orchid",
+   "name": "The Withering Orchids",
+   "length": "medium",
+   "steps": 4,
+   "start": "orchid_1"
+  },
+  {
+   "id": "debt",
+   "name": "The Merchant's Debt",
+   "length": "medium",
+   "steps": 4,
+   "start": "debt_1"
+  },
+  {
+   "id": "beast_king",
+   "name": "The Beast King",
+   "length": "medium",
+   "steps": 3,
+   "start": "bk_1"
+  },
+  {
+   "id": "ember",
+   "name": "The Ember Tyrant",
+   "length": "short",
+   "steps": 2,
+   "start": "ember_1"
+  },
+  {
+   "id": "three_kings",
+   "name": "The Three Kings' Key",
+   "length": "long",
+   "steps": 10,
+   "start": "tk_1"
+  },
+  {
+   "id": "rival",
+   "name": "A Rival's Shadow",
+   "length": "long",
+   "steps": 10,
+   "start": "rv_1"
+  }
+ ],
+ "templates": [
+  {
+   "id": "tpl_beast",
+   "title": "{adj} {beast}",
+   "text": "A {adj_l} {beast_l} prowls near {loc}. {flavor}",
+   "kind": "combat",
+   "where": [
+    "wild",
+    "travel"
+   ]
+  },
+  {
+   "id": "tpl_find",
+   "title": "{adj} {thing}",
+   "text": "You come across {article} {adj_l} {thing_l} half-buried in the {terrain}. {flavor}",
+   "kind": "discovery",
+   "where": [
+    "wild",
+    "travel"
+   ]
+  },
+  {
+   "id": "tpl_npc",
+   "title": "{npc_title} in Need",
+   "text": "{npc}, a {arch_l}, asks for your help: {need}.",
+   "kind": "favour",
+   "where": [
+    "village",
+    "city"
+   ]
+  },
+  {
+   "id": "tpl_trade",
+   "title": "{arch} with a Deal",
+   "text": "A {arch_l} offers you {offer} for {price} stones.",
+   "kind": "trade",
+   "where": [
+    "village",
+    "city",
+    "travel"
+   ]
+  }
+ ],
+ "words": {
+  "adj": [
+   "Hungry",
+   "Wounded",
+   "Ancient",
+   "Silent",
+   "Scarred",
+   "Pale",
+   "Thunderous",
+   "Moon-Eyed",
+   "Starving",
+   "Enormous"
+  ],
+  "beast": [
+   "Wolf",
+   "Boar",
+   "Spider",
+   "Snake",
+   "Bear",
+   "Hawk",
+   "Centipede",
+   "Toad"
+  ],
+  "beast_enemy": {
+   "Wolf": "grey_wolf",
+   "Boar": "black_boar",
+   "Spider": "moon_spider",
+   "Snake": "jade_eye_snake",
+   "Bear": "rock_bear",
+   "Hawk": "grey_wolf",
+   "Centipede": "moon_spider",
+   "Toad": "jade_eye_snake"
+  },
+  "thing": [
+   "Gu Corpse",
+   "Stone Tablet",
+   "Satchel",
+   "Shrine",
+   "Gu Pot",
+   "Cracked Urn"
+  ],
+  "terrain": [
+   "mud",
+   "grass",
+   "roots",
+   "riverbank",
+   "scree",
+   "snow"
+  ],
+  "flavor": [
+   "The air smells of iron.",
+   "Birds have gone quiet.",
+   "Something about it feels old.",
+   "Your Gu stir uneasily.",
+   "Mist curls around your ankles."
+  ],
+  "need": [
+   "their Gu fell sick and needs spirit water",
+   "bandits stole their family's stones",
+   "they need an escort through the woods",
+   "they want help capturing a wild Gu",
+   "their mentor vanished on the plains"
+  ],
+  "offer": [
+   "a scrap of a Gu formula",
+   "a map of a beast den",
+   "a crate of materials",
+   "a rumour about a hidden blessed land",
+   "a used but healthy Gu"
+  ]
+ }
+}

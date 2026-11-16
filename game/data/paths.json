@@ -1,0 +1,98 @@
+[
+ {
+  "id": "strength",
+  "name": "Strength",
+  "symbol": "✊",
+  "color": "#DC2F45",
+  "desc": "Build a combo with every attack, then cash it in.",
+  "icon": "fist"
+ },
+ {
+  "id": "wisdom",
+  "name": "Wisdom",
+  "symbol": "◆",
+  "color": "#3A8EE6",
+  "desc": "Draw, reveal intent, cheapen your next Gu.",
+  "icon": "brain"
+ },
+ {
+  "id": "blood",
+  "name": "Blood",
+  "symbol": "◈",
+  "color": "#B3122A",
+  "desc": "Pay in HP, drink it back, hit harder when wounded.",
+  "icon": "blood"
+ },
+ {
+  "id": "refinement",
+  "name": "Refinement",
+  "symbol": "⚒",
+  "color": "#CD7F32",
+  "desc": "Forge temporary Gu mid-fight and upgrade your hand.",
+  "icon": "anvil"
+ },
+ {
+  "id": "transformation",
+  "name": "Transformation",
+  "symbol": "☯",
+  "color": "#20B2AA",
+  "desc": "Take on forms and mimic your foe.",
+  "icon": "yin-yang"
+ },
+ {
+  "id": "enslavement",
+  "name": "Enslavement",
+  "symbol": "⛓",
+  "color": "#9B59B6",
+  "desc": "Summon beasts, control and steal.",
+  "icon": "crossed-chains"
+ },
+ {
+  "id": "poison",
+  "name": "Poison",
+  "symbol": "☠",
+  "color": "#9ACD32",
+  "desc": "Stack venom, multiply it, detonate it.",
+  "icon": "poison"
+ },
+ {
+  "id": "dark",
+  "name": "Dark",
+  "symbol": "☾",
+  "color": "#6A5ACD",
+  "desc": "Vanish into stealth and execute the weakened.",
+  "icon": "evil-moon"
+ },
+ {
+  "id": "light",
+  "name": "Light",
+  "symbol": "✦",
+  "color": "#FFD34D",
+  "desc": "Layer shields of light, then release them as a burst.",
+  "icon": "sun"
+ },
+ {
+  "id": "food",
+  "name": "Food",
+  "symbol": "◍",
+  "color": "#FFB000",
+  "desc": "Feast on essence and turn plenty into power.",
+  "icon": "bowl-of-rice"
+ },
+ {
+  "id": "fire",
+  "name": "Fire",
+  "symbol": "♨",
+  "color": "#FF6A2A",
+  "desc": "Kindle burning stacks that rage then fade (Chi clan).",
+  "icon": "flame"
+ },
+ {
+  "id": "none",
+  "name": "Neutral",
+  "symbol": "○",
+  "color": "#B8AFA2",
+  "desc": "Utility Gu with no path. Not limited by attainment.",
+  "icon": "circle"
+ }
+]

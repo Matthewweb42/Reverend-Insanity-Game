@@ -1,0 +1,312 @@
+{
+ "seeds": [
+  {
+   "id": "elder_chen",
+   "name": "Elder Chen",
+   "arch": "elder",
+   "loc": "gu_yue_village",
+   "align": 30,
+   "rank": 4,
+   "path": "light",
+   "personality": "stern but fair",
+   "desire": "a worthy successor",
+   "icon": "wizard-face"
+  },
+  {
+   "id": "jia_fu",
+   "name": "Jia Fu",
+   "arch": "merchant",
+   "loc": "merchant_city",
+   "align": 0,
+   "rank": 3,
+   "path": "food",
+   "personality": "jovial, greedy",
+   "desire": "rare materials",
+   "icon": "coins-pile"
+  },
+  {
+   "id": "old_mo",
+   "name": "Old Mo",
+   "arch": "broker",
+   "loc": "merchant_city",
+   "align": -10,
+   "rank": 3,
+   "path": "wisdom",
+   "personality": "sly, patient",
+   "desire": "secrets",
+   "icon": "hood"
+  },
+  {
+   "id": "lan_xiu",
+   "name": "Lan Xiu",
+   "arch": "cultivator",
+   "loc": "gu_yue_village",
+   "align": 20,
+   "rank": 1,
+   "path": "wisdom",
+   "personality": "earnest, curious",
+   "desire": "to see the world",
+   "icon": "scroll-unfurled"
+  },
+  {
+   "id": "bai_hao",
+   "name": "Bai Hao",
+   "arch": "antagonist",
+   "loc": "bai_territory",
+   "align": -20,
+   "rank": 1,
+   "path": "strength",
+   "personality": "arrogant, relentless",
+   "desire": "to crush rivals",
+   "icon": "sword-brandish",
+   "rival": true
+  },
+  {
+   "id": "tie_shan",
+   "name": "Tie Shan",
+   "arch": "beast_tamer",
+   "loc": "xiong_village",
+   "align": 10,
+   "rank": 2,
+   "path": "enslavement",
+   "personality": "gruff, loyal",
+   "desire": "a beast king",
+   "icon": "bear-head"
+  },
+  {
+   "id": "wen_rui",
+   "name": "Wen Rui",
+   "arch": "wanderer",
+   "loc": "moon_orchid_valley",
+   "align": 0,
+   "rank": 3,
+   "path": "transformation",
+   "personality": "dreamy, cryptic",
+   "desire": "the Three Kings' legacy",
+   "icon": "walking-boot"
+  },
+  {
+   "id": "madam_su",
+   "name": "Madam Su",
+   "arch": "merchant",
+   "loc": "bai_territory",
+   "align": 5,
+   "rank": 2,
+   "path": "refinement",
+   "personality": "precise, honest",
+   "desire": "fine formulas",
+   "icon": "anvil"
+  },
+  {
+   "id": "hei_tu",
+   "name": "Hei Tu",
+   "arch": "antagonist",
+   "loc": "wild_beast_plains",
+   "align": -60,
+   "rank": 3,
+   "path": "blood",
+   "personality": "cruel, cunning",
+   "desire": "a blood inheritance",
+   "icon": "devil-mask"
+  },
+  {
+   "id": "elder_ying",
+   "name": "Elder Ying",
+   "arch": "elder",
+   "loc": "merchant_city",
+   "align": 0,
+   "rank": 5,
+   "path": "enslavement",
+   "personality": "cold, calculating",
+   "desire": "profit for the clan",
+   "icon": "crowned-skull"
+  },
+  {
+   "id": "little_feng",
+   "name": "Little Feng",
+   "arch": "cultivator",
+   "loc": "qing_mao_woods",
+   "align": 15,
+   "rank": 1,
+   "path": "food",
+   "personality": "cheerful, hungry",
+   "desire": "a liquor worm",
+   "icon": "bowl-of-rice"
+  },
+  {
+   "id": "hermit_gao",
+   "name": "Hermit Gao",
+   "arch": "elder",
+   "loc": "dang_hun_mountain",
+   "align": 0,
+   "rank": 5,
+   "path": "dark",
+   "personality": "half-mad, wise",
+   "desire": "a soul to talk to",
+   "icon": "skull-mask"
+  }
+ ],
+ "names": {
+  "family": [
+   "Gu Yue",
+   "Bai",
+   "Xiong",
+   "Shang",
+   "Tie",
+   "Jiang",
+   "Mo",
+   "Lin",
+   "Qin",
+   "Wen",
+   "Hua",
+   "Song",
+   "Zhao",
+   "Lu",
+   "He"
+  ],
+  "given": [
+   "An",
+   "Bo",
+   "Chun",
+   "Dao",
+   "Fei",
+   "Gang",
+   "Hui",
+   "Jing",
+   "Kai",
+   "Lei",
+   "Ming",
+   "Ning",
+   "Ping",
+   "Qiu",
+   "Rong",
+   "Shi",
+   "Tao",
+   "Wei",
+   "Xian",
+   "Yan",
+   "Zhen",
+   "Lan",
+   "Yu",
+   "Feng",
+   "Hong"
+  ]
+ },
+ "archetypes": {
+  "merchant": {
+   "name": "Merchant",
+   "benefit": "discount",
+   "lines": [
+    "Everything has a price, friend.",
+    "For you? A special price.",
+    "Coin talks. I listen."
+   ]
+  },
+  "elder": {
+   "name": "Elder",
+   "benefit": "mentor",
+   "lines": [
+    "Patience is the first Gu you must refine.",
+    "Your aperture is restless. Calm it.",
+    "The clan remembers who serves it."
+   ]
+  },
+  "cultivator": {
+   "name": "Gu Master",
+   "benefit": "ally",
+   "lines": [
+    "Shall we train together?",
+    "I heard there's a Gu nest past the ridge.",
+    "Don't fall behind me."
+   ]
+  },
+  "broker": {
+   "name": "Information Broker",
+   "benefit": "intel",
+   "lines": [
+    "Information is the only currency that grows.",
+    "I know a thing or two. For a fee.",
+    "Ask the right question."
+   ]
+  },
+  "beast_tamer": {
+   "name": "Beast Tamer",
+   "benefit": "beasts",
+   "lines": [
+    "A beast knows who respects it.",
+    "Mind the teeth.",
+    "The plains are restless this season."
+   ]
+  },
+  "wanderer": {
+   "name": "Wanderer",
+   "benefit": "locations",
+   "lines": [
+    "I've seen a door in the mist no one else has.",
+    "Roads are longer than lives.",
+    "Some places don't want to be found."
+   ]
+  },
+  "antagonist": {
+   "name": "Rival",
+   "benefit": "none",
+   "lines": [
+    "You again.",
+    "Stay out of my way.",
+    "One day I'll take everything you have."
+   ]
+  }
+ },
+ "bands": [
+  [
+   -100,
+   "Mortal Enemy"
+  ],
+  [
+   -74,
+   "Hostile"
+  ],
+  [
+   -49,
+   "Unfriendly"
+  ],
+  [
+   -24,
+   "Neutral"
+  ],
+  [
+   25,
+   "Friendly"
+  ],
+  [
+   50,
+   "Allied"
+  ],
+  [
+   75,
+   "Devoted"
+  ]
+ ],
+ "levels": [
+  [
+   "Stranger",
+   25,
+   0
+  ],
+  [
+   "Acquaintance",
+   50,
+   3
+  ],
+  [
+   "Contact",
+   75,
+   8
+  ],
+  [
+   "Connection",
+   100,
+   18
+  ]
+ ]
+}

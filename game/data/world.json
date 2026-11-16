@@ -1,0 +1,290 @@
+{
+ "goals": [
+  {
+   "id": "seek_path_gu",
+   "name": "Seeking {path} Gu",
+   "desc": "Obtain a new {path} Gu.",
+   "tag": "gu_path"
+  },
+  {
+   "id": "seek_type_gu",
+   "name": "Seeking a {kind} Gu",
+   "desc": "Obtain a {kind} Gu.",
+   "tag": "gu_kind"
+  },
+  {
+   "id": "resources",
+   "name": "Need Resources",
+   "desc": "Hold {n} primeval stones.",
+   "tag": "stones"
+  },
+  {
+   "id": "connections",
+   "name": "Making Connections",
+   "desc": "Have {n} NPCs at Acquaintance or better.",
+   "tag": "npc"
+  },
+  {
+   "id": "information",
+   "name": "Seeking Information",
+   "desc": "Gather {n} pieces of information.",
+   "tag": "info"
+  },
+  {
+   "id": "path_training",
+   "name": "{path} Training",
+   "desc": "Reach Adept or higher in {path}.",
+   "tag": "train"
+  },
+  {
+   "id": "trouble",
+   "name": "Looking for Trouble",
+   "desc": "Win {n} battles.",
+   "tag": "combat"
+  },
+  {
+   "id": "explore",
+   "name": "Exploring",
+   "desc": "Visit {n} different locations.",
+   "tag": "explore"
+  },
+  {
+   "id": "inheritance",
+   "name": "Seeking an Inheritance",
+   "desc": "Find an inheritance site.",
+   "tag": "inheritance"
+  },
+  {
+   "id": "prepare",
+   "name": "Preparing for {event}",
+   "desc": "Reach Rank {n} before {event}.",
+   "tag": "epoch"
+  }
+ ],
+ "epochs": [
+  {
+   "id": "verdant_inheritance",
+   "name": "Verdant Great Inheritance",
+   "year": [
+    50,
+    70
+   ],
+   "signs": "Ancient texts mention it; treasure hunters gather.",
+   "event": "epoch_verdant"
+  },
+  {
+   "id": "border_competition",
+   "name": "Southern Border Competition",
+   "every": 100,
+   "offset": 0,
+   "signs": "Clans begin selecting candidates; training intensifies.",
+   "event": "epoch_competition"
+  },
+  {
+   "id": "tribulation_storm",
+   "name": "Heavenly Tribulation Storm",
+   "year": [
+    150,
+    150
+   ],
+   "signs": "Weather anomalies; divination Gu go haywire.",
+   "event": "epoch_storm"
+  },
+  {
+   "id": "demonic_war",
+   "name": "Demonic Alliance War",
+   "year": [
+    200,
+    300
+   ],
+   "signs": "Border skirmishes, refugees, political tension.",
+   "event": "epoch_war"
+  },
+  {
+   "id": "immortal_awakens",
+   "name": "Ancient Immortal Awakens",
+   "year": [
+    400,
+    500
+   ],
+   "signs": "Blessed land disturbances; prophecies circulate.",
+   "event": "epoch_awaken"
+  },
+  {
+   "id": "beast_tide",
+   "name": "Great Beast Tide",
+   "year": [
+    35,
+    60
+   ],
+   "signs": "Beasts flee the plains; hunters vanish.",
+   "event": "epoch_beast_tide"
+  },
+  {
+   "id": "wolf_tide",
+   "name": "Thunder Wolf Tide",
+   "year": [
+    25,
+    45
+   ],
+   "signs": "Wolves howl every night on Qing Mao Mountain.",
+   "event": "epoch_wolf_tide"
+  },
+  {
+   "id": "auction",
+   "name": "Grand Merchant Auction",
+   "every": 30,
+   "offset": 12,
+   "signs": "Merchants from every region gather in Merchant City.",
+   "event": "epoch_auction"
+  },
+  {
+   "id": "plague",
+   "name": "Grey Plague",
+   "year": [
+    80,
+    110
+   ],
+   "signs": "Grey-skinned travellers; markets close early.",
+   "event": "epoch_plague"
+  },
+  {
+   "id": "moon_eclipse",
+   "name": "Blood Moon Eclipse",
+   "every": 40,
+   "offset": 20,
+   "signs": "The moon grows red at the edges.",
+   "event": "epoch_eclipse"
+  },
+  {
+   "id": "clan_war",
+   "name": "Gu Yue and Bai Clan War",
+   "year": [
+    60,
+    90
+   ],
+   "signs": "Border patrols double; elders argue in the hall.",
+   "event": "epoch_clan_war"
+  },
+  {
+   "id": "three_kings_open",
+   "name": "Three Kings Land Stirs",
+   "year": [
+    70,
+    120
+   ],
+   "signs": "Wanderers speak of a light beyond Dang Hun Mountain.",
+   "event": "epoch_three_kings"
+  }
+ ],
+ "missions": [
+  {
+   "id": "patrol",
+   "name": "Patrol the Border",
+   "kind": "patrol",
+   "min": "Probationary",
+   "days": 3,
+   "stones": [
+    10,
+    30
+   ],
+   "contrib": 8,
+   "combat": 0.5
+  },
+  {
+   "id": "gather",
+   "name": "Gather Herbs",
+   "kind": "gathering",
+   "min": "Probationary",
+   "days": 4,
+   "stones": [
+    15,
+    40
+   ],
+   "contrib": 8,
+   "mats": true
+  },
+  {
+   "id": "investigate",
+   "name": "Investigate Disappearances",
+   "kind": "investigation",
+   "min": "Member",
+   "days": 5,
+   "stones": [
+    20,
+    50
+   ],
+   "contrib": 14,
+   "info": 1,
+   "combat": 0.3
+  },
+  {
+   "id": "hunt",
+   "name": "Hunt a Beast",
+   "kind": "combat",
+   "min": "Member",
+   "days": 4,
+   "stones": [
+    30,
+    80
+   ],
+   "contrib": 18,
+   "combat": 1.0,
+   "elite": true
+  },
+  {
+   "id": "special",
+   "name": "Elder's Special Task",
+   "kind": "special",
+   "min": "Core",
+   "days": 8,
+   "stones": [
+    50,
+    200
+   ],
+   "contrib": 40,
+   "combat": 1.0,
+   "elite": true,
+   "reward_gu": true
+  }
+ ],
+ "standing": [
+  [
+   "Outsider",
+   -999
+  ],
+  [
+   "Probationary",
+   0
+  ],
+  [
+   "Member",
+   100
+  ],
+  [
+   "Core",
+   300
+  ],
+  [
+   "Elder",
+   800
+  ]
+ ],
+ "stipend": {
+  "Probationary": 5,
+  "Member": 20,
+  "Core": 60,
+  "Elder": 150
+ },
+ "feed": {
+  "1": 2,
+  "2": 5,
+  "3": 12,
+  "4": 30,
+  "5": 75,
+  "6": 150,
+  "7": 300,
+  "8": 600,
+  "9": 1200
+ }
+}

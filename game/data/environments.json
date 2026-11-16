@@ -1,0 +1,98 @@
+{
+ "moonlit_night": {
+  "name": "Moonlit Night",
+  "desc": "Light Gu deal +20% damage.",
+  "path_bonus": {
+   "light": 0.2
+  }
+ },
+ "mountain_mist": {
+  "name": "Mountain Mist",
+  "desc": "Everyone gains +10 evasion.",
+  "eva": 10
+ },
+ "dense_forest": {
+  "name": "Dense Forest",
+  "desc": "+10 evasion; Dark Gu deal +10%.",
+  "eva": 10,
+  "path_bonus": {
+   "dark": 0.1
+  }
+ },
+ "open_plains": {
+  "name": "Open Plains",
+  "desc": "Nowhere to hide: -10 evasion; Strength +10%.",
+  "eva": -10,
+  "path_bonus": {
+   "strength": 0.1
+  }
+ },
+ "blood_ground": {
+  "name": "Blood-Soaked Ground",
+  "desc": "Blood Gu deal +20% damage.",
+  "path_bonus": {
+   "blood": 0.2
+  }
+ },
+ "beast_den": {
+  "name": "Beast Den",
+  "desc": "Beasts start Strengthened.",
+  "enemy_buff": "strong"
+ },
+ "spirit_spring": {
+  "name": "Spirit Spring",
+  "desc": "+5 essence regeneration; healing +20%.",
+  "regen": 5,
+  "heal": 0.2
+ },
+ "miasma": {
+  "name": "Miasma",
+  "desc": "All combatants take 2 x rank damage per turn. Poison Gu +20%.",
+  "dot": 2,
+  "path_bonus": {
+   "poison": 0.2
+  }
+ },
+ "soul_fog": {
+  "name": "Soul Fog",
+  "desc": "Wisdom Gu cost +5. Dark Gu +20%.",
+  "cost": {
+   "wisdom": 5
+  },
+  "path_bonus": {
+   "dark": 0.2
+  }
+ },
+ "crowded_streets": {
+  "name": "Crowded Streets",
+  "desc": "Enslavement and Wisdom Gu +10%.",
+  "path_bonus": {
+   "enslavement": 0.1,
+   "wisdom": 0.1
+  }
+ },
+ "storm_wind": {
+  "name": "Storm Wind",
+  "desc": "Accuracy -10 for everyone.",
+  "acc": -10
+ },
+ "searing_heat": {
+  "name": "Searing Heat",
+  "desc": "Fire Gu +25%; shields are 20% weaker.",
+  "path_bonus": {
+   "fire": 0.25
+  },
+  "shield": -0.2
+ },
+ "ancient_formation": {
+  "name": "Ancient Formation",
+  "desc": "Essence regeneration -4; all damage +10%.",
+  "regen": -4,
+  "dmg": 0.1
+ },
+ "tribulation_lightning": {
+  "name": "Tribulation Lightning",
+  "desc": "Each turn lightning strikes a random combatant.",
+  "lightning": true
+ }
+}

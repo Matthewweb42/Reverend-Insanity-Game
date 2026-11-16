@@ -1,0 +1,446 @@
+[
+ {
+  "id": "gu_yue_village",
+  "name": "Gu Yue Village",
+  "type": "village",
+  "danger": 1,
+  "rank": [
+   1,
+   3
+  ],
+  "x": 250,
+  "y": 300,
+  "clan": "gu_yue",
+  "services": [
+   "market",
+   "clan_hall",
+   "refinery",
+   "library",
+   "inn"
+  ],
+  "icon": "village",
+  "env": [
+   "moonlit_night",
+   "mountain_mist"
+  ],
+  "enemies": [
+   "wild",
+   "bandit"
+  ],
+  "cult": 1.0,
+  "desc": "A modest village in a valley on Qing Mao Mountain. Cultivation hall, small market, mission board."
+ },
+ {
+  "id": "qing_mao_woods",
+  "name": "Qing Mao Woods",
+  "type": "wild",
+  "danger": 2,
+  "rank": [
+   1,
+   2
+  ],
+  "x": 150,
+  "y": 420,
+  "services": [],
+  "icon": "pine-tree",
+  "env": [
+   "dense_forest",
+   "mountain_mist"
+  ],
+  "enemies": [
+   "wild"
+  ],
+  "cult": 1.0,
+  "desc": "Bamboo and pine below Gu Yue Village. Wolves, boars and common herbs."
+ },
+ {
+  "id": "bai_territory",
+  "name": "Bai Clan Territory",
+  "type": "village",
+  "danger": 2,
+  "rank": [
+   1,
+   4
+  ],
+  "x": 420,
+  "y": 180,
+  "clan": "bai",
+  "services": [
+   "market",
+   "clan_hall",
+   "inn",
+   "arena"
+  ],
+  "icon": "castle",
+  "env": [
+   "blood_ground",
+   "open_plains"
+  ],
+  "enemies": [
+   "bandit",
+   "wild"
+  ],
+  "cult": 1.0,
+  "desc": "A fortified settlement of bone-white walls. Arena, bone workshop, war hall."
+ },
+ {
+  "id": "xiong_village",
+  "name": "Xiong Village",
+  "type": "village",
+  "danger": 2,
+  "rank": [
+   1,
+   4
+  ],
+  "x": 120,
+  "y": 160,
+  "clan": "xiong",
+  "services": [
+   "market",
+   "clan_hall",
+   "inn"
+  ],
+  "icon": "huts-village",
+  "env": [
+   "mountain_mist",
+   "beast_den"
+  ],
+  "enemies": [
+   "wild"
+  ],
+  "cult": 1.0,
+  "desc": "A sturdy hill village of bear tamers and iron fists."
+ },
+ {
+  "id": "merchant_city",
+  "name": "Merchant City",
+  "type": "city",
+  "danger": 3,
+  "rank": [
+   2,
+   5
+  ],
+  "x": 560,
+  "y": 330,
+  "clan": "shang",
+  "services": [
+   "market",
+   "clan_hall",
+   "black_market",
+   "refinery",
+   "library",
+   "inn",
+   "broker"
+  ],
+  "icon": "medieval-village-01",
+  "env": [
+   "crowded_streets"
+  ],
+  "enemies": [
+   "bandit",
+   "demonic"
+  ],
+  "cult": 1.0,
+  "desc": "The Southern Border's largest trade hub, seat of the Shang clan. Anything can be bought for the right price."
+ },
+ {
+  "id": "wild_beast_plains",
+  "name": "Wild Beast Plains",
+  "type": "wild",
+  "danger": 4,
+  "rank": [
+   2,
+   4
+  ],
+  "x": 720,
+  "y": 200,
+  "services": [],
+  "icon": "wolf-howl",
+  "env": [
+   "open_plains",
+   "beast_den",
+   "storm_wind"
+  ],
+  "enemies": [
+   "wild",
+   "beast_king"
+  ],
+  "cult": 1.0,
+  "desc": "Vast grasslands roamed by wild beasts. Dangerous, but rich in materials and wild Gu."
+ },
+ {
+  "id": "moon_orchid_valley",
+  "name": "Moon Orchid Valley",
+  "type": "wild",
+  "danger": 3,
+  "rank": [
+   2,
+   3
+  ],
+  "x": 330,
+  "y": 470,
+  "services": [],
+  "icon": "lotus-flower",
+  "env": [
+   "moonlit_night",
+   "spirit_spring"
+  ],
+  "enemies": [
+   "wild",
+   "demonic"
+  ],
+  "cult": 1.15,
+  "desc": "A misty valley where moon orchids bloom. A spirit spring speeds cultivation."
+ },
+ {
+  "id": "wu_hollow",
+  "name": "Wu Marsh Hollow",
+  "type": "village",
+  "danger": 4,
+  "rank": [
+   2,
+   5
+  ],
+  "x": 820,
+  "y": 470,
+  "clan": "wu",
+  "services": [
+   "market",
+   "clan_hall",
+   "inn",
+   "black_market"
+  ],
+  "icon": "swamp",
+  "hidden_unless_clan": true,
+  "env": [
+   "miasma",
+   "dense_forest"
+  ],
+  "enemies": [
+   "demonic",
+   "wild"
+  ],
+  "cult": 1.0,
+  "desc": "Stilt houses over a poisoned marsh. The Wu clan trade in venom and secrets."
+ },
+ {
+  "id": "chi_forge",
+  "name": "Chi Forge Town",
+  "type": "village",
+  "danger": 3,
+  "rank": [
+   2,
+   5
+  ],
+  "x": 650,
+  "y": 520,
+  "clan": "chi",
+  "services": [
+   "market",
+   "clan_hall",
+   "inn",
+   "refinery"
+  ],
+  "icon": "furnace",
+  "hidden_unless_clan": true,
+  "env": [
+   "searing_heat"
+  ],
+  "enemies": [
+   "bandit",
+   "fire"
+  ],
+  "cult": 1.0,
+  "desc": "A town built around volcanic vents. Every house has a furnace."
+ },
+ {
+  "id": "ember_caldera",
+  "name": "Ember Caldera",
+  "type": "wild",
+  "danger": 5,
+  "rank": [
+   3,
+   5
+  ],
+  "x": 720,
+  "y": 590,
+  "services": [],
+  "icon": "volcano",
+  "env": [
+   "searing_heat",
+   "storm_wind"
+  ],
+  "enemies": [
+   "fire"
+  ],
+  "cult": 1.0,
+  "desc": "A crater of molten rock. The Ember Tyrant is said to nest here."
+ },
+ {
+  "id": "dang_hun_mountain",
+  "name": "Dang Hun Mountain",
+  "type": "danger",
+  "danger": 7,
+  "rank": [
+   4,
+   6
+  ],
+  "x": 900,
+  "y": 120,
+  "services": [],
+  "icon": "mountains",
+  "env": [
+   "soul_fog",
+   "miasma"
+  ],
+  "enemies": [
+   "soul",
+   "demonic"
+  ],
+  "cult": 1.5,
+  "soul": true,
+  "desc": "Shrouded in soul-damaging miasma. Cultivation is faster here, but the unprotected lose health every day."
+ },
+ {
+  "id": "hu_immortal_land",
+  "name": "Hu Immortal Blessed Land",
+  "type": "blessed",
+  "danger": 6,
+  "rank": [
+   4,
+   5
+  ],
+  "x": 60,
+  "y": 560,
+  "services": [
+   "inn"
+  ],
+  "icon": "fox-tail",
+  "hidden": true,
+  "safe": true,
+  "env": [
+   "spirit_spring",
+   "dense_forest"
+  ],
+  "enemies": [
+   "wild"
+  ],
+  "cult": 1.6,
+  "desc": "A secret blessed land behind a concealment barrier. A safe haven with a living ecosystem."
+ },
+ {
+  "id": "three_kings_land",
+  "name": "Three Kings Blessed Land",
+  "type": "blessed",
+  "danger": 8,
+  "rank": [
+   5,
+   6
+  ],
+  "x": 980,
+  "y": 330,
+  "services": [],
+  "icon": "three-keys",
+  "hidden": true,
+  "req": {
+   "rank": 5,
+   "item": "three_kings_key"
+  },
+  "env": [
+   "ancient_formation",
+   "storm_wind"
+  ],
+  "enemies": [
+   "construct"
+  ],
+  "cult": 1.8,
+  "desc": "A hidden grotto heaven left by three ancient Gu Immortals. Deadly trials, incredible treasure."
+ },
+ {
+  "id": "southern_border_arena",
+  "name": "Southern Border Arena",
+  "type": "city",
+  "danger": 3,
+  "rank": [
+   2,
+   6
+  ],
+  "x": 470,
+  "y": 560,
+  "services": [
+   "arena",
+   "inn",
+   "market"
+  ],
+  "icon": "crossed-swords",
+  "env": [
+   "crowded_streets",
+   "open_plains"
+  ],
+  "enemies": [
+   "bandit",
+   "demonic"
+  ],
+  "cult": 1.0,
+  "desc": "Where the clans' young talents test each other once a century."
+ },
+ {
+  "id": "northern_plains",
+  "name": "Northern Plains",
+  "type": "region",
+  "danger": 6,
+  "rank": [
+   5,
+   7
+  ],
+  "x": 560,
+  "y": 40,
+  "services": [
+   "market",
+   "inn"
+  ],
+  "icon": "eagle-head",
+  "region_unlock": "northern_plains",
+  "env": [
+   "open_plains",
+   "storm_wind"
+  ],
+  "enemies": [
+   "wild",
+   "beast_king",
+   "demonic"
+  ],
+  "cult": 1.3,
+  "desc": "Endless grass under an endless sky. Tribes, golden eagles and dark wolves."
+ },
+ {
+  "id": "central_continent",
+  "name": "Central Continent",
+  "type": "region",
+  "danger": 9,
+  "rank": [
+   6,
+   9
+  ],
+  "x": 980,
+  "y": 40,
+  "services": [
+   "market",
+   "inn",
+   "library"
+  ],
+  "icon": "byzantin-temple",
+  "region_unlock": "central_continent",
+  "env": [
+   "ancient_formation",
+   "spirit_spring"
+  ],
+  "enemies": [
+   "construct",
+   "demonic",
+   "soul"
+  ],
+  "cult": 2.0,
+  "desc": "The heart of the world, ruled by great sects. Only immortals walk here safely."
+ }
+]

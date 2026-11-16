@@ -1,0 +1,1414 @@
+[
+ {
+  "id": "iron_fist",
+  "rank": 1,
+  "path": "strength",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": "xiong"
+ },
+ {
+  "id": "bone_spike",
+  "rank": 1,
+  "path": "strength",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": "bai"
+ },
+ {
+  "id": "brute_force",
+  "rank": 1,
+  "path": "strength",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "black_boar",
+  "rank": 1,
+  "path": "strength",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "rolling_fist",
+  "rank": 2,
+  "path": "strength",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "white_boar",
+  "rank": 2,
+  "path": "strength",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "bear_strength",
+  "rank": 2,
+  "path": "strength",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": "xiong"
+ },
+ {
+  "id": "thick_skin",
+  "rank": 2,
+  "path": "strength",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": "xiong"
+ },
+ {
+  "id": "bone_armor",
+  "rank": 2,
+  "path": "strength",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": "bai"
+ },
+ {
+  "id": "bone_blade",
+  "rank": 2,
+  "path": "strength",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": "bai"
+ },
+ {
+  "id": "hundred_strikes",
+  "rank": 3,
+  "path": "strength",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "mountain_stance",
+  "rank": 3,
+  "path": "strength",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": "xiong"
+ },
+ {
+  "id": "skeletal_reinforcement",
+  "rank": 3,
+  "path": "strength",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": "bai"
+ },
+ {
+  "id": "dragon_strength",
+  "rank": 4,
+  "path": "strength",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "titans_grip",
+  "rank": 4,
+  "path": "strength",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": "xiong"
+ },
+ {
+  "id": "sovereign_strength",
+  "rank": 5,
+  "path": "strength",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "insight",
+  "rank": 1,
+  "path": "wisdom",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "wise_thought",
+  "rank": 1,
+  "path": "wisdom",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "suggestion",
+  "rank": 1,
+  "path": "enslavement",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": "shang"
+ },
+ {
+  "id": "clear_mind",
+  "rank": 2,
+  "path": "wisdom",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "thought_spear",
+  "rank": 2,
+  "path": "wisdom",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "information_network",
+  "rank": 3,
+  "path": "wisdom",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": "shang"
+ },
+ {
+  "id": "myriad_thoughts",
+  "rank": 3,
+  "path": "wisdom",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "lunar_reflection",
+  "rank": 3,
+  "path": "wisdom",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "heavens_calculation",
+  "rank": 4,
+  "path": "wisdom",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "star_thought",
+  "rank": 5,
+  "path": "wisdom",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "blood_drop",
+  "rank": 1,
+  "path": "blood",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "blood_leech",
+  "rank": 1,
+  "path": "blood",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "blood_qi",
+  "rank": 2,
+  "path": "blood",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "blood_moon_blade",
+  "rank": 2,
+  "path": "blood",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "wound_drinker",
+  "rank": 3,
+  "path": "blood",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "blood_sacrifice",
+  "rank": 3,
+  "path": "blood",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "crimson_tide",
+  "rank": 4,
+  "path": "blood",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "blood_skull",
+  "rank": 5,
+  "path": "blood",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "spark_forge",
+  "rank": 1,
+  "path": "refinement",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "tempering",
+  "rank": 1,
+  "path": "refinement",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "smelting",
+  "rank": 2,
+  "path": "refinement",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "gu_refining_furnace",
+  "rank": 3,
+  "path": "refinement",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "moon_smith",
+  "rank": 3,
+  "path": "refinement",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "ten_thousand_forgings",
+  "rank": 4,
+  "path": "refinement",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "heaven_forge",
+  "rank": 5,
+  "path": "refinement",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "beast_skin",
+  "rank": 1,
+  "path": "transformation",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "stone_skin",
+  "rank": 1,
+  "path": "transformation",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "wind_body",
+  "rank": 2,
+  "path": "transformation",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "mimic",
+  "rank": 2,
+  "path": "transformation",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "blood_wolf_form",
+  "rank": 3,
+  "path": "transformation",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "white_bone_transformation",
+  "rank": 4,
+  "path": "transformation",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": "bai"
+ },
+ {
+  "id": "thousand_shapes",
+  "rank": 4,
+  "path": "transformation",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "myriad_transformations",
+  "rank": 5,
+  "path": "transformation",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "wolf_slave",
+  "rank": 1,
+  "path": "enslavement",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "essence_thief",
+  "rank": 1,
+  "path": "enslavement",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "puppet_thread",
+  "rank": 2,
+  "path": "enslavement",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": "shang"
+ },
+ {
+  "id": "soul_contract",
+  "rank": 2,
+  "path": "enslavement",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": "shang"
+ },
+ {
+  "id": "beast_tide",
+  "rank": 3,
+  "path": "enslavement",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "bone_puppet",
+  "rank": 3,
+  "path": "enslavement",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": "bai"
+ },
+ {
+  "id": "dominating_presence",
+  "rank": 3,
+  "path": "enslavement",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": "xiong"
+ },
+ {
+  "id": "shadow_servant",
+  "rank": 3,
+  "path": "enslavement",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": "shang"
+ },
+ {
+  "id": "masters_voice",
+  "rank": 4,
+  "path": "enslavement",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": "shang"
+ },
+ {
+  "id": "beast_king",
+  "rank": 4,
+  "path": "enslavement",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "myriad_slaves",
+  "rank": 5,
+  "path": "enslavement",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "venom_needle",
+  "rank": 1,
+  "path": "poison",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "toxic_cloud",
+  "rank": 1,
+  "path": "poison",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "rot_spreading",
+  "rank": 2,
+  "path": "poison",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "scorpion_tail",
+  "rank": 2,
+  "path": "poison",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "plague_detonation",
+  "rank": 3,
+  "path": "poison",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "myriad_venom",
+  "rank": 3,
+  "path": "poison",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "seven_step_poison",
+  "rank": 4,
+  "path": "poison",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "ten_thousand_venoms",
+  "rank": 5,
+  "path": "poison",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "shadow_step",
+  "rank": 1,
+  "path": "dark",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "night_blade",
+  "rank": 1,
+  "path": "dark",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "darkness_shroud",
+  "rank": 2,
+  "path": "dark",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "reapers_mark",
+  "rank": 2,
+  "path": "dark",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "moonless_night",
+  "rank": 3,
+  "path": "dark",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "soul_shadow",
+  "rank": 3,
+  "path": "dark",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "abyss",
+  "rank": 4,
+  "path": "dark",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "eternal_night",
+  "rank": 5,
+  "path": "dark",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "moonlight",
+  "rank": 1,
+  "path": "light",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "light_shield",
+  "rank": 1,
+  "path": "light",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "sunray",
+  "rank": 1,
+  "path": "light",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "radiant_burst",
+  "rank": 2,
+  "path": "light",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "moonlight_blade",
+  "rank": 2,
+  "path": "light",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "crescent_shield",
+  "rank": 2,
+  "path": "light",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "moon_phase",
+  "rank": 3,
+  "path": "light",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "moonblade",
+  "rank": 3,
+  "path": "light",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "golden_light",
+  "rank": 3,
+  "path": "light",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "full_moon",
+  "rank": 4,
+  "path": "light",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": "gu_yue"
+ },
+ {
+  "id": "dawn_bulwark",
+  "rank": 4,
+  "path": "light",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "heavenly_light",
+  "rank": 5,
+  "path": "light",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "liquor_worm",
+  "rank": 1,
+  "path": "food",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "feast",
+  "rank": 1,
+  "path": "food",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "honey",
+  "rank": 2,
+  "path": "food",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "rice_bag",
+  "rank": 2,
+  "path": "food",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "gluttony",
+  "rank": 3,
+  "path": "food",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "spring_autumn_feast",
+  "rank": 4,
+  "path": "food",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "heavens_banquet",
+  "rank": 5,
+  "path": "food",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "basic_flame",
+  "rank": 1,
+  "path": "fire",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "fire_bowl",
+  "rank": 2,
+  "path": "fire",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "flame_lotus",
+  "rank": 3,
+  "path": "fire",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "firestorm",
+  "rank": 4,
+  "path": "fire",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "phoenix_fire",
+  "rank": 5,
+  "path": "fire",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "swift_steps",
+  "rank": 1,
+  "path": "none",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "jade_skin",
+  "rank": 1,
+  "path": "none",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "cloud_walker",
+  "rank": 3,
+  "path": "none",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "starlight_wings",
+  "rank": 5,
+  "path": "none",
+  "stones": 1000,
+  "mats": {
+   "rare": 5,
+   "legendary": 1
+  },
+  "days": 40,
+  "clan": null
+ },
+ {
+  "id": "spring_autumn_cicada",
+  "rank": 2,
+  "path": "none",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "primeval_moss",
+  "rank": 1,
+  "path": "none",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "heaven_earth_lotus",
+  "rank": 4,
+  "path": "none",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "stillwater",
+  "rank": 1,
+  "path": "none",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "gourmand_pouch",
+  "rank": 2,
+  "path": "food",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "soul_guard",
+  "rank": 3,
+  "path": "none",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "treasure_pouch",
+  "rank": 1,
+  "path": "none",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "heavenly_eye",
+  "rank": 2,
+  "path": "wisdom",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "relic",
+  "rank": 1,
+  "path": "none",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "longevity",
+  "rank": 2,
+  "path": "none",
+  "stones": 60,
+  "mats": {
+   "common": 3,
+   "uncommon": 1
+  },
+  "days": 5,
+  "clan": null
+ },
+ {
+  "id": "ten_years_longevity",
+  "rank": 3,
+  "path": "none",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "fifteen_years_longevity",
+  "rank": 4,
+  "path": "none",
+  "stones": 500,
+  "mats": {
+   "uncommon": 2,
+   "rare": 2,
+   "path": 1
+  },
+  "days": 20,
+  "clan": null
+ },
+ {
+  "id": "breakthrough_pill",
+  "rank": 1,
+  "path": "none",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ },
+ {
+  "id": "dao_insight",
+  "rank": 3,
+  "path": "none",
+  "stones": 200,
+  "mats": {
+   "uncommon": 3,
+   "rare": 1
+  },
+  "days": 10,
+  "clan": null
+ },
+ {
+  "id": "healing_spring",
+  "rank": 1,
+  "path": "none",
+  "stones": 20,
+  "mats": {
+   "common": 3
+  },
+  "days": 3,
+  "clan": null
+ }
+]

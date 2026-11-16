@@ -1,28 +1,10 @@
+# Godot
+game/.godot/
+*.import.tmp
+# Builds
+build/
+*.exe
+*.pck
 # Python
 __pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-venv/
-env/
-
-# Env / secrets
-.env
-*.local
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
-# Godot (future)
-.godot/
-.import/
-export.cfg
-export_presets.cfg
-
-# OS / editor
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
+*.pyc

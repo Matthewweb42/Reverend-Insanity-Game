@@ -1,0 +1,194 @@
+[
+ {
+  "id": "primeval_grass",
+  "name": "Primeval Grass",
+  "tier": "common",
+  "path": null,
+  "icon": "high-grass",
+  "value": 4
+ },
+ {
+  "id": "beast_bone",
+  "name": "Beast Bone",
+  "tier": "common",
+  "path": null,
+  "icon": "broken-bone",
+  "value": 5
+ },
+ {
+  "id": "spirit_water",
+  "name": "Spirit Water",
+  "tier": "common",
+  "path": null,
+  "icon": "water-flask",
+  "value": 5
+ },
+ {
+  "id": "iron_sand",
+  "name": "Iron Sand",
+  "tier": "uncommon",
+  "path": null,
+  "icon": "stone-pile",
+  "value": 18
+ },
+ {
+  "id": "moon_orchid",
+  "name": "Moon Orchid",
+  "tier": "uncommon",
+  "path": "light",
+  "icon": "lotus",
+  "value": 22
+ },
+ {
+  "id": "beast_core",
+  "name": "Beast Core",
+  "tier": "uncommon",
+  "path": null,
+  "icon": "gems",
+  "value": 20
+ },
+ {
+  "id": "star_fragment",
+  "name": "Star Fragment",
+  "tier": "rare",
+  "path": null,
+  "icon": "falling-star",
+  "value": 80
+ },
+ {
+  "id": "ancient_amber",
+  "name": "Ancient Amber",
+  "tier": "rare",
+  "path": null,
+  "icon": "crystal-cluster",
+  "value": 90
+ },
+ {
+  "id": "thunder_crystal",
+  "name": "Thunder Crystal",
+  "tier": "rare",
+  "path": null,
+  "icon": "crystal-bars",
+  "value": 95
+ },
+ {
+  "id": "heavens_tear",
+  "name": "Heaven's Tear",
+  "tier": "legendary",
+  "path": null,
+  "icon": "water-drop",
+  "value": 400
+ },
+ {
+  "id": "dao_shard",
+  "name": "Dao Shard",
+  "tier": "legendary",
+  "path": null,
+  "icon": "floating-crystal",
+  "value": 450
+ },
+ {
+  "id": "bear_sinew",
+  "name": "Bear Sinew",
+  "tier": "uncommon",
+  "path": "strength",
+  "icon": "muscle-up",
+  "value": 20
+ },
+ {
+  "id": "thought_pearl",
+  "name": "Thought Pearl",
+  "tier": "uncommon",
+  "path": "wisdom",
+  "icon": "crystal-eye",
+  "value": 24
+ },
+ {
+  "id": "crimson_essence",
+  "name": "Crimson Essence",
+  "tier": "uncommon",
+  "path": "blood",
+  "icon": "heart-drop",
+  "value": 22
+ },
+ {
+  "id": "refining_ember",
+  "name": "Refining Ember",
+  "tier": "uncommon",
+  "path": "refinement",
+  "icon": "fire-gem",
+  "value": 22
+ },
+ {
+  "id": "shifting_scale",
+  "name": "Shifting Scale",
+  "tier": "uncommon",
+  "path": "transformation",
+  "icon": "fish-scales",
+  "value": 22
+ },
+ {
+  "id": "binding_thread",
+  "name": "Binding Thread",
+  "tier": "uncommon",
+  "path": "enslavement",
+  "icon": "sewing-string",
+  "value": 22
+ },
+ {
+  "id": "venom_sac",
+  "name": "Venom Sac",
+  "tier": "uncommon",
+  "path": "poison",
+  "icon": "chemical-drop",
+  "value": 20
+ },
+ {
+  "id": "shade_silk",
+  "name": "Shade Silk",
+  "tier": "uncommon",
+  "path": "dark",
+  "icon": "spider-web",
+  "value": 24
+ },
+ {
+  "id": "dawn_dew",
+  "name": "Dawn Dew",
+  "tier": "uncommon",
+  "path": "light",
+  "icon": "drop",
+  "value": 22
+ },
+ {
+  "id": "sweet_nectar",
+  "name": "Sweet Nectar",
+  "tier": "uncommon",
+  "path": "food",
+  "icon": "honeypot",
+  "value": 18
+ },
+ {
+  "id": "phoenix_ash",
+  "name": "Phoenix Ash",
+  "tier": "uncommon",
+  "path": "fire",
+  "icon": "fire-bowl",
+  "value": 24
+ },
+ {
+  "id": "soul_jade",
+  "name": "Soul Jade",
+  "tier": "rare",
+  "path": "dark",
+  "icon": "crystal-shrine",
+  "value": 110
+ },
+ {
+  "id": "immortal_stone",
+  "name": "Immortal Essence Stone",
+  "tier": "legendary",
+  "path": null,
+  "icon": "crystal-growth",
+  "value": 1000
+ }
+]

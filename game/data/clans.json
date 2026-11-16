@@ -1,0 +1,270 @@
+[
+ {
+  "id": "gu_yue",
+  "name": "Gu Yue Clan",
+  "theme": "Moonlight and Balance",
+  "icon": "moon",
+  "paths": [
+   "light",
+   "refinement",
+   "wisdom"
+  ],
+  "primary": "light",
+  "home": "gu_yue_village",
+  "age": 15,
+  "stones": 50,
+  "start_gu": [
+   "moonlight",
+   "light_shield",
+   "insight",
+   "tempering",
+   "jade_skin",
+   "wise_thought",
+   "sunray",
+   "brute_force"
+  ],
+  "bonus": {
+   "attain": {
+    "light": 0.1
+   },
+   "night": 0.15
+  },
+  "hp_bonus": 0,
+  "km": "moonlight_devastation",
+  "unique": [
+   "moonlight_blade",
+   "crescent_shield",
+   "moon_phase",
+   "lunar_reflection",
+   "full_moon"
+  ],
+  "rival": "bai",
+  "unlock": null,
+  "desc": "Balanced cultivators of moonlight. +10% Light attainment, bonus damage at night. A good first clan."
+ },
+ {
+  "id": "bai",
+  "name": "Bai Clan",
+  "theme": "Bone and Aggression",
+  "icon": "skull-crossed-bones",
+  "paths": [
+   "strength",
+   "blood",
+   "transformation"
+  ],
+  "primary": "strength",
+  "home": "bai_territory",
+  "age": 16,
+  "stones": 35,
+  "start_gu": [
+   "bone_spike",
+   "brute_force",
+   "blood_drop",
+   "beast_skin",
+   "stone_skin",
+   "blood_leech",
+   "jade_skin",
+   "black_boar"
+  ],
+  "bonus": {
+   "attain": {
+    "strength": 0.15
+   },
+   "damage": 0.1
+  },
+  "hp_bonus": 20,
+  "km": "bone_storm",
+  "unique": [
+   "bone_armor",
+   "bone_blade",
+   "skeletal_reinforcement",
+   "bone_puppet",
+   "white_bone_transformation"
+  ],
+  "rival": "gu_yue",
+  "unlock": {
+   "type": "rank_with_clan",
+   "clan": "gu_yue",
+   "rank": 3,
+   "text": "Reach Rank 3 as a Gu Yue Gu Master."
+  },
+  "desc": "Brutal bone cultivators. +15% Strength attainment, +10% combat damage, +20 HP."
+ },
+ {
+  "id": "xiong",
+  "name": "Xiong Clan",
+  "theme": "Raw Power and Simplicity",
+  "icon": "bear-head",
+  "paths": [
+   "strength",
+   "food",
+   "enslavement"
+  ],
+  "primary": "strength",
+  "home": "xiong_village",
+  "age": 17,
+  "stones": 40,
+  "start_gu": [
+   "iron_fist",
+   "brute_force",
+   "liquor_worm",
+   "wolf_slave",
+   "jade_skin",
+   "feast",
+   "black_boar",
+   "light_shield"
+  ],
+  "bonus": {
+   "attain": {
+    "strength": 0.2
+   },
+   "cult": -0.05
+  },
+  "hp_bonus": 30,
+  "km": "mountain_crushing_fist",
+  "unique": [
+   "bear_strength",
+   "thick_skin",
+   "mountain_stance",
+   "dominating_presence",
+   "titans_grip"
+  ],
+  "rival": null,
+  "unlock": {
+   "type": "rank",
+   "rank": 4,
+   "text": "Reach Rank 4 with any clan."
+  },
+  "desc": "Straightforward strength. +20% Strength attainment, +30 HP, cultivation 5% slower."
+ },
+ {
+  "id": "shang",
+  "name": "Shang Clan",
+  "theme": "Politics and Manipulation",
+  "icon": "coins",
+  "paths": [
+   "enslavement",
+   "wisdom",
+   "dark"
+  ],
+  "primary": "enslavement",
+  "home": "merchant_city",
+  "age": 16,
+  "stones": 75,
+  "start_gu": [
+   "suggestion",
+   "essence_thief",
+   "wolf_slave",
+   "insight",
+   "shadow_step",
+   "night_blade",
+   "jade_skin",
+   "wise_thought"
+  ],
+  "bonus": {
+   "attain": {
+    "enslavement": 0.15
+   },
+   "trade": -0.1,
+   "contacts": 2
+  },
+  "hp_bonus": 0,
+  "km": "absolute_dominion",
+  "unique": [
+   "soul_contract",
+   "puppet_thread",
+   "information_network",
+   "shadow_servant",
+   "masters_voice"
+  ],
+  "rival": null,
+  "unlock": {
+   "type": "rank",
+   "rank": 5,
+   "text": "Reach Rank 5 with any clan."
+  },
+  "desc": "Merchants and manipulators. +15% Enslavement attainment, 2 starting contacts, 10% cheaper trade."
+ },
+ {
+  "id": "wu",
+  "name": "Wu Clan",
+  "theme": "Assassination and Toxins",
+  "icon": "poison",
+  "paths": [
+   "poison",
+   "dark",
+   "blood"
+  ],
+  "primary": "poison",
+  "home": "wu_hollow",
+  "age": 16,
+  "stones": 45,
+  "start_gu": [
+   "venom_needle",
+   "toxic_cloud",
+   "night_blade",
+   "shadow_step",
+   "blood_drop",
+   "jade_skin",
+   "venom_needle",
+   "blood_leech"
+  ],
+  "bonus": {
+   "attain": {
+    "poison": 0.2
+   }
+  },
+  "hp_bonus": 0,
+  "km": "plague_apocalypse",
+  "unique": [],
+  "rival": null,
+  "unlock": {
+   "type": "rank_attain",
+   "rank": 4,
+   "path": "poison",
+   "tier": "Adept",
+   "text": "Reach Rank 4 with Adept Poison attainment."
+  },
+  "desc": "Assassins of the marsh. +20% Poison attainment."
+ },
+ {
+  "id": "chi",
+  "name": "Chi Clan",
+  "theme": "Forges and Fire Mastery",
+  "icon": "flame",
+  "paths": [
+   "fire",
+   "refinement",
+   "strength"
+  ],
+  "primary": "fire",
+  "home": "chi_forge",
+  "age": 16,
+  "stones": 45,
+  "start_gu": [
+   "basic_flame",
+   "basic_flame",
+   "spark_forge",
+   "tempering",
+   "brute_force",
+   "iron_fist",
+   "jade_skin",
+   "light_shield"
+  ],
+  "bonus": {
+   "attain": {
+    "fire": 0.2
+   }
+  },
+  "hp_bonus": 10,
+  "km": "inferno_furnace",
+  "unique": [],
+  "rival": null,
+  "unlock": {
+   "type": "flag",
+   "flag": "beat_fire_boss",
+   "text": "Defeat the Ember Tyrant, a fire path boss."
+  },
+  "desc": "Smiths of flame. +20% Fire attainment, +10 HP."
+ }
+]

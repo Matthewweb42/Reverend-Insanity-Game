@@ -1,0 +1,403 @@
+[
+ {
+  "id": "moonlight_devastation",
+  "name": "Moonlight Devastation",
+  "path": "light",
+  "need_tier": "Master",
+  "components": {
+   "tag": "moon",
+   "count": 3
+  },
+  "cost": 45,
+  "clan": "gu_yue",
+  "effects": [
+   {
+    "v": "damage",
+    "n": 60,
+    "raw": true,
+    "rankscale": true,
+    "times": 1
+   },
+   {
+    "v": "dmg_shield",
+    "mult": 1.0,
+    "consume": true
+   }
+  ],
+  "desc": "Massive light damage that also releases your shields. Stronger at night.",
+  "night_bonus": 0.4
+ },
+ {
+  "id": "bone_storm",
+  "name": "Bone Storm",
+  "path": "strength",
+  "need_tier": "Master",
+  "components": {
+   "tag": "bone",
+   "count": 2
+  },
+  "cost": 40,
+  "clan": "bai",
+  "effects": [
+   {
+    "v": "damage",
+    "n": 34,
+    "rankscale": true,
+    "t": "all"
+   },
+   {
+    "v": "status",
+    "s": "vuln",
+    "stacks": 2,
+    "turns": 2,
+    "t": "all"
+   },
+   {
+    "v": "status",
+    "s": "bleed",
+    "stacks": 4,
+    "turns": 3,
+    "t": "all"
+   }
+  ],
+  "desc": "A storm of bone shards hits every enemy and shreds their armour."
+ },
+ {
+  "id": "mountain_crushing_fist",
+  "name": "Mountain Crushing Fist",
+  "path": "strength",
+  "need_tier": "Master",
+  "components": {
+   "path": "strength",
+   "count": 2
+  },
+  "cost": 40,
+  "clan": "xiong",
+  "effects": [
+   {
+    "v": "dmg_combo",
+    "base": 70,
+    "per": 12,
+    "rankscale": true
+   },
+   {
+    "v": "status",
+    "s": "stun",
+    "stacks": 1,
+    "turns": 1,
+    "t": "enemy"
+   }
+  ],
+  "desc": "One massive blow that grows with your combo, and stuns."
+ },
+ {
+  "id": "absolute_dominion",
+  "name": "Absolute Dominion",
+  "path": "enslavement",
+  "need_tier": "Master",
+  "components": {
+   "tag": "control",
+   "count": 3
+  },
+  "cost": 45,
+  "clan": "shang",
+  "effects": [
+   {
+    "v": "status",
+    "s": "control",
+    "stacks": 1,
+    "turns": 2,
+    "t": "enemy"
+   },
+   {
+    "v": "status",
+    "s": "stun",
+    "stacks": 1,
+    "turns": 2,
+    "t": "enemy"
+   },
+   {
+    "v": "steal_essence",
+    "n": 30
+   }
+  ],
+  "desc": "Fully control the enemy for 2 turns."
+ },
+ {
+  "id": "plague_apocalypse",
+  "name": "Plague Apocalypse",
+  "path": "poison",
+  "need_tier": "Master",
+  "components": {
+   "path": "poison",
+   "count": 3
+  },
+  "cost": 40,
+  "effects": [
+   {
+    "v": "multiply_status",
+    "s": "poison",
+    "x": 3,
+    "t": "all"
+   },
+   {
+    "v": "detonate",
+    "s": "poison",
+    "mult": 1.0,
+    "t": "all",
+    "keep": true
+   }
+  ],
+  "desc": "Triple every enemy's poison, then make it burst for its full value."
+ },
+ {
+  "id": "exsanguinate",
+  "name": "Exsanguinate",
+  "path": "blood",
+  "need_tier": "Master",
+  "components": {
+   "path": "blood",
+   "count": 3
+  },
+  "cost": 35,
+  "effects": [
+   {
+    "v": "self_damage",
+    "n": 20,
+    "rankscale": true
+   },
+   {
+    "v": "dmg_missing_hp",
+    "pct": 0.6,
+    "base": 40,
+    "rankscale": true,
+    "lifesteal": 0.5
+   }
+  ],
+  "desc": "Pour your own life into a strike that drinks it all back."
+ },
+ {
+  "id": "avatar_of_war",
+  "name": "Avatar of War",
+  "path": "strength",
+  "need_tier": "Master",
+  "components": {
+   "path": "strength",
+   "count": 3
+  },
+  "cost": 45,
+  "effects": [
+   {
+    "v": "dmg_combo",
+    "base": 40,
+    "per": 15,
+    "rankscale": true
+   },
+   {
+    "v": "status",
+    "s": "strong",
+    "stacks": 2,
+    "turns": 3,
+    "t": "self"
+   },
+   {
+    "v": "combo",
+    "n": 3
+   }
+  ],
+  "desc": "Become war itself: a combo-fuelled blow and three turns of strength."
+ },
+ {
+  "id": "dawnbreaker",
+  "name": "Dawnbreaker",
+  "path": "light",
+  "need_tier": "Master",
+  "components": {
+   "path": "light",
+   "count": 3
+  },
+  "cost": 40,
+  "effects": [
+   {
+    "v": "dmg_shield",
+    "mult": 2.0,
+    "consume": true
+   },
+   {
+    "v": "shield_pct_hp",
+    "pct": 0.15
+   }
+  ],
+  "desc": "Release all shields as damage twice over, then raise a fresh one."
+ },
+ {
+  "id": "reaping_shadow",
+  "name": "Reaping Shadow",
+  "path": "dark",
+  "need_tier": "Master",
+  "components": {
+   "path": "dark",
+   "count": 3
+  },
+  "cost": 40,
+  "effects": [
+   {
+    "v": "status",
+    "s": "stealth",
+    "stacks": 1,
+    "turns": 1,
+    "t": "self"
+   },
+   {
+    "v": "execute",
+    "pct": 0.35,
+    "n": 60,
+    "rankscale": true
+   }
+  ],
+  "desc": "Vanish, then reap: executes enemies below 35% health."
+ },
+ {
+  "id": "myriad_thoughts_cascade",
+  "name": "Myriad Thoughts Cascade",
+  "path": "wisdom",
+  "need_tier": "Master",
+  "components": {
+   "path": "wisdom",
+   "count": 3
+  },
+  "cost": 35,
+  "effects": [
+   {
+    "v": "draw",
+    "n": 3
+   },
+   {
+    "v": "cheapen",
+    "n": 3
+   },
+   {
+    "v": "reveal",
+    "n": 3
+   }
+  ],
+  "desc": "Draw 3, your next 3 Gu cost half, and every intent is revealed."
+ },
+ {
+  "id": "furnace_of_ten_thousand",
+  "name": "Furnace of Ten Thousand Refinements",
+  "path": "refinement",
+  "need_tier": "Master",
+  "components": {
+   "path": "refinement",
+   "count": 3
+  },
+  "cost": 40,
+  "effects": [
+   {
+    "v": "create",
+    "card": "forged_blade",
+    "n": 3
+   },
+   {
+    "v": "upgrade_hand",
+    "pct": 0.4
+   }
+  ],
+  "desc": "Forge three blades and empower your whole hand."
+ },
+ {
+  "id": "thousand_transformations",
+  "name": "Thousand Transformations",
+  "path": "transformation",
+  "need_tier": "Master",
+  "components": {
+   "path": "transformation",
+   "count": 3
+  },
+  "cost": 40,
+  "effects": [
+   {
+    "v": "form",
+    "form": "beast",
+    "turns": 3
+   },
+   {
+    "v": "form",
+    "form": "wind",
+    "turns": 3
+   },
+   {
+    "v": "form",
+    "form": "blood",
+    "turns": 3
+   },
+   {
+    "v": "damage",
+    "n": 40,
+    "raw": true,
+    "rankscale": true
+   }
+  ],
+  "desc": "Take beast, wind and blood forms at once, and strike."
+ },
+ {
+  "id": "feast_of_heaven",
+  "name": "Feast of Heaven",
+  "path": "food",
+  "need_tier": "Master",
+  "components": {
+   "path": "food",
+   "count": 3
+  },
+  "cost": 20,
+  "effects": [
+   {
+    "v": "essence",
+    "n": 50,
+    "rankscale": true
+   },
+   {
+    "v": "heal",
+    "n": 40,
+    "raw": true,
+    "rankscale": true
+   },
+   {
+    "v": "dmg_essence",
+    "pct": 0.4,
+    "base": 20,
+    "rankscale": true
+   }
+  ],
+  "desc": "Gorge on essence, heal, and hit for a share of everything you hold."
+ },
+ {
+  "id": "inferno_furnace",
+  "name": "Inferno Furnace",
+  "path": "fire",
+  "need_tier": "Master",
+  "components": {
+   "path": "fire",
+   "count": 3
+  },
+  "cost": 40,
+  "effects": [
+   {
+    "v": "status",
+    "s": "burn",
+    "stacks": 8,
+    "turns": 4,
+    "t": "all"
+   },
+   {
+    "v": "detonate",
+    "s": "burn",
+    "mult": 3.0,
+    "t": "all",
+    "keep": true
+   }
+  ],
+  "desc": "Set every enemy ablaze and stoke it into an inferno."
+ }
+]

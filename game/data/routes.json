@@ -1,0 +1,132 @@
+[
+ {
+  "a": "gu_yue_village",
+  "b": "qing_mao_woods",
+  "days": 2
+ },
+ {
+  "a": "gu_yue_village",
+  "b": "bai_territory",
+  "days": 4
+ },
+ {
+  "a": "gu_yue_village",
+  "b": "xiong_village",
+  "days": 5
+ },
+ {
+  "a": "gu_yue_village",
+  "b": "moon_orchid_valley",
+  "days": 3
+ },
+ {
+  "a": "gu_yue_village",
+  "b": "merchant_city",
+  "days": 5
+ },
+ {
+  "a": "qing_mao_woods",
+  "b": "hu_immortal_land",
+  "days": 4
+ },
+ {
+  "a": "qing_mao_woods",
+  "b": "moon_orchid_valley",
+  "days": 3
+ },
+ {
+  "a": "bai_territory",
+  "b": "xiong_village",
+  "days": 4
+ },
+ {
+  "a": "bai_territory",
+  "b": "merchant_city",
+  "days": 4
+ },
+ {
+  "a": "bai_territory",
+  "b": "northern_plains",
+  "days": 12
+ },
+ {
+  "a": "merchant_city",
+  "b": "wild_beast_plains",
+  "days": 4
+ },
+ {
+  "a": "merchant_city",
+  "b": "moon_orchid_valley",
+  "days": 4
+ },
+ {
+  "a": "merchant_city",
+  "b": "southern_border_arena",
+  "days": 3
+ },
+ {
+  "a": "merchant_city",
+  "b": "chi_forge",
+  "days": 4
+ },
+ {
+  "a": "merchant_city",
+  "b": "wu_hollow",
+  "days": 5
+ },
+ {
+  "a": "wild_beast_plains",
+  "b": "dang_hun_mountain",
+  "days": 6
+ },
+ {
+  "a": "wild_beast_plains",
+  "b": "wu_hollow",
+  "days": 5
+ },
+ {
+  "a": "wild_beast_plains",
+  "b": "three_kings_land",
+  "days": 8
+ },
+ {
+  "a": "wild_beast_plains",
+  "b": "northern_plains",
+  "days": 10
+ },
+ {
+  "a": "chi_forge",
+  "b": "ember_caldera",
+  "days": 3
+ },
+ {
+  "a": "chi_forge",
+  "b": "southern_border_arena",
+  "days": 4
+ },
+ {
+  "a": "wu_hollow",
+  "b": "ember_caldera",
+  "days": 4
+ },
+ {
+  "a": "dang_hun_mountain",
+  "b": "three_kings_land",
+  "days": 6
+ },
+ {
+  "a": "dang_hun_mountain",
+  "b": "central_continent",
+  "days": 15
+ },
+ {
+  "a": "northern_plains",
+  "b": "central_continent",
+  "days": 15
+ },
+ {
+  "a": "moon_orchid_valley",
+  "b": "southern_border_arena",
+  "days": 3
+ }
+]

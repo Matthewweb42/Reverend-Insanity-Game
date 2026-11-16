@@ -1,0 +1,22 @@
+{
+ "beast": {
+  "name": "Beast Form",
+  "desc": "+30% damage, -10 evasion"
+ },
+ "stone": {
+  "name": "Stone Form",
+  "desc": "Takes 40% less damage, rooted"
+ },
+ "wind": {
+  "name": "Wind Form",
+  "desc": "+30 evasion, draw +1 each turn"
+ },
+ "blood": {
+  "name": "Blood Form",
+  "desc": "Heal 20% of damage dealt"
+ },
+ "bone": {
+  "name": "Bone Form",
+  "desc": "Attackers take 4 x rank damage"
+ }
+}
