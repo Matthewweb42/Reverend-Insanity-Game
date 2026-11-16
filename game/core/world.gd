@@ -571,6 +571,8 @@ func mission_combat_done(won: bool) -> String:
 
 func _mission_reward(m: Dictionary, ok: bool) -> String:
 	var pl := p()
+	if not g.headless and bool(Meta.setting("autopause", {}).get("mission", false)):
+		g.paused = true
 	if not ok:
 		g.add_standing(-int(m.contrib) / 2)
 		g.add_log("Mission failed: %s." % m.name, "bad")

@@ -118,6 +118,11 @@ func new_game(opts: Dictionary) -> void:
 	if clan.km != null and clan.km != "":
 		pl.killers.append(clan.km)
 	_init_known_locations()
+	var region: String = opts.get("region", "southern_border")
+	if region == "northern_plains" or region == "central_continent":
+		pl.known_locs.append("northern_plains")
+	if region == "central_continent":
+		pl.known_locs.append("central_continent")
 	for gid in clan.start_gu:
 		var gi := add_gu(gid, true)
 		if not gi.is_empty() and can_equip(gi) == "":
@@ -886,7 +891,8 @@ func _activity_tick() -> void:
 				if float(pl.progress) >= Data.stage_req(int(pl.rank), int(pl.stage)):
 					pl.activity = "idle"
 					add_log("Your aperture is full. You can attempt a breakthrough.", "great")
-					paused = true
+					if bool(Meta.setting("autopause", {}).get("breakthrough", true)):
+						paused = true
 		"rest":
 			pl.hp = mini(max_hp(), int(pl.hp) + maxi(2, int(max_hp() * 0.15)))
 			cult.daily(false, true)
@@ -1008,6 +1014,8 @@ func arrive(dest: String) -> void:
 		add_log("You arrive at %s." % Data.locations[dest].name, "info")
 	world.on_arrive(dest)
 	world.check_goals()
+	if not headless and bool(Meta.setting("autopause", {}).get("travel", true)):
+		paused = true
 	emit_signal("state_changed")
 
 
