@@ -1,0 +1,6 @@
+Double-click ReverendInsanity-win_x64.exe.
+
+Windows 10 or 11 already includes the WebView2 runtime this window needs.
+If the window does not open, install WebView2 from Microsoft and try again.
+
+Esc is the menu. The game saves on its own. Continue is on the title screen.

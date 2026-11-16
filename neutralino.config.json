@@ -1,0 +1,41 @@
+{
+  "applicationId": "ri.aperture",
+  "applicationName": "Reverend Insanity",
+  "version": "1.0.0",
+  "author": "Matthewweb42",
+  "description": "A Reverend Insanity roguelike deckbuilder.",
+  "defaultMode": "window",
+  "port": 0,
+  "documentRoot": "/game/",
+  "url": "/",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "tokenSecurity": "one-time",
+  "logging": { "enabled": false, "writeToLogFile": false },
+  "nativeAllowList": ["app.*"],
+  "modes": {
+    "window": {
+      "title": "Reverend Insanity",
+      "width": 1440,
+      "height": 900,
+      "minWidth": 1100,
+      "minHeight": 720,
+      "fullScreen": false,
+      "alwaysOnTop": false,
+      "enableInspector": false,
+      "borderless": false,
+      "maximize": false,
+      "hidden": false,
+      "resizable": true,
+      "exitProcessOnClose": true
+    }
+  },
+  "cli": {
+    "binaryName": "ReverendInsanity",
+    "resourcesPath": "/game/",
+    "clientLibrary": "/game/neutralino.js",
+    "binaryVersion": "6.10.0",
+    "clientVersion": "6.10.0",
+    "distributionPath": "/build"
+  }
+}
