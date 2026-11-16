@@ -41,9 +41,10 @@ func _ready() -> void:
 	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(overlay)
 	toast_box = UI.vbox(6)
-	toast_box.set_anchors_preset(Control.PRESET_CENTER_TOP)
-	toast_box.position = Vector2(-220, 70)
-	toast_box.custom_minimum_size = Vector2(440, 0)
+	# toasts sit over the top of the map, clear of the side panel and the top bar
+	toast_box.set_anchors_preset(Control.PRESET_TOP_LEFT)
+	toast_box.position = Vector2(260, 120)
+	toast_box.custom_minimum_size = Vector2(460, 0)
 	toast_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(toast_box)
 	dialogs = Dialogs.new(self)
@@ -248,7 +249,7 @@ func toast(text: String, kind := "info") -> void:
 	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	p.add_child(l)
 	toast_box.add_child(p)
-	while toast_box.get_child_count() > 4:
+	while toast_box.get_child_count() > 3:
 		var old := toast_box.get_child(0)
 		toast_box.remove_child(old)
 		old.queue_free()

@@ -18,8 +18,8 @@ const INTENSITY := [
 	{"name": "Meditation", "stones": 0, "points": 0.25},
 	{"name": "Steady", "stones": 1, "points": 0.5},
 	{"name": "Focused", "stones": 2, "points": 1.0},
-	{"name": "Intense", "stones": 5, "points": 1.75},
-	{"name": "Reckless", "stones": 12, "points": 2.5},
+	{"name": "Intense", "stones": 5, "points": 1.75, "risk": 0.002},
+	{"name": "Reckless", "stones": 12, "points": 2.5, "risk": 0.008},
 ]
 const APTITUDE := {
 	"A": {"mult": 1.5, "rank": 15, "stage": 5, "label": "A-grade"},

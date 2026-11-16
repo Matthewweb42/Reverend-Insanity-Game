@@ -266,6 +266,29 @@ func build(sid: String) -> String:
 	return ""
 
 
+const BEAST_NAMES := ["Thunder-Crown Wolf", "Jade Crane", "Flame Python", "Moon Fox", "Iron-Hide Bear", "Cloud Stag"]
+
+
+func raise_beast() -> String:
+	## Tame an immortal beast for the Beast Pen. Each one weakens tribulations by 5% (up to 3).
+	var b = g.s.blessed
+	if b == null:
+		return "No blessed land"
+	if not ("beast_pen" in b.structures):
+		return "Build a Beast Pen first"
+	if b.beasts.size() >= 3:
+		return "Your Beast Pen is full"
+	if int(p().istones) < 15:
+		return "Needs 15 immortal essence stones"
+	p().istones = int(p().istones) - 15
+	var name: String = BEAST_NAMES[g.rng.randi_range(0, BEAST_NAMES.size() - 1)]
+	b.beasts.append({"name": name, "born": int(g.s.day)})
+	g.skip_days(10)
+	g.add_log("After ten days of patient feeding, a young %s accepts you as its master." % name, "good")
+	g.emit_signal("state_changed")
+	return ""
+
+
 func nurture_cost() -> int:
 	return 20 * int(g.s.blessed.grade)
 

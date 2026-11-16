@@ -1,131 +1,129 @@
-# Reverend Insanity Roguelike
+# Reverend Insanity: Path of the Gu Master
 
-A real-time with pause roguelike where you cultivate from Rank 1 mortal to Rank 9 Venerable. Based on the Reverend Insanity (Gu Zhen Ren) novel.
+A roguelike deckbuilder for Windows, inspired by the web novel *Reverend Insanity* by Gu Zhen Ren
+(fan project, not affiliated with the author or publishers).
 
-## Project Status
+You are a young Gu Master with one mortal lifespan. Time runs on its own, with pause and speed
+controls. Your equipped Gu worms are your deck. Cultivate from Rank 1, survive bandits, beasts,
+rivals and heart demons, refine new Gu, climb your clan's ranks, face the immortal tribulation,
+manage a blessed land, and try to become a Rank 9 Venerable before age or a blade ends you. Death
+is permanent, but every life earns inheritance points for the next.
 
-**Phase:** Playable text prototype
+Built with Godot 4.5 (GDScript). Runs fully offline. Live AI writing through the Claude API is
+optional and only switches on if you paste your own API key in Settings.
 
-A terminal card-combat prototype is playable now (see [prototype/](prototype/)). This is a
-throwaway/reference build to nail the fun of the card system before porting to Godot (DEC-041).
-Design docs are otherwise complete (Sprint 0).
+---
 
-### Play the prototype
+## Play it
 
-```
-py prototype/game.py            # interactive
-py prototype/game.py --demo     # scripted auto-play (no input)
-py prototype/game.py --seed 7   # reproducible RNG
-```
+### Option 1: download the build (no tools needed)
 
-The game is a **card RPG**: your Gu worms are cards, and your aperture is your deck (DEC-039).
-Each cultivation path has its own symbol (DEC-040).
+1. Open the repository on GitHub, go to **Actions**, then **Build Windows**, and open the latest
+   green run on the `claude-build` branch.
+2. Under **Artifacts**, download **ReverendInsanity-windows** and unzip it.
+3. Double-click `build/windows/ReverendInsanity.exe`.
 
-## Quick Links
+It is one self-contained file (about 95 MB). Windows SmartScreen may warn that the app is
+unrecognised because it isn't code-signed: choose **More info**, then **Run anyway**.
 
-- [Game Design Document](GameDesign.md) - Core gameplay and mechanics
-- [Documentation Index](docs/README.md) - All planning docs
+### Option 2: build it yourself
 
-## Tech Stack
+On Windows (PowerShell):
 
-| Component | Technology |
-|-----------|------------|
-| Game Engine | Godot 4 (GDScript) |
-| AI Server | Python + FastAPI |
-| Database | SQLite |
-| AI Generation | Claude API |
-
-## Key Features
-
-- **Real-time with pause** gameplay (Stellaris-style)
-- **AI-generated content** - Gu, events, NPCs, quests
-- **10 cultivation paths** with distinct mechanics
-- **Permadeath with inheritance** - meta-progression between runs
-- **Goal-directed event system** - set objectives, world responds
-
-## Project Structure
-
-```
-reverend-insanity-game/
-├── prototype/               # Playable text card-RPG prototype (Python)
-│   ├── game.py              # Entry point + character creation + game loop
-│   ├── combat.py            # Aperture-as-deck combat + effect resolver
-│   ├── cards.py             # Gu cards + starter pool
-│   ├── enemies.py           # Hardcoded enemy loadouts
-│   ├── paths.py             # 10 paths + symbols/colors
-│   └── ui.py                # Terminal rendering
-├── docs/                    # Planning documentation
-│   ├── Architecture.md      # Technical architecture
-│   ├── Database.md          # Database schema
-│   ├── AIGeneration.md      # AI generation system
-│   ├── Sprints.md           # Development sprints
-│   ├── Decisions.md         # Decision log
-│   ├── Systems/             # Detailed system docs
-│   │   ├── Combat.md
-│   │   ├── Cultivation.md
-│   │   ├── Time.md
-│   │   ├── Events.md
-│   │   ├── Economy.md
-│   │   └── Inheritance.md
-│   ├── Content/             # Content design docs
-│   │   ├── Paths.md
-│   │   ├── Gu.md
-│   │   ├── Clans.md
-│   │   ├── Locations.md
-│   │   └── NPCs.md
-│   └── Glossary.md          # Terms and definitions
-├── godot/                   # Godot project (not yet created)
-├── server/                  # Python AI server (not yet created)
-├── data/                    # Database and fallback content
-├── GameDesign.md            # Master design document
-└── README.md                # This file
+```powershell
+powershell -ExecutionPolicy Bypass -File tools\build.ps1
 ```
 
-## Getting Started
+On Linux or macOS:
 
-### Prerequisites
+```bash
+tools/build.sh          # build only
+tools/build.sh test     # run every test first, then build
+```
 
-- Godot 4.x
-- Python 3.11+
-- Anthropic API key
+Both scripts download Godot 4.5.1 and its Windows export templates on first run (the templates
+are about 1 GB, once), then write `build/windows/ReverendInsanity.exe`.
 
-### Setup (Coming Soon)
+If you already have Godot 4.5.1 with export templates installed, you can also open `game/` in
+the editor and use **Project > Export > Windows Desktop**, or run:
 
-Implementation has not started yet. See [Sprints.md](docs/Sprints.md) for development roadmap.
+```bash
+godot --headless --path game --export-release "Windows Desktop" ../build/windows/ReverendInsanity.exe
+```
 
-## Documentation
+### Run from source without building
 
-All planning documentation is in the `docs/` folder:
+Open `game/project.godot` in Godot 4.5 and press F5.
 
-### Core Documents
-- **[GameDesign.md](GameDesign.md)** - High-level game design
-- **[Architecture.md](docs/Architecture.md)** - System architecture
-- **[Sprints.md](docs/Sprints.md)** - Development plan
+---
 
-### System Design
-- **[Combat](docs/Systems/Combat.md)** - Turn-based tactical combat
-- **[Cultivation](docs/Systems/Cultivation.md)** - Rank progression
-- **[Time](docs/Systems/Time.md)** - Real-time mechanics
-- **[Events](docs/Systems/Events.md)** - AI event generation
-- **[Economy](docs/Systems/Economy.md)** - Resources and trading
-- **[Inheritance](docs/Systems/Inheritance.md)** - Meta-progression
+## How to play
 
-### Content Design
-- **[Paths](docs/Content/Paths.md)** - The 10 cultivation paths
-- **[Gu](docs/Content/Gu.md)** - Gu worm design
-- **[Clans](docs/Content/Clans.md)** - Starting factions
-- **[Locations](docs/Content/Locations.md)** - World map
-- **[NPCs](docs/Content/NPCs.md)** - Character generation
+- **New Life:** pick a name, region, clan, start and mode, roll your aptitude (two rerolls) and
+  carry up to three legacies from the vault.
+- **Time:** Space pauses, 1/2/3 set speed. Events and battles pause automatically.
+- **Cultivate tab:** pick an activity (cultivate, closed-door, rest, study a path) and an intensity.
+  Higher intensity is faster and burns primeval stones. When the aperture is full press **B** to
+  break through. Rank breakthroughs from Rank 3 on summon a heart demon to fight.
+- **Aperture tab:** your equipped Gu are your combat deck. Every Gu must be fed each week or it
+  starves and dies. Click a Gu to equip, refine further, use or sell it.
+- **Map:** click a place to travel. Markets, the black market, caravans, refineries, the clan hall,
+  the arena, tutors and inns depend on where you are.
+- **Combat:** click an enemy to target it, click cards (or press 1-9) to activate Gu, Tab cycles
+  targets. Essence pays for cards; your attainment in each path limits plays of that path per turn.
+  Killer moves combine several Gu and get cheaper with practice.
+- **Goals tab:** set goals ("Seeking Light Gu", "Need Resources", "Preparing for the Great Beast Tide")
+  and events lean toward them.
+- **Immortal tab:** after the Rank 5 tribulation, manage your blessed land, join a faction, raise
+  beasts, build structures, survive periodic tribulations and climb to Rank 8, then face the
+  three-stage Venerable tribulation.
+- **Auto** (or A) lets the game play itself, which is handy for seeing late-game systems.
+- F11 toggles fullscreen. Esc closes dialogs. Menu saves (three slots plus a monthly autosave).
 
-## Contributing
+Sandbox mode in Settings unlocks every clan, start and mode at once.
 
-This is currently a solo project in early planning stages.
+Saves, settings and legacy progress live in `%APPDATA%\ReverendInsanity`.
 
-## License
+### Optional: live AI writing
 
-TBD
+Settings > Live AI writing. Paste an Anthropic API key and press **Test connection**. Claude then
+writes fresh NPC lines, event openings and names for newly discovered Gu. Rules and numbers never
+change, nothing is needed to play, and the key is stored only on your computer in the folder above.
 
-## Acknowledgments
+---
 
-- Inspired by the novel "Reverend Insanity" (Gu Zhen Ren) by Gu Zhen Ren
-- Gameplay inspiration from Stellaris, Slay the Spire, Caves of Qud
+## Repository layout
+
+```
+game/                 Godot 4.5 project (open project.godot)
+  autoload/           Data, Meta (legacy and settings), Sfx, Game (state and rules), AIGen
+  core/               combat, cultivation, world (NPCs, goals, missions), events, economy,
+                      immortal stage, procedural generation, auto-play bot
+  ui/                 every screen and dialog, built in code
+  data/               all content as JSON (Gu, clans, events, enemies, locations, ...)
+  assets/             icons, fonts, synthesized audio, shaders
+  tests/              run_tests.gd, playthrough.gd, ui_smoke.gd (dev/ holds debugging scripts)
+  export_presets.cfg  Windows export (single exe, data embedded)
+tools/                build.sh, build.ps1, gen_assets.py (rebuilds icons, fonts, audio),
+                      content/ (content generators)
+docs/                 design docs; docs/MVP-Checklist.md lists every feature and its status
+.github/workflows/    build-windows.yml: tests + Windows exe artifact on every push
+GameDesign.md         the design document this build follows
+CREDITS.md            every third-party asset and its licence
+```
+
+## Tests
+
+```bash
+godot --headless --path game --script res://tests/run_tests.gd              # 400+ logic checks
+godot --headless --path game --script res://tests/playthrough.gd -- 6 1000  # bot plays 6 whole lives
+godot --headless --path game --script res://tests/ui_smoke.gd -- "" 20      # opens every screen, auto-plays
+```
+
+The logic suite covers every system, including the immortal ascension, an immortal rank-up and a
+full Venerable victory. The GitHub Actions workflow runs all three before exporting.
+
+## Credits
+
+See [CREDITS.md](CREDITS.md). Icons from game-icons.net (CC BY 3.0); fonts under the SIL Open
+Font License; music and sound effects synthesized for this project. No AI-generated images.

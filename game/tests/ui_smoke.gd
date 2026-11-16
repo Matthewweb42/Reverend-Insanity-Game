@@ -133,5 +133,28 @@ func _initialize() -> void:
 		if not G.has_run():
 			break
 	await _shot("19_end")
+	main._stop_bot()
+	if G.has_run() and G.combat == null:
+		main._close_all_modals()
+		var me = G.p()
+		me.rank = 5
+		me.stage = 3
+		me.progress = 1e9
+		me.specialization = me.primary_path
+		me.stones = 3000
+		G.current_event = {}
+		var r = G.breakthrough()
+		print("ascension breakthrough: ", r.kind)
+		main._maybe_tribulation()
+		await _shot("20_tribulation")
+		main._close_all_modals()
+		me.trib = {}
+		G.immortal._become_immortal(3)
+		G.p().istones = 200
+		G.immortal.build("beast_pen")
+		G.immortal.raise_beast()
+		main.world.tabs.current_tab = main.world.tabs.get_tab_count() - 1
+		main.world.refresh(true)
+		await _shot("21_immortal")
 	print("UI SMOKE OK frames=", n, " ran=", G.has_run(), " day=", G.s.day if G.has_run() else -1, " rank=", G.p().rank if G.has_run() else -1, " modals=", main.modals.size())
 	quit(0)

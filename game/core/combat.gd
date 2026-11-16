@@ -18,7 +18,7 @@ var turn := 0
 var result := ""          # "", "win", "lose", "fled", "stalemate_win", "stalemate_lose"
 var lines := []
 var fx := []
-var stats := {"plays": {}, "killer_used": false, "damage_dealt": 0, "turns": 0, "bosses": [], "killed": [], "enemies_fled": 0}
+var stats := {"plays": {}, "killer_used": false, "killer_ids": {}, "damage_dealt": 0, "turns": 0, "bosses": [], "killed": [], "enemies_fled": 0}
 var ctx := {}
 var killer_cd := {}
 var night := false
@@ -397,7 +397,10 @@ func available_killers() -> Array:
 
 
 func killer_cost(km: Dictionary) -> int:
-	return int(round(float(km.cost) * pow(player.max_essence / 100.0, 0.8)))
+	## Practice makes a killer move cheaper: -3% essence per past use, down to -30%.
+	var practiced := int(ctx.get("km_practice", {}).get(km.get("id", ""), 0))
+	var drill := 1.0 - minf(0.3, 0.03 * practiced)
+	return int(round(float(km.cost) * pow(player.max_essence / 100.0, 0.8) * drill))
 
 
 func killer_block_reason(km: Dictionary) -> String:
@@ -432,6 +435,7 @@ func use_killer(id: String, target_idx := -1) -> bool:
 	player.essence -= killer_cost(km)
 	killer_cd[id] = KILLER_COOLDOWN
 	stats.killer_used = true
+	stats.killer_ids[id] = int(stats.killer_ids.get(id, 0)) + 1
 	var target := _pick_target(target_idx)
 	_log("KILLER MOVE: %s!" % km.name, "killer")
 	_fx({"type": "killer", "who": "p", "name": km.name, "path": km.path})

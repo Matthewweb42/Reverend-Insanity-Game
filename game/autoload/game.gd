@@ -1148,6 +1148,7 @@ func combat_ctx(flee_allowed := true) -> Dictionary:
 	return {
 		"name": pl.name, "rank": int(pl.rank), "hp": int(pl.hp), "max_hp": max_hp(), "essence": max_essence(),
 		"max_essence": max_essence(), "primary": pl.primary_path, "deck": deck, "attain": pl.attain.duplicate(),
+		"km_practice": pl.get("km_practice", {}).duplicate(),
 		"killers": pl.killers.duplicate(), "can_flee": can_flee, "flee_bonus": flee_bonus, "flee_allowed": flee_allowed,
 		"damage_bonus": float(Data.clans[pl.clan].bonus.get("damage", 0.0)), "age_combat": float(band.combat) * injury_mult,
 		"intel": 0, "night": night, "night_bonus": float(Data.clans[pl.clan].bonus.get("night", 0.0)),
@@ -1264,6 +1265,10 @@ func finish_combat() -> Dictionary:
 		if path != "none" and n > 0:
 			add_attain(path, n * 1.6 * (1.0 if won else 0.6))
 			s.stats.plays[path] = int(s.stats.plays.get(path, 0)) + n
+	if not pl.has("km_practice"):
+		pl["km_practice"] = {}
+	for kid in c.stats.get("killer_ids", {}):
+		pl.km_practice[kid] = int(pl.km_practice.get(kid, 0)) + int(c.stats.killer_ids[kid])
 	if c.stats.killer_used:
 		s.stats.killers = int(s.stats.killers) + 1
 		achieve("killer_move")
@@ -1392,6 +1397,8 @@ func _defeat(c: Combat) -> String:
 	if s.mode == "hard":
 		leth += 0.1
 	var death_chance := leth * 0.2
+	if int(pl.rank) == 1 and s.mode != "hard":
+		death_chance *= 0.5   # fledglings are usually left for dead rather than finished off
 	if rng.randf() < death_chance:
 		var killer: String = c.enemies[0].name
 		end_run("combat", "Slain by %s." % killer)

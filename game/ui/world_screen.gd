@@ -364,7 +364,8 @@ func _build_cultivate(v: VBoxContainer) -> void:
 		var bt := UI.btn(lab, func():
 			pl.intensity = i
 			_dirty = true
-			refresh(true), "Progress x%s. Costs %d stones per day while cultivating." % [str(d.points), cost])
+			refresh(true), "Progress x%s. Costs %d stones per day while cultivating.%s" % [str(d.points), cost,
+			("\nRisk of qi deviation: about %s%% per day." % str(snappedf(float(d.get("risk", 0.0)) * 100.0, 0.1))) if float(d.get("risk", 0.0)) > 0.0 else ""])
 		if int(pl.intensity) == i:
 			bt.add_theme_stylebox_override("normal", UI.box(Color("4a3a28"), UI.GOLD, 2, 5, 8, 5))
 			bt.add_theme_color_override("font_color", UI.GOLD)
@@ -771,6 +772,8 @@ func _build_immortal(v: VBoxContainer) -> void:
 		return ""))
 	nr.add_child(_act("Nurture the land (%d ✦)" % im.nurture_cost(), func(): return im.nurture(), "Raise the land's grade."))
 	nr.add_child(_act("Annex territory", func(): return im.annex(), "Add a resource point."))
+	if "beast_pen" in Game.s.blessed.structures:
+		nr.add_child(_act("Raise a beast (15 ✦) · %d/3" % Game.s.blessed.beasts.size(), func(): return im.raise_beast(), "Immortal beasts weaken tribulations by 5% each."))
 	# structures
 	var ss := _section(v, "Structures")
 	var sf := _flow(ss)

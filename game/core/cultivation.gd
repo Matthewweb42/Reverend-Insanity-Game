@@ -73,6 +73,13 @@ func daily(cultivating: bool, active: bool) -> void:
 		pl.stones -= int(Data.INTENSITY[tier].stones) * rk
 		var gain := float(Data.INTENSITY[tier].points) * cult_multiplier()
 		pl.progress = minf(req, float(pl.progress) + gain)
+		# pushing too hard risks qi deviation (design: "risk of deviation if pushed too hard")
+		var risk := float(Data.INTENSITY[tier].get("risk", 0.0))
+		if risk > 0.0 and g.rng.randf() < risk:
+			var lost := float(pl.progress) * 0.25
+			pl.progress = float(pl.progress) - lost
+			g.add_injury("Qi Deviation", 12)
+			g.add_log("Qi deviation! Your essence runs wild: progress -%d and an injury for 12 days." % int(lost), "bad")
 		if tier < int(pl.intensity) and not pl.get("_warned_stones", false):
 			pl["_warned_stones"] = true
 			g.add_log("Not enough primeval stones: cultivating at %s instead." % Data.INTENSITY[tier].name, "warn")

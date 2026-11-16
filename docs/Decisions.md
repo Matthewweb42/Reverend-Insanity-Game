@@ -1103,6 +1103,60 @@ If Strength Diff < -10: -30 reputation, potential story event
 
 ---
 
+### DEC-042: Draw two cards per turn
+**Date:** 2026-11-16
+**Status:** DECIDED
+**Context:** The card design (DEC-039) drew one card per turn. In playtests the hand ran dry by turn three and fights turned into "end turn" loops.
+**Decision:** Draw 2 per turn after the opening hand of 4. Hand limit stays at 7.
+**Rationale:** Keeps a real choice every turn without inflating damage; essence and per-path play limits still cap what you can do.
+**Trade-offs:** Decks cycle faster, so very small decks are slightly stronger than intended.
+
+---
+
+### DEC-043: Score rewards time lived (years x 5)
+**Date:** 2026-11-16
+**Status:** DECIDED
+**Context:** Inheritance points need to reward a long careful life as well as a fast reckless climb.
+**Decision:** Points = highest rank x 100 + years lived x 5 + achievements x 25 + bosses x 20, plus 1,500 for a Venerable victory. Hard mode x1.25; Speed Run victories earn a bonus for finishing fast; dying repeatedly at the same rank earns up to 50% more (catch-up).
+**Trade-offs:** Turtling at Rank 3 for decades earns some points, but rank still dominates.
+
+---
+
+### DEC-044: Godot 4 only, no separate AI server or database
+**Date:** 2026-11-16
+**Status:** DECIDED (supersedes the FastAPI + SQLite parts of the original stack)
+**Context:** The MVP must be a single Windows executable that runs offline.
+**Decision:** All logic in GDScript. Saves are JSON files in the user folder. Live AI writing calls the Claude API directly from the game over HTTPS, only when the player enters their own key in Settings. Without a key, every piece of text is authored or procedural.
+**Rationale:** One double-click exe, no Python install, no server to start, nothing breaks offline.
+**Trade-offs:** No shared balance database across players (DEC on dynamic balancing is local only, see DEC-046).
+
+---
+
+### DEC-045: Events pause the game by default
+**Date:** 2026-11-16
+**Status:** DECIDED
+**Context:** The design calls for Stellaris-style notifications that let time keep running. Events here ask for a choice that can start a fight, and letting days run on behind an open choice confused playtests.
+**Decision:** Events and battles always pause. Arriving somewhere, a full aperture and finished missions pause by default and can be turned off in Settings. Events can be deferred ("Decide later") or ignored.
+**Trade-offs:** Less "always running" feel than Stellaris.
+
+---
+
+### DEC-046: Local dynamic balancing
+**Date:** 2026-11-16
+**Status:** DECIDED
+**Context:** The design asks for balancing driven by play metrics.
+**Decision:** Each install tracks which paths you play across lives. After 200 card plays, newly generated Gu of an over-used path (over 30% of plays) come out up to 10% weaker, and those of a neglected path (under 5%) 5% stronger. Repeated deaths at the same rank also nudge aptitude rolls up a little.
+**Trade-offs:** Only one player's data; no global telemetry.
+
+---
+
+### DEC-038 (resolved): Combat AI
+**Date:** 2026-11-16
+**Status:** DECIDED
+**Decision:** Each enemy has a weighted ability list with simple rules (shield when hurt, heal allies, finish a weak target). Intents are shown a turn ahead, and Insight-type Gu reveal more.
+
+---
+
 ## Pending Decisions
 
 ### DEC-038: Combat AI Behavior System

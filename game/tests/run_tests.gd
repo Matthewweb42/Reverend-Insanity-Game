@@ -98,6 +98,24 @@ func t_cultivation() -> void:
 	pl.progress = D.stage_req(1, int(pl.stage))
 	var r: Dictionary = G.breakthrough()
 	ok(r.kind in ["stage", "fail", "crit"], "stage breakthrough resolves (%s)" % r.kind)
+	# reckless cultivation can cause qi deviation
+	fresh()
+	pl = G.p()
+	G.set_activity("cultivate")
+	pl.intensity = 4
+	var devs := 0
+	for i in 600:
+		pl.stones = 9999
+		var before := (pl.injuries as Array).size()
+		G.advance_day(false)
+		if (pl.injuries as Array).size() > before:
+			for inj in pl.injuries:
+				if str(inj.get("name", "")) == "Qi Deviation":
+					devs += 1
+					break
+		pl.injuries.clear()
+		pl.progress = 0.0
+	ok(devs >= 1, "reckless cultivation risks qi deviation (%d in 600 days)" % devs)
 
 
 func t_breakthrough_trial() -> void:
@@ -178,6 +196,11 @@ func t_killer_moves() -> void:
 	G.start_combat({"enemies": [{"id": "bandit", "rank": 1, "tier": "elite"}], "env": [], "flee_allowed": true})
 	var c = G.combat
 	c.player.essence = 999
+	for gd in D.gu_list:
+		if "moon" in gd.get("tags", []):
+			for k in 3:
+				c.player.deck.append({"path": gd.path, "tags": gd.tags})
+			break
 	var ks: Array = c.available_killers()
 	ok(ks.size() > 0, "clan killer move listed")
 	var usable = ks.filter(func(k): return k.reason == "")
@@ -190,9 +213,18 @@ func t_killer_moves() -> void:
 		for e in c.enemies:
 			hp1 += int(e.hp)
 		ok(hp1 < hp0 or c.result != "", "killer move hurts")
+	var used_any: bool = usable.size() > 0
+	var cost0: int = c.killer_cost(D.killers[ks[0].km.id])
 	G.combat.result = "win"
 	G.finish_combat()
-	ok(int(G.s.stats.killers) >= 0, "killer stat tracked")
+	if used_any:
+		ok(int(G.p().km_practice.get(usable[0].km.id, 0)) == 1, "killer practice recorded")
+		G.start_combat({"enemies": [{"id": "bandit", "rank": 1, "tier": "elite"}], "env": [], "flee_allowed": true})
+		G.p().km_practice[ks[0].km.id] = 10
+		G.combat.ctx.km_practice = G.p().km_practice
+		ok(G.combat.killer_cost(D.killers[ks[0].km.id]) < cost0, "practice lowers the essence cost")
+		G.combat.result = "win"
+		G.finish_combat()
 
 
 func t_economy() -> void:
@@ -385,6 +417,8 @@ func t_immortal_systems() -> void:
 	ok(G.immortal.node_upgrade_cost(0) > 0, "node upgrade cost")
 	ok(G.immortal.upgrade_node(0) == "" or true, "node upgrade")
 	ok(G.immortal.nurture_cost() > 0, "nurture cost")
+	ok(G.immortal.build("beast_pen") == "", "build a beast pen")
+	ok(G.immortal.raise_beast() == "" and G.s.blessed.beasts.size() == 1, "raise an immortal beast")
 	var st: Array = G.immortal.STRUCTURES.keys() if G.immortal.STRUCTURES is Dictionary else G.immortal.STRUCTURES
 	ok(st.size() > 0, "structures exist")
 	ok(G.immortal.FACTIONS.size() > 0, "factions exist")
