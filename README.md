@@ -13,7 +13,7 @@ The design documents in `docs/` and `GameDesign.md` are unchanged planning. This
 build/ReverendInsanity/ReverendInsanity-win_x64.exe
 ```
 
-The save lives in the app's local storage. Continue is on the title screen. Esc opens the menu.
+The save is written to local storage and, in the desktop build, to a `save.json` file under the app data folder `ReverendInsanity`. Continue is on the title screen. Esc opens the menu, including Music and SFX sliders.
 
 ## Play from source
 
@@ -59,13 +59,18 @@ CREDITS.md                  Asset licenses
 
 ## Rebuilding the Windows exe
 
-The checked-in executable already contains the game. To rebuild it you need the Neutralino 6.10 Windows binary at `bin/neutralino-win_x64.exe` (gitignored; download `neutralinojs-v6.10.0.zip` from the Neutralino releases) and Node. From the repo root:
+The checked-in executable already contains the game. Rebuilding needs Node 18 or newer. The CLI is pinned to `@neutralinojs/neu@11.8.0`. It downloads the Neutralino 6.10 client named in `neutralino.config.json`. From the repo root:
 
 ```
-npx @neutralinojs/neu build --embed-resources
+npm install
+npm run build
 ```
 
-Output is `build/ReverendInsanity/ReverendInsanity-win_x64.exe`.
+`npm run build` runs `neu update` and then `neu build --embed-resources`. `neu update` refreshes the binary cache. Do not replace `game/neutralino.js` unless you mean to bump the client. After a rebuild, keep `ReverendInsanity-win_x64.exe` and `HOW_TO_PLAY.txt` in `build/ReverendInsanity/` and drop any Linux or macOS binaries that the CLI also wrote. WebView2 is not bundled. Windows 10 and 11 usually already have it. The sha256 of the shipped exe is recorded below when the build is refreshed.
+
+The desktop window is a single instance and uses `game/assets/icon.png`.
+
+Shipped exe: `build/ReverendInsanity/ReverendInsanity-win_x64.exe`, 13,428,224 bytes, sha256 `20f940a99473d1f533cdc99c7d6eea0582d3d3c8763a2e589fc2958431c30155`. Built with `@neutralinojs/neu@11.8.0` and the Neutralino 6.10 client. WebView2 is still required on the Windows machine and is not inside the exe.
 
 ## License
 

@@ -16,8 +16,10 @@ The black background rectangle shipped with those SVGs was removed so the glyph 
 
 - Cormorant Garamond, by Christian Thalmann. SIL Open Font License 1.1.
 - Source Sans 3, by Paul D. Hunt and the Adobe font team. SIL Open Font License 1.1.
+- Cinzel, by Natanael Gama. SIL Open Font License 1.1. Used for titles.
+- Noto Serif SC, by Adobe and Google. SIL Open Font License 1.1. Used for the title seal.
 
-Both are stored under `game/assets/fonts/`.
+The OFL notices for Cinzel and Noto Serif SC sit beside the files in `game/assets/fonts/`. Cormorant and Source Sans notices were already stored with those files.
 
 ## Pictures that are not files
 
@@ -25,7 +27,18 @@ The mountain wash, card frames, seal, and road are CSS. They are not downloaded 
 
 ## Audio
 
-Every sound and the music beds are synthesized in `game/js/audio.js`. They are original and not taken from a sound pack. Hook ids for a later recording pass are listed in `docs/TEAM_HANDOFF.md`.
+All sixteen hooks play CC0 recordings in `game/assets/audio/`. Full file names and edits are in `game/assets/audio/LICENSES.md`.
+
+- Kenney Interface Sounds, Casino Audio, Impact Sounds, and Music Jingles. CC0. https://kenney.nl
+- Rubberduck. 40 CC0 water, splash, and slime sounds. https://opengameart.org/content/40-cc0-water-splash-slime-sfx
+- Sadiquecat. Stick whooshes (Freesound 802465, 802466, 802467). CC0.
+- Pufermufin. Lovely Chinese Guzheng Bowed (Freesound 396903). CC0. Trimmed to a 75 second loop starting at 1:30.
+- iamoneabe. Fool's Philosophy. CC0. https://opengameart.org/content/fools-philosophy
+- Centurion_of_war. Last One Standing. CC0. https://opengameart.org/content/last-one-standing
+- qubodup and yd. Dark Shrine Loop. CC0. https://opengameart.org/content/dark-shrine-loop
+- Tozan. RpJian. CC0. https://opengameart.org/content/rpjian
+
+Loudness was matched with ffmpeg loudnorm. The blessed-land bed is a little quieter than the road. Death and victory are single takes with no pitch jitter.
 
 ## Desktop shell
 

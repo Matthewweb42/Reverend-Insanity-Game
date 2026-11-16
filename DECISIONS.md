@@ -49,12 +49,13 @@ A full venerable run is meant to be one sitting. The design's six-hour, 600-year
 - Gu hunger. Food-path Gu feed themselves. Starving Gu are weaker until you pay to feed them.
 - A few Gu formulas can be crafted at rest once learned or inherited.
 - Inheritance points are spent after death or Rank 9 and persist in local save data.
-- Wisdom attainment reveals odds as unclear, a vague word, or a percent.
+- Wisdom attainment reveals event and breakthrough odds as unclear, a vague word, or a percent. Flee always shows an exact percentage and the modifiers behind it. Failing to flee ends the turn: the hand is discarded and every living enemy resolves its intent. That failed-flee cost replaces a single extra hit.
+- Event rewards that used to resolve in the middle of a fight now wait until the fight is won, so fleeing does not collect them. That change moved the combat dice and made the greedy run too safe. Attacks from enemies of Rank 4 and above deal one extra point of damage. On 1,000 greedy seeds that lands Gu Yue at about 46%, inside the 30–50% test gate and just above the 35–45% headline, without retuning the Act 1 numbers. Cultivation progress still fades by 2 whenever days pass, which is the curve that band was measured on. The door check runs at the end of those days, so a trip that spends the last of a lifespan opens Death's Door and does not enter the node.
 
 ## Art and audio
 
-- No generated images. Icons are game-icons.net (CC BY 3.0). Type is Cormorant Garamond and Source Sans 3 (OFL). Frames, mountains, and the seal are drawn in CSS. Credits are in `CREDITS.md`.
-- Sound is original synthesis hooked by id, so a later pass can drop in recordings without renaming calls. The list is in `docs/TEAM_HANDOFF.md`.
+- No generated images. Icons are game-icons.net (CC BY 3.0). Type is Cinzel, Cormorant Garamond, Source Sans 3, and Noto Serif SC for the seal (all OFL). Frames, mountains, and the seal are drawn in CSS. Credits are in `CREDITS.md`.
+- Sound is CC0 recordings under `game/assets/audio/`, still called through the same hook ids. Elites use the combat bed. Bosses use the boss bed. Music and SFX volumes are separate sliders.
 
 ## Content
 

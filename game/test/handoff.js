@@ -94,7 +94,7 @@ for (const ev of EVENTS) {
 
 w("## Sound and music hooks");
 w();
-w("All of these play today as short original synthesis. None of them are final recordings. Replace the body of `play()` / `music()` in `game/js/audio.js` and keep the ids.");
+w("These ids are the ones `play()` and `music()` accept. The recordings live in `game/assets/audio/` and are credited in `CREDITS.md` and `game/assets/audio/LICENSES.md`. Elites use `music_combat`. Bosses and tribulations use `music_boss`.");
 w();
 for (const h of AUDIO_HOOKS) {
   w(`- \`${h.id}\` (${h.kind}): ${h.desc}`);

@@ -12,7 +12,8 @@
   "enableNativeAPI": true,
   "tokenSecurity": "one-time",
   "logging": { "enabled": false, "writeToLogFile": false },
-  "nativeAllowList": ["app.*"],
+  "nativeAllowList": ["app.*", "os.*", "filesystem.*", "storage.*", "window.*"],
+  "singleInstance": true,
   "modes": {
     "window": {
       "title": "Reverend Insanity",
@@ -27,7 +28,8 @@
       "maximize": false,
       "hidden": false,
       "resizable": true,
-      "exitProcessOnClose": true
+      "exitProcessOnClose": true,
+      "icon": "/game/assets/icon.png"
     }
   },
   "cli": {

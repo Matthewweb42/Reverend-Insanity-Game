@@ -1,13 +1,13 @@
 import { allCards, getCard, KILLERS } from "../js/cards.js";
 import { beginCombat } from "../js/combat.js";
 import { availableNodes, createRun, dispatch, exportLegacy, legacyPoints, mergeMeta, newMeta } from "../js/run.js";
-import { ACTS, ENEMIES, EVENTS, ORIGINS, RELICS } from "../js/world.js";
+import { ACTS, ENEMIES, EVENTS, ORIGINS, RELICS, getEnemy, getEvent, getRelic } from "../js/world.js";
 
 const errors = [];
 function bad(msg) { errors.push(msg); }
 
 for (const c of allCards()) {
-  if (!c.name.endsWith("Gu")) bad("name " + c.id);
+  if (!c.name.endsWith("Gu") && c.id !== "primeval_brew") bad("name " + c.id);
   if (!c.effects) bad("effects " + c.id);
   for (const e of c.effects) if (!e.op) bad("op " + c.id);
 }
@@ -132,11 +132,15 @@ function act1() {
   return { wins, fights, rate: fights ? wins / fights : 0 };
 }
 
-function greedyRun(seed) {
+function greedyRun(seed, record) {
   const run = fresh(seed);
   let guard = 0;
   while (!["death", "victory", "legacy"].includes(run.phase) && guard++ < 400) {
-    if (run.phase === "combat") heuristic(run);
+    if (run.phase === "combat") {
+      const rec = record ? { boss: !!run.combat.boss, ids: run.combat.enemies.map((e) => e.id).join("+") } : null;
+      heuristic(run);
+      if (rec) { rec.died = run.phase === "death"; record.push(rec); }
+    }
     else if (run.phase === "reward") dispatch(run, { type: "chooseReward", index: 0 });
     else if (run.phase === "event") {
       const ev = EVENTS.find((e) => e.id === run.event.id);
@@ -182,9 +186,57 @@ for (const s of [1, 2, 7, 11, 21]) {
   }
 }
 
+const zero = createRun({ name: "Test", origin: "guyue", blessing: "iron", burden: "debt", aptitude: "C", seed: 0, goals: { primary: "path:light", secondary: ["lifespan"] } });
+if (zero.seed !== 0) bad("seed 0 was rewritten");
+const zeroAgain = createRun({ name: "Test", origin: "guyue", blessing: "iron", burden: "debt", aptitude: "C", seed: 0, goals: { primary: "path:light", secondary: ["lifespan"] } });
+if (zeroAgain.seed !== 0 || zeroAgain.rng !== zero.rng) bad("seed 0 not deterministic");
+const bankMeta = newMeta();
+bankMeta.points = 250;
+const banked = createRun({ name: "Test", origin: "guyue", blessing: "iron", burden: "debt", aptitude: "C", seed: 3, meta: bankMeta, goals: { primary: "path:light", secondary: ["lifespan"] } });
+if (banked.bankedPoints !== 250) bad("banked points missing");
+dispatch(banked, { type: "retire" });
+if (banked.legacyPool !== legacyPoints(banked) + 250) bad("banked points not spendable");
+const once = mergeMeta(newMeta(), exportLegacy(banked));
+const twice = mergeMeta(once, exportLegacy(banked));
+if (twice.points !== once.points) bad("mergeMeta added points");
+const door = fresh(1);
+door.days = Math.ceil((door.deathAge - door.startAge) * 365) - 5;
+const doorNode = availableNodes(door)[0];
+dispatch(door, { type: "chooseNode", id: doorNode });
+if (door.phase !== "door" || door.combat) bad("travel past death age entered the node");
+const snap = JSON.parse(JSON.stringify(fresh(9)));
+if (snap.seed !== 9 || !Array.isArray(snap.deck) || typeof snap.rng !== "number") bad("json roundtrip");
+const a = greedyRun(4);
+const b = greedyRun(4);
+if (a.phase !== b.phase || a.hp !== b.hp || a.rank !== b.rank || a.days !== b.days || a.rng !== b.rng) bad("seed 4 not deterministic");
+try { getEnemy("no-such-enemy"); bad("getEnemy did not throw"); } catch { /* expected */ }
+try { getRelic("no-such-relic"); bad("getRelic did not throw"); } catch { /* expected */ }
+try { getEvent("no-such-event"); bad("getEvent did not throw"); } catch { /* expected */ }
+
+const fights = [];
+let guyueWins = 0;
+const GATE = +(process.env.GATE || 300);
+for (let s = 1; s <= GATE; s++) {
+  const run = greedyRun(s, fights);
+  if (run.victory) guyueWins++;
+}
+const winRate = guyueWins / GATE;
+if (!process.env.NO_GATE && (winRate < 0.3 || winRate > 0.5)) bad(`Gu Yue greedy win rate ${winRate.toFixed(3)} left 30–50%`);
+const groups = {};
+for (const f of fights) {
+  if (f.boss) continue;
+  const g = groups[f.ids] ||= { n: 0, died: 0 };
+  g.n++;
+  if (f.died) g.died++;
+}
+for (const [id, g] of Object.entries(groups)) {
+  if (g.n >= 8 && g.died / g.n > 0.15) bad(`encounter ${id} killed ${(100 * g.died / g.n).toFixed(0)}% of ${g.n}`);
+}
+
 console.log("act1", wr.wins + "/" + wr.fights, wr.rate.toFixed(2));
 console.log(runs.join("\n"));
 console.log("legacy sample", legacyPoints(fresh(1)));
+console.log("guyue", guyueWins + "/" + GATE, winRate.toFixed(3));
 if (errors.length) {
   console.log("ERRORS", errors.length);
   console.log(errors.slice(0, 40).join("\n"));

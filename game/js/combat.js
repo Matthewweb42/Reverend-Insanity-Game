@@ -265,7 +265,7 @@ export function beginCombat(run, ids, opts = {}) {
       log(run, `${ally.name} steps into the fight beside you.`);
     }
   }
-  const note = living(run.combat).length >= 2 ? " Outnumbered: enemy attacks deal +2." : "";
+  const note = living(run.combat).length >= 2 ? " Outnumbered: enemy attacks deal +1." : "";
   log(run, `${env.name}. ${env.note}${note}`);
   startTurn(run, true);
 }
@@ -311,7 +311,7 @@ function startTurn(run, first) {
       if (p.turns <= 0) delete h.powers[key];
     }
   }
-  let drawN = OPENING === 5 && first ? 5 : 5;
+  let drawN = first ? OPENING : 5;
   if (first && hook(run, "turn1Draw")) drawN += 1;
   drawN += h.nextDraw || 0;
   h.nextDraw = 0;
@@ -879,7 +879,7 @@ function resolveEnemyMove(run, enemy, move) {
     const hits = move.hits || 1;
     if (enemy.shackle) {
       for (let i = 0; i < hits; i++) {
-        const n = scaleEnemy(run, enemy, move.dmg);
+        const n = scaleEnemy(run, enemy, move.dmg, true);
         damageEnemy(run, enemy, n, { kind: "shackle" });
         log(run, `${enemy.name} is shackled and hits itself for ${n}.`);
       }
@@ -904,12 +904,21 @@ function resolveEnemyMove(run, enemy, move) {
   if (move.burn) h.burn += move.burn;
 }
 
-function scaleEnemy(run, enemy, base) {
+function scaleEnemy(run, enemy, base, selfHit) {
   let n = base + (enemy.strength || 0);
   if (enemy.weak > 0) n = Math.round(n * 0.75);
-  if (living(run.combat).length >= 2) n += 2;
+  if (!selfHit && living(run.combat).length >= 2) n += 1;
   if (run.combat.env.id === "mountain") n -= 1;
+  if ((enemy.rank || 1) >= 4) n += 1;
   return Math.max(1, n);
+}
+
+export function intentDamage(run, enemy, move) {
+  if (!move || !move.dmg) return null;
+  let n = scaleEnemy(run, enemy, move.dmg);
+  if (run.combat.hero.vulnerable > 0) n = Math.round(n * 1.25);
+  const hits = move.hits || 1;
+  return { per: n, hits, total: n * hits };
 }
 
 function attackPlayer(run, enemy, base, label) {
@@ -942,31 +951,43 @@ function attackPlayer(run, enemy, base, label) {
   if (!run.combatOver) log(run, `${label} hits you for ${n}.`);
 }
 
+export const FLEE = { base: 0.5, elite: 0.35, boss: 0.1, movement: 0.2, lowHp: -0.1, lowHpPct: 0.3, perFail: 0.1, min: 0.05, max: 0.85 };
+
+export function fleeOdds(run) {
+  const c = run.combat;
+  if (!c) return null;
+  const boss = c.enemies.some((e) => e.boss);
+  const elite = !boss && (c.elite || c.enemies.some((e) => e.elite));
+  const mods = [{ label: boss ? "Boss" : elite ? "Elite" : "Base", d: boss ? FLEE.boss : elite ? FLEE.elite : FLEE.base }];
+  if (run.deck.some((card) => (getCard(card.id).tags || []).includes("movement"))) mods.push({ label: "Movement Gu", d: FLEE.movement });
+  if (run.hp < run.maxHp * FLEE.lowHpPct) mods.push({ label: "Below 30% HP", d: FLEE.lowHp });
+  const fails = c.hero.fleeFails || 0;
+  if (fails) mods.push({ label: `Failed ${fails}×`, d: FLEE.perFail * fails });
+  const raw = mods.reduce((s, m) => s + m.d, 0);
+  const chance = Math.round(Math.max(FLEE.min, Math.min(FLEE.max, raw)) * 100) / 100;
+  if (chance !== Math.round(raw * 100) / 100) mods.push({ label: raw > FLEE.max ? "Cap 85%" : "Floor 5%", d: chance - raw });
+  const fail = living(c).reduce((s, e) => s + (intentDamage(run, e, currentMove(e))?.total || 0), 0);
+  return { chance, mods, rep: fleeRep(run), fail };
+}
+
 export function tryFlee(run) {
   const c = run.combat;
   if (!c) return { ok: false, error: "You are not in a fight." };
   c.fx = [];
   if (run.combatOver) return { ok: false, error: "The fight is already over." };
-  const boss = c.enemies.some((e) => e.boss);
-  let chance = boss ? 0.08 : 0.42;
-  if (run.deck.some((card) => (getCard(card.id).tags || []).includes("movement"))) chance += 0.22;
-  if (run.hp < run.maxHp * 0.3) chance -= 0.12;
-  chance = Math.max(0.05, Math.min(0.9, chance));
+  const { chance } = fleeOdds(run);
   run._lastFlee = chance;
   if (rngNext(run) < chance) {
     const loss = fleeRep(run);
     run.reputation -= loss;
     run.combatOver = { outcome: "flee", rep: loss };
-    log(run, loss ? `You break away. Reputation ${loss > 0 ? "−" + loss : "holds"}.` : "You break away. No one calls it cowardice.");
+    log(run, `You break away (${Math.round(chance * 100)}%).${loss ? ` Reputation −${loss}.` : ""}`);
     return { ok: true, fled: true, fx: c.fx.slice() };
   }
-  log(run, "You fail to break away.");
-  const enemy = living(c)[0];
-  if (enemy) {
-    const mv = currentMove(enemy);
-    if (mv.dmg) attackPlayer(run, enemy, mv.dmg, enemy.name);
-  }
-  return { ok: true, fled: false, fx: c.fx.slice(), error: run.combatOver ? null : "Escape failed." };
+  c.hero.fleeFails = (c.hero.fleeFails || 0) + 1;
+  log(run, `You fail to break away (${Math.round(chance * 100)}%). Your turn is lost.`);
+  const res = endTurn(run);
+  return { ok: true, fled: false, fx: (res.fx || []).slice(), error: run.combatOver ? null : "Escape failed." };
 }
 
 function fleeRep(run) {
@@ -978,14 +999,7 @@ function fleeRep(run) {
   return 22;
 }
 
-export function fleeChance(run) {
-  if (!run.combat) return 0;
-  const boss = run.combat.enemies.some((e) => e.boss);
-  let chance = boss ? 0.08 : 0.42;
-  if (run.deck.some((card) => (getCard(card.id).tags || []).includes("movement"))) chance += 0.22;
-  if (run.hp < run.maxHp * 0.3) chance -= 0.12;
-  return Math.max(0.05, Math.min(0.9, chance));
-}
+export function fleeChance(run) { return fleeOdds(run)?.chance ?? 0; }
 
 /** Fix shield burst so the block is spent and steal works. Patched by wrapping amount. */
 export function _wireSteal(run, enemy, dealt, steal) {

@@ -92,7 +92,9 @@ export function createRun(opts = {}) {
   const origin = ORIGINS.find((o) => o.id === (opts.origin || "guyue")) || ORIGINS[0];
   const blessing = BLESSINGS.find((b) => b.id === opts.blessing) || BLESSINGS[0];
   const burden = BURDENS.find((b) => b.id === opts.burden) || BURDENS[0];
-  const seed = (opts.seed >>> 0) || ((Date.now() ^ 0x9e3779b9) >>> 0) || 1;
+  const seed = opts.seed === undefined || opts.seed === null
+    ? (((Date.now() ^ 0x9e3779b9) >>> 0) || 1)
+    : (Number(opts.seed) >>> 0);
   const run = {
     version: 1,
     seed,
@@ -142,6 +144,8 @@ export function createRun(opts = {}) {
     uidCounter: 1,
     removeCost: 46,
     tutorial: (meta.runs || 0) === 0,
+    bankedPoints: meta.points || 0,
+    pendingFx: null,
     immortal: false,
     victory: false,
     paused: true,
@@ -358,6 +362,13 @@ function addDays(run, n, travel) {
   void travel;
   run.days += Math.max(0, Math.round(n));
   if (run.progress > 0 && run.stage < 3) run.progress = Math.max(0, run.progress - 2);
+  checkDoor(run);
+}
+
+export function travelPreview(run, type) {
+  const base = { monster: 96, elite: 120, event: 78, shop: 42, rest: 50, cultivate: 28, treasure: 70, boss: 88, blessed: 36, auction: 40, tribulation: 100, tribulationFinal: 110 }[type] || 80;
+  if (hasTag(run, "movement")) return Math.round(base * (hasCard(run, "gale_stride") ? 0.55 : 0.75));
+  return base;
 }
 
 function checkDoor(run) {
@@ -466,6 +477,7 @@ function settleCombat(run) {
     return;
   }
   if (outcome.outcome === "flee") {
+    run.pendingFx = null;
     journal(run, outcome.rep ? `You flee. Reputation −${outcome.rep}.` : "You flee a stronger foe. No one blames you.");
     run.combat = null;
     const act = actState(run);
@@ -485,7 +497,7 @@ function settleCombat(run) {
   for (const card of run.deck) {
     if (getCard(card.id).path !== "food") card.hunger = Math.min(5, (card.hunger || 0) + 1);
   }
-  addProgress(run, dead.some((e) => e.boss) ? 120 : dead.some((e) => e.elite) ? 40 : 28);
+  addProgress(run, dead.some((e) => e.boss) ? 120 : dead.some((e) => e.elite) ? 56 : 32);
   let rankNote = "";
   if (dead.some((e) => e.calamity)) {
     rankUp(run, Math.max(run.rank, 6));
@@ -503,6 +515,12 @@ function settleCombat(run) {
     }
   }
   if (dead.some((e) => e.finale)) run.victory = true;
+  run._hpEnd = run.hp;
+  if (outcome.outcome === "win" && run.pendingFx) {
+    const rest = run.pendingFx;
+    run.pendingFx = null;
+    applyFx(run, rest);
+  } else run.pendingFx = null;
   if (dead.some((e) => e.boss || e.grantsRank || e.calamity)) run.hp = run.maxHp;
   let relic = null;
   if (dead.some((e) => e.elite || e.boss) || rngNext(run) < 0.06) relic = rollRelics(run, 1)[0] || null;
@@ -519,11 +537,18 @@ function settleCombat(run) {
   run.tutorial = false;
 }
 
+function openLegacy(run) {
+  if (run.legacyOpened) return;
+  run.legacyOpened = true;
+  run.legacyPool = legacyPoints(run) + (run.bankedPoints || 0);
+  run.legacyBought = [];
+}
+
 function die(run, cause) {
+  run.pendingFx = null;
   run.phase = "death";
   run.death = { cause, rank: run.rank, days: run.days, age: Math.floor(ageYears(run)) };
-  run.legacyPool = legacyPoints(run);
-  run.legacyBought = [];
+  openLegacy(run);
   journal(run, cause);
   return { ok: true };
 }
@@ -564,8 +589,7 @@ function continueOn(run) {
     run.reward = null;
     if (victory) {
       run.phase = "victory";
-      run.legacyPool = legacyPoints(run);
-      run.legacyBought = [];
+      openLegacy(run);
       return { ok: true };
     }
     return { ok: true, ...toMap(run) };
@@ -745,9 +769,25 @@ function eventChoice(run, id) {
   return { ok: true };
 }
 
+function scaleEncounter(run, ids) {
+  const weak = new Set(["disciple", "bandit", "boar"]);
+  if (!ids.every((id) => weak.has(id)) || run.act <= 0) return ids;
+  const group = actDef(run).monsters[0];
+  return group ? group.slice() : ids;
+}
+
 function applyFx(run, list) {
+  const steps = list || [];
   let combat = false;
-  for (const step of list || []) {
+  for (let i = 0; i < steps.length; i++) {
+    const step = steps[i];
+    if (step.op === "combat") {
+      if (run.phase === "death") return combat;
+      run.pendingFx = steps.slice(i + 1);
+      beginCombat(run, scaleEncounter(run, step.enemies), { env: actDef(run).env, source: "event" });
+      run.phase = "combat";
+      return true;
+    }
     if (step.op === "stones") run.stones = Math.max(0, run.stones + step.n);
     else if (step.op === "hp") {
       run.hp = Math.max(0, run.hp + step.n);
@@ -780,13 +820,7 @@ function applyFx(run, list) {
     else if (step.op === "hunger") for (const c of run.deck) if (getCard(c.id).path !== "food") c.hunger = Math.min(5, (c.hunger || 0) + step.n);
     else if (step.op === "flag") run.flags[step.key] = step.v;
     else if (step.op === "disposition" && run.npcs[step.npc] != null) run.npcs[step.npc] = clamp((run.npcs[step.npc] || 0) + step.n, -100, 100);
-    else if (step.op === "combat") {
-      if (run.phase === "death") return combat;
-      beginCombat(run, step.enemies, { env: actDef(run).env, source: "event" });
-      run.phase = "combat";
-      combat = true;
-    }
-    if (run.phase === "death") return combat;
+    if (run.phase === "death" || run.phase === "door") return combat;
   }
   return combat;
 }
@@ -816,7 +850,8 @@ function cardPrice(id) {
 
 function priceOf(run, base, currency) {
   if (currency === "immortal") return Math.max(1, Math.round(base / 70));
-  let p = base * (1 + run.act * 0.08);
+  const aptPrice = { A: -0.1, B: -0.05, C: 0, D: 0.1 }[run.aptitude] || 0;
+  let p = base * (1 + run.act * 0.08) * (1 + aptPrice);
   let off = run.discount || 0;
   if (run.relics.includes("abacus")) off += 0.2;
   if (run.deck.some((c) => c.id === "information_network")) off += 0.1;
@@ -838,7 +873,11 @@ function buy(run, kind, index) {
   const list = run.shop[kind];
   const item = list && list[index];
   if (!item || item.sold) return { ok: false, error: "Already gone." };
-  if (wallet(run, run.shop) < item.price) return { ok: false, error: "You cannot afford it." };
+  if (wallet(run, run.shop) < item.price) {
+    const name = kind === "cards" ? getCard(item.id).name : kind === "relics" ? getRelic(item.id).name : (ITEMS[item.id]?.name || "that");
+    const short = item.price - wallet(run, run.shop);
+    return { ok: false, error: `Need ${short} more for ${name}.` };
+  }
   pay(run, run.shop, item.price);
   item.sold = true;
   if (kind === "cards") giveCard(run, item.id);
@@ -1246,7 +1285,7 @@ export function exportLegacy(run) {
 export function mergeMeta(base, add) {
   const meta = { ...newMeta(), ...(base || {}) };
   if (!add) return meta;
-  meta.points = (meta.points || 0) + (add.points || 0);
+  meta.points = add.points || 0;
   meta.bonusStones = (meta.bonusStones || 0) + (add.bonusStones || 0);
   meta.bonusYears = (meta.bonusYears || 0) + (add.bonusYears || 0);
   if ((add.insight || 0) >= (meta.insight || 0)) {
