@@ -1461,6 +1461,7 @@ func end_run(cause: String, text: String) -> void:
 	if s.get("ended", false):
 		return
 	s.ended = true
+	s.ended_cause = cause
 	paused = true
 	var pl := p()
 	var summary := {

@@ -532,7 +532,7 @@ func start_mission(mid: String) -> String:
 			if not a.ok:
 				return a.reason
 			pl.activity = "mission"
-			pl.act = {"id": mid, "name": a.m.name, "left": int(a.m.days), "fought": false}
+			pl.act = {"id": mid, "name": a.m.name, "left": int(a.m.days), "total": int(a.m.days), "fought": false}
 			g.add_log("You accept the mission: %s." % a.m.name, "info")
 			g.emit_signal("state_changed")
 			return ""

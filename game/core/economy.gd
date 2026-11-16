@@ -438,7 +438,7 @@ func start_refine(fid: String) -> void:
 		g.add_material("immortal_stone", -1)
 	pl.stones = int(pl.stones) - int(f.stones)
 	pl.activity = "refine"
-	pl.act = {"formula": fid, "left": int(f.days), "chance": refine_chance(fid), "mats": pick}
+	pl.act = {"formula": fid, "left": int(f.days), "total": int(f.days), "chance": refine_chance(fid), "mats": pick}
 	g.add_log("You begin refining %s (%d days)." % [Data.gu[f.id].name, int(f.days)], "info")
 	g.emit_signal("state_changed")
 

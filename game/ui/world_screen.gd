@@ -103,7 +103,7 @@ func refresh(force := false) -> void:
 	_update_top()
 	_update_status()
 	var imm := Game.is_immortal()
-	tabs.set_tab_hidden(tabs.get_tab_count() - 1, not imm)
+	pass
 	var name: String = tabs.get_child(tabs.current_tab).name
 	if not pages.has(name):
 		return

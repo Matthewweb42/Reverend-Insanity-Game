@@ -108,11 +108,17 @@ func _initialize() -> void:
 			main.combat_ui.bot_step()
 			await process_frame
 	print("after combat loop mem=", OS.get_static_memory_usage() / 1048576)
-	var ev = G.debug_event() if G.has_method("debug_event") else {}
-	if not ev.is_empty():
-		main.dialogs.event(ev)
+	for i in 300:
+		if G.combat != null or not G.current_event.is_empty():
+			break
+		G.advance_day()
+	if not G.current_event.is_empty():
 		await _shot("17_event")
+		var ref = [main.modals[-1]] if main.modals.size() > 0 else [null]
+		main.dialogs._choose(ref, 0)
+		await _shot("17_event_outcome")
 		main._close_all_modals()
+	print("event test done, combat=", G.combat != null)
 	# auto-play
 	main.toggle_bot()
 	var t0 := Time.get_ticks_msec()
