@@ -60,7 +60,7 @@ The Gu Yue clan is known for their balanced cultivation approach and moonlight-b
 
 **Unique Gu Pool:**
 ```
-Moonlight Blade Gu (Rank 2, Light, Offensive)
+Moonlight Gu (Rank 1, Light, Offensive)
 - Clan signature offensive technique
 
 Crescent Shield Gu (Rank 2, Light, Defensive)

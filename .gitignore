@@ -26,3 +26,8 @@ export_presets.cfg
 Thumbs.db
 .vscode/
 .idea/
+
+# Neutralino build scratch
+bin/
+.tmp/
+node_modules/

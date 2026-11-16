@@ -146,7 +146,7 @@ Blood Frenzy Gu (Rank 2, Offensive)
 Cost: 10 essence + 15 health
 Deal 45 damage. If you're below 50% health, deal 65 instead.
 
-Vampiric Touch Gu (Rank 2, Utility)
+Blood Siphon Gu (Rank 2, Utility)
 Cost: 20 essence
 Your attacks heal you for 30% of damage dealt for 2 turns.
 ```

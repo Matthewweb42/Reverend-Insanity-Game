@@ -1,0 +1,17 @@
+{
+  "name": "reverend-insanity",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Reverend Insanity roguelike deckbuilder",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "python3 -m http.server 8765 --directory game",
+    "test": "node game/test/sim.js",
+    "handoff": "node game/test/handoff.js",
+    "build": "neu update && neu build --embed-resources"
+  },
+  "devDependencies": {
+    "@neutralinojs/neu": "11.8.0"
+  }
+}

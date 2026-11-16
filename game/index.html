@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reverend Insanity</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="css/game.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="wash" aria-hidden="true"></div>
+    <div id="floats"></div>
+    <div id="root"></div>
+  </div>
+  <script src="neutralino.js"></script>
+  <script type="module" src="js/main.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      if (window.NL_PORT && window.Neutralino) Neutralino.init();
+    });
+  </script>
+</body>
+</html>
