@@ -47,7 +47,7 @@ func cult_multiplier() -> float:
 	m *= maxf(1.0, best)
 	var loc: Dictionary = Data.locations.get(pl.location, {})
 	m *= float(loc.get("cult", 1.0))
-	if pl.location == "blessed_land":
+	if pl.get("in_land", false):
 		m *= 2.0
 	m *= 1.0 + float(Data.clans[pl.clan].bonus.get("cult", 0.0))
 	m *= pow(0.85, pl.injuries.size())
@@ -66,9 +66,11 @@ func daily(cultivating: bool, active: bool) -> void:
 	var req := Data.stage_req(pl.rank, pl.stage)
 	if cultivating:
 		var tier: int = int(pl.intensity)
-		while tier > 0 and pl.stones < Data.INTENSITY[tier].stones:
+		var rk := int(pl.rank)
+		var reserve: int = g.weekly_feed_cost() if pl.get("reserve_feed", true) else 0
+		while tier > 0 and int(pl.stones) - reserve < int(Data.INTENSITY[tier].stones) * rk:
 			tier -= 1
-		pl.stones -= Data.INTENSITY[tier].stones
+		pl.stones -= int(Data.INTENSITY[tier].stones) * rk
 		var gain := float(Data.INTENSITY[tier].points) * cult_multiplier()
 		pl.progress = minf(req, float(pl.progress) + gain)
 		if tier < int(pl.intensity) and not pl.get("_warned_stones", false):
@@ -129,7 +131,7 @@ func attempt_breakthrough() -> Dictionary:
 	if pl.rank == 5 and pl.stage == 3:
 		return {"ok": false, "text": "tribulation", "kind": "tribulation"}
 	var chance := breakthrough_chance()
-	var roll := g.rng.randf() * 100.0
+	var roll = g.rng.randf() * 100.0
 	pl.bt_bonus = 0
 	var req := Data.stage_req(pl.rank, pl.stage)
 	if roll < chance:
@@ -149,7 +151,7 @@ func attempt_breakthrough() -> Dictionary:
 		pl.progress = req * 0.7
 		g.add_log("Breakthrough failed. Your progress falls back to 70%.", "bad")
 		return {"ok": false, "text": "The breakthrough fails. Progress falls to 70%.", "kind": "fail"}
-	var crit := g.rng.randf() < 0.05
+	var crit = g.rng.randf() < 0.05
 	pl.bt_cooldown = 30
 	if crit:
 		pl.progress = req * 0.25

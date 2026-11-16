@@ -12,7 +12,7 @@
   "primary": "light",
   "home": "gu_yue_village",
   "age": 15,
-  "stones": 50,
+  "stones": 150,
   "start_gu": [
    "moonlight",
    "light_shield",
@@ -55,7 +55,7 @@
   "primary": "strength",
   "home": "bai_territory",
   "age": 16,
-  "stones": 35,
+  "stones": 105,
   "start_gu": [
    "bone_spike",
    "brute_force",
@@ -103,7 +103,7 @@
   "primary": "strength",
   "home": "xiong_village",
   "age": 17,
-  "stones": 40,
+  "stones": 120,
   "start_gu": [
    "iron_fist",
    "brute_force",
@@ -150,7 +150,7 @@
   "primary": "enslavement",
   "home": "merchant_city",
   "age": 16,
-  "stones": 75,
+  "stones": 225,
   "start_gu": [
    "suggestion",
    "essence_thief",
@@ -198,7 +198,7 @@
   "primary": "poison",
   "home": "wu_hollow",
   "age": 16,
-  "stones": 45,
+  "stones": 135,
   "start_gu": [
    "venom_needle",
    "toxic_cloud",
@@ -240,7 +240,7 @@
   "primary": "fire",
   "home": "chi_forge",
   "age": 16,
-  "stones": 45,
+  "stones": 135,
   "start_gu": [
    "basic_flame",
    "basic_flame",

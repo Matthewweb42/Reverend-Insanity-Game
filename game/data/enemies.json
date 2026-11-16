@@ -1212,6 +1212,69 @@
    }
   },
   {
+   "id": "heart_demon",
+   "name": "Heart Demon",
+   "group": "trial",
+   "kind": "soul",
+   "tier": "elite",
+   "rank": 2,
+   "path": "dark",
+   "behaviour": "tactical",
+   "icon": "evil-minion",
+   "lethality": 0.0,
+   "abilities": [
+    {
+     "name": "Doubt",
+     "effects": [
+      {
+       "v": "damage",
+       "n": 1.0,
+       "pierce": true
+      }
+     ],
+     "w": 3,
+     "kind": "attack"
+    },
+    {
+     "name": "Old Regrets",
+     "effects": [
+      {
+       "v": "status",
+       "s": "weak",
+       "stacks": 1,
+       "turns": 2,
+       "t": "enemy"
+      }
+     ],
+     "w": 1,
+     "kind": "debuff"
+    },
+    {
+     "name": "Hollow Calm",
+     "effects": [
+      {
+       "v": "shield",
+       "n": 1.2,
+       "t": "self"
+      }
+     ],
+     "w": 1,
+     "kind": "defend"
+    }
+   ],
+   "killer": {
+    "name": "Mirror of Failure",
+    "effects": [
+     {
+      "v": "damage",
+      "n": 1.8
+     }
+    ],
+    "w": 1,
+    "kind": "killer"
+   }
+  },
+  {
    "id": "heaven_will",
    "name": "Avatar of Heaven's Will",
    "group": "fate",

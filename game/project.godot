@@ -17,10 +17,24 @@ boot_splash/show_image=false
 [autoload]
 
 Data="*res://autoload/data.gd"
-Game="*res://autoload/game.gd"
 Meta="*res://autoload/meta.gd"
 Sfx="*res://autoload/sfx.gd"
+Game="*res://autoload/game.gd"
 AIGen="*res://autoload/ai_gen.gd"
+
+[debug]
+
+gdscript/warnings/inference_on_variant=0
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/unused_variable=0
+gdscript/warnings/shadowed_variable=0
+gdscript/warnings/shadowed_variable_base_class=0
+gdscript/warnings/integer_division=0
+gdscript/warnings/narrowing_conversion=0
+gdscript/warnings/return_value_discarded=0
+gdscript/warnings/unused_signal=0
+gdscript/warnings/confusable_local_declaration=0
+gdscript/warnings/redundant_await=0
 
 [display]
 

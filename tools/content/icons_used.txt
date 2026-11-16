@@ -58,6 +58,7 @@ droplets
 eagle-head
 earth-worm
 empty-hourglass
+evil-minion
 evil-moon
 eye-of-horus
 eye-shield

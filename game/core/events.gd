@@ -25,7 +25,7 @@ func roll_daily(where_kind: String) -> void:
 	else:
 		var loc: Dictionary = Data.locations.get(pl.location, {"danger": 1})
 		chance = 0.022 + 0.004 * int(loc.get("danger", 1))
-		if pl.location == "blessed_land":
+		if pl.get("in_land", false):
 			chance = 0.01
 	if g.s.events.queue.size() >= 3:
 		return
@@ -44,7 +44,7 @@ func _where_ok(e: Dictionary, where_kind: String) -> bool:
 		return true
 	if where_kind == "travel":
 		return "travel" in w
-	if pl.location == "blessed_land":
+	if pl.get("in_land", false):
 		return false
 	var loc: Dictionary = Data.locations.get(pl.location, {})
 	if pl.location in w:
@@ -61,7 +61,7 @@ func pick_event(where_kind: String) -> Dictionary:
 	var pl := p()
 	var cands := []
 	var total := 0.0
-	var goal_tags := g.goal_tags()
+	var goal_tags = g.goal_tags()
 	var primary_tag: String = g.primary_goal_tag()
 	for e in Data.event_list:
 		if float(e.weight) <= 0:
@@ -96,7 +96,7 @@ func pick_event(where_kind: String) -> Dictionary:
 		total += tw * 0.6
 	if total <= 0:
 		return {}
-	var roll := g.rng.randf() * total
+	var roll = g.rng.randf() * total
 	for c in cands:
 		roll -= c[1]
 		if roll <= 0:
@@ -174,7 +174,7 @@ func instantiate(q: Dictionary) -> Dictionary:
 	var ctx: Dictionary = q.ctx.duplicate()
 	if ev.has("npc") and not ctx.has("npc"):
 		if ev.npc == "known":
-			var known := g.known_npcs()
+			var known = g.known_npcs()
 			if known.size() > 0:
 				ctx["npc"] = known[g.rng.randi_range(0, known.size() - 1)]
 		else:
@@ -206,7 +206,7 @@ func req_fail(req: Dictionary, ev: Dictionary) -> String:
 		var v = req[k]
 		match k:
 			"stones":
-				var need := g.scaled_amount(v)
+				var need = g.scaled_amount(v)
 				if pl.stones < need:
 					return "Needs %d stones" % need
 			"immortal_stones":
@@ -291,7 +291,7 @@ func odds_text(c: Dictionary) -> String:
 	if chk.type == "combat":
 		return "Battle"
 	var pc := check_chance(chk) * 100.0
-	var w := g.wisdom_score()
+	var w = g.wisdom_score()
 	if w < 20:
 		return "You have no idea what might happen"
 	if w < 40:
@@ -320,7 +320,7 @@ func choose(inst: Dictionary, idx: int) -> Dictionary:
 	g.s.events.seen[inst.q.id] = true
 	g.s.events.last_seen[inst.q.id] = int(g.s.day)
 	if raw.has("check") and raw.check.type == "combat":
-		var setup := g.combat_setup_from_check(raw.check)
+		var setup = g.combat_setup_from_check(raw.check)
 		setup["after"] = {"inst": inst, "choice": idx}
 		return {"combat": setup}
 	var ok := true
@@ -376,7 +376,7 @@ func _apply_one(e: Dictionary, ctx: Dictionary):
 		"log":
 			return e.text
 		"stones":
-			var n := g.scaled_amount(e.n)
+			var n = g.scaled_amount(e.n)
 			if n < 0 and pl.stones < -n:
 				n = -pl.stones
 			pl.stones += n
@@ -398,13 +398,13 @@ func _apply_one(e: Dictionary, ctx: Dictionary):
 				got.append(Data.materials[m].name)
 			return "Found: %s." % ", ".join(got)
 		"gu":
-			var gi := g.add_gu(e.id)
+			var gi = g.add_gu(e.id)
 			return "Obtained %s!" % Data.gu[e.id].name if not gi.is_empty() else "Your storage is full; you leave a Gu behind."
 		"gu_pool":
-			var gid := g.random_gu(e.get("rank", "r"), e.get("rarity", ""), e.get("path", ""))
+			var gid = g.random_gu(e.get("rank", "r"), e.get("rarity", ""), e.get("path", ""))
 			if gid == "":
 				return ""
-			var gi2 := g.add_gu(gid)
+			var gi2 = g.add_gu(gid)
 			if gi2.is_empty():
 				return "Your storage is full; you leave a Gu behind."
 			return e.get("log", "") + (" " if e.has("log") else "") + "Obtained %s!" % Data.gu[gid].name
@@ -439,7 +439,7 @@ func _apply_one(e: Dictionary, ctx: Dictionary):
 			pl.info = maxi(0, int(pl.info) + int(e.n))
 			return "Information %+d." % int(e.n)
 		"formula":
-			var f := g.learn_random_formula(e.get("rank", "r"), e.get("path", ""))
+			var f = g.learn_random_formula(e.get("rank", "r"), e.get("path", ""))
 			return "Learned the formula for %s." % Data.gu[f].name if f != "" else ""
 		"killer":
 			var id: String = e.get("id", "")
@@ -510,7 +510,7 @@ func _apply_one(e: Dictionary, ctx: Dictionary):
 				return "%s seems %s." % [g.s.npcs[ctx.npc].name, "pleased" if int(e.n) > 0 else "displeased"]
 			return ""
 		"disp_arch":
-			var nid2 := g.npc_by_arch(e.arch, true)
+			var nid2 = g.npc_by_arch(e.arch, true)
 			if nid2 != "":
 				g.ensure_npc_met(nid2)
 				g.change_disp(nid2, int(e.n))

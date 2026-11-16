@@ -16,10 +16,10 @@ const DMG_BASE := [12, 28, 48, 72, 98, 300, 650, 1300, 2800]
 const ENEMY_HP := [80, 230, 450, 720, 1050, 3200, 7000, 14000, 30000]
 const INTENSITY := [
 	{"name": "Meditation", "stones": 0, "points": 0.25},
-	{"name": "Steady", "stones": 2, "points": 0.5},
-	{"name": "Focused", "stones": 5, "points": 1.0},
-	{"name": "Intense", "stones": 15, "points": 1.75},
-	{"name": "Reckless", "stones": 30, "points": 2.5},
+	{"name": "Steady", "stones": 1, "points": 0.5},
+	{"name": "Focused", "stones": 2, "points": 1.0},
+	{"name": "Intense", "stones": 5, "points": 1.75},
+	{"name": "Reckless", "stones": 12, "points": 2.5},
 ]
 const APTITUDE := {
 	"A": {"mult": 1.5, "rank": 15, "stage": 5, "label": "A-grade"},

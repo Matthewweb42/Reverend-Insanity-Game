@@ -168,7 +168,7 @@ func end_turn() -> void:
 		return
 	turn += 1
 	if turn > MAX_TURNS:
-		var pp := float(player.hp) / player.max_hp
+		var pp = float(player.hp) / player.max_hp
 		var ep := 0.0
 		for e in _living_enemies():
 			ep = maxf(ep, float(e.hp) / e.max_hp)
@@ -247,7 +247,7 @@ func _choose_intent(e: Dictionary) -> void:
 		e.intent = e.killer
 		return
 	var pool := []
-	var hp_pct := float(e.hp) / e.max_hp
+	var hp_pct = float(e.hp) / e.max_hp
 	for a in abilities:
 		var w := float(a.get("w", 1))
 		match e.behaviour:
@@ -476,12 +476,12 @@ func try_flee() -> bool:
 # ------------------------------------------------------------- resolution ---
 func _resolve_effects(src: Dictionary, target: Dictionary, effects: Array, o: Dictionary) -> void:
 	var power: float = float(o.get("power", 1.0))
-	var is_enemy_src := not src.get("is_player", false) and o.has("enemy_scale")
+	var is_enemy_src = not src.get("is_player", false) and o.has("enemy_scale")
 	var hit := -1.0
 	for e in effects:
 		if result != "":
 			return
-		var tsel: String = e.get("t", "enemy")
+		var tsel: String = _default_target(e, o)
 		var targets := []
 		if tsel == "self":
 			targets = [src]
@@ -539,7 +539,7 @@ func _resolve_effects(src: Dictionary, target: Dictionary, effects: Array, o: Di
 				src.reveal = int(src.get("reveal", 0)) + int(e.n)
 			"dmg_missing_hp":
 				for t in targets:
-					var base := (float(e.get("base", 0)) * _rank_scale(src, o, e) * power) + float(e.pct) * (src.max_hp - src.hp)
+					var base = (float(e.get("base", 0)) * _rank_scale(src, o, e) * power) + float(e.pct) * (src.max_hp - src.hp)
 					if hit < 0:
 						hit = _hit_roll(src, t)
 					_deal(src, t, _attack_amount(src, t, base, o, e) * hit, {"path": o.get("path", "none"), "lifesteal": float(e.get("lifesteal", 0)), "hit": hit})
@@ -624,6 +624,26 @@ func _resolve_effects(src: Dictionary, target: Dictionary, effects: Array, o: Di
 						src.statuses.erase(s)
 	if is_enemy_src:
 		pass
+
+
+const SELF_VERBS := ["shield", "shield_pct_hp", "heal", "essence", "draw", "combo", "cheapen", "reveal", "upgrade_hand",
+		"form", "self_damage", "summon", "create", "mimic"]
+const BUFFS := ["thorns", "prot", "stealth", "regen", "strong"]
+
+
+func _default_target(e: Dictionary, o: Dictionary) -> String:
+	if e.has("t"):
+		return str(e.t)
+	if e.v in SELF_VERBS:
+		return "self"
+	if e.v == "status" and str(e.get("s", "")) in BUFFS:
+		return "self"
+	var card_t := str(o.get("card", {}).get("target", "enemy")) if o.get("card") is Dictionary else "enemy"
+	if card_t == "all":
+		return "all"
+	if card_t == "self" and e.v == "status":
+		return "self"
+	return "enemy"
 
 
 func _created_power(g: Dictionary) -> float:
